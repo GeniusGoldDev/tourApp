@@ -1,0 +1,58 @@
+<app-grand-service-header *ngIf="grandService" [grandServiceName]="grandService.name" [activeTab]="2"></app-grand-service-header>
+
+<form id="myForm" *ngIf="grandService" [formGroup]="form" novalidate>
+  <section class="card p-3" novalidate>
+    <ng-template ngFor let-item [ngForOf]="formErrors" let-i="index">
+      <div class="alert alert-danger" role="alert">{{ formErrors[i] }}</div>
+    </ng-template>
+
+    <div formArrayName="paymentSteps">
+      <div *ngFor="let STEP of form['controls'].paymentSteps['controls']; let iINDEX=index">
+          <div class="card mb-4 p-2" formGroupName="{{ iINDEX }}">
+          <input type="hidden" formControlName="id" />
+          <input type="hidden" formControlName="grandServiceId" />
+
+          
+          <div class="row mb-1">
+            <div class="col-md-5 text-center">
+              <label>Is Deposit</label>
+              <div class="">
+                <label class="checkbox-inline mr-3">
+                  <input (click)="checkDepositPayment($event);" name="paymentType-{{iINDEX}}" type="radio" id="deposit-{{iINDEX}}" />
+                  Deposit
+                </label>
+                <label class="checkbox-inline mr-3">
+                  <input (click)="checkFinalPayment($event);" name="paymentType-{{iINDEX}}" type="radio" id="final-{{iINDEX}}" />
+                  Final
+                </label>
+                <label class="checkbox-inline mr-3">
+                  <input (click)="checkOtherPayment($event);" name="paymentType-{{iINDEX}}" type="radio" id="other-{{iINDEX}}" />
+                  Other
+                </label>
+              </div>
+            </div>
+            <div class="col-md-2">
+              <label>Type:</label>
+              <input formControlName="type" type="text" id="paymentType-{{iINDEX}}" class="form-control" />
+            </div>
+
+            <div class="col-md-2">
+              <label>Amount:</label>
+              <input formControlName="amount" type="number" class="form-control" />
+            </div>
+
+            <div class="col-md-3">
+              <label>Due Date:</label>
+              <input [owlDateTime]="dtDue" [owlDateTimeTrigger]="dtDue" formControlName="due" class="form-control" />
+              <owl-date-time #dtDue></owl-date-time>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <button type="button" class="btn btn-warning mt-3" (click)="add();">Add Payment Step</button>
+    <button type="button" class="btn btn-success mt-3" [disabled]="form.pristine" (click)="save();">Save Tour</button>
+  </section>
+</form>

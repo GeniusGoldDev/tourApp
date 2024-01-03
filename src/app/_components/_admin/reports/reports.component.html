@@ -1,0 +1,25 @@
+<form>
+  <h1>Reports</h1>
+
+<div class="row mb-3">
+  <div class="col-md-3">
+    <input id="dateTimeFrom" [owlDateTime]="dateTimeFrom" [owlDateTimeTrigger]="dateTimeFrom" class="form-control" placeholder="From..." />
+    <owl-date-time [pickerType]="'calendar'" #dateTimeFrom></owl-date-time>
+  </div>
+  <div class="col-md-3">
+    <input id="dateTimeTo" [owlDateTime]="dateTimeTo" [owlDateTimeTrigger]="dateTimeTo" class="form-control" placeholder="From..." />
+    <owl-date-time [pickerType]="'calendar'" #dateTimeTo></owl-date-time>
+  </div>
+  <div class="col-md-4">
+    <select id="ddlReports" class="form-control">
+      <option value="1">Interests Report</option>
+      <option value="2">Bookings Report</option>
+      <option value="3">Customers Bookings</option>
+    </select>
+  </div>
+  <div class="col-md-2">
+    <input (click)="getReport()" class="btn btn-info col-md-12" type="button" value="Download Report" />
+  </div>
+</div>
+
+</form>

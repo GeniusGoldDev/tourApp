@@ -1,0 +1,39 @@
+<app-grand-service-header *ngIf="grandService" [grandServiceName]="grandService.name" [activeTab]="10"></app-grand-service-header>
+
+<form *ngIf="grandService" novalidate>
+  <section class="card p-3" novalidate>
+    <ng-template ngFor let-item [ngForOf]="formErrors" let-i="index">
+        <div class="alert alert-danger" role="alert">{{ formErrors[i] }}</div>
+    </ng-template>
+
+    <h3>{{ grandService.name }}</h3>
+
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">Room Occ.</th>
+          <th scope="col">Rrg. Cost</th>
+          <th scope="col">Discounted Price</th>
+        </tr>
+      </thead>
+      <tbody *ngIf="priceModels">
+        <tr *ngFor="let priceModel of priceModels; let i = index">
+          <th scope="row">
+            <input type="hidden" name="id" value="{{ priceModel.id }}" />
+            <select name="roomOccupancy" type="text" class="form-control" [value]=priceModel.roomOccupancy>
+              <option value="{{ roomOccupancy.value }}" *ngFor="let roomOccupancy of roomOccupancyTypes">{{roomOccupancy.name}}</option>
+            </select>
+          </th>
+          <td>
+            <input name="regPrice" class="form-control" placeholder="reg. price" value="{{ priceModel.regPrice }}" />
+          </td>
+          <td>
+            <input name="discountPrice" class="form-control" placeholder="dis. price" value="{{ priceModel.discountPrice }}" />
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+    <button type="button" class="btn btn-success mt-3" (click)="save();">Save</button>
+  </section>
+</form>

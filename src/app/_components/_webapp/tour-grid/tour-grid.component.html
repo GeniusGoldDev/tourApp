@@ -1,0 +1,1003 @@
+<!-- breadcrumb start here -->
+<div class="bread-crumb">
+	<div class="container">
+		<h2>Our Tours</h2>
+		<ul class="list-inline">
+			<li><a href="index-2.html">home</a></li>
+			<li><a href="tour-grid-view.html">tours</a></li>
+		</ul>
+	</div>
+</div>
+<!-- breadcrumb end here -->
+
+<!-- main container start here -->
+<div class="placetop">
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-3">
+				<div class="left-box">
+					<h6>BOOK NOW</h6>
+					<div class="book">
+						<ul class="nav nav-tabs list-inline">
+							<li class="active">
+								<mat-checkbox></mat-checkbox><a href="#tour" data-toggle="tab" aria-expanded="true">tour</a>
+							</li>
+							<li class="">
+								<mat-checkbox></mat-checkbox><a href="#hotel" data-toggle="tab" aria-expanded="false">hotel</a>
+							</li>
+							<li class="">
+								<mat-checkbox></mat-checkbox><a href="#flight" data-toggle="tab" aria-expanded="false">flights	</a>
+							</li>
+							<li class="">
+								<mat-checkbox></mat-checkbox><a href="#package" data-toggle="tab" aria-expanded="false">Packages</a>
+							</li>
+							<li class="">
+								<mat-checkbox></mat-checkbox><a href="#place" data-toggle="tab" aria-expanded="false">places</a>
+							</li>
+						</ul>
+						<div class="tab-content">
+							<div class="tab-pane active" id="tour">
+								<form class="form-horizontal" method="post">
+									<div class="form-group">
+										<h2>Where</h2>
+										<label>Destination</label>
+										<input name="s" class="form-control" value="" placeholder="Enter a destination or tour type.." type="text">
+									</div>	
+									<div class="form-group">
+										<h2>When</h2>
+										<div class="date">
+											<label>From</label>
+											<input class="form-control" placeholder="dd/mm/yy" [matDatepicker]="dateFrom">
+											<mat-datepicker-toggle [for]="dateFrom"></mat-datepicker-toggle>
+											<mat-datepicker #dateFrom></mat-datepicker>
+										</div>
+									</div>	
+									<div class="date form-group">
+										<label>To</label>
+										<input class="form-control" placeholder="dd/mm/yy" [matDatepicker]="dateTo">
+										<mat-datepicker-toggle [for]="dateTo"></mat-datepicker-toggle>
+										<mat-datepicker #dateTo></mat-datepicker>
+									</div>
+									<div class="form-group">
+										<label>Trip Type</label>
+										<mat-select class="selectpicker form-control bs-select-hidden" name="location" [(value)]="tripType">
+											<mat-option value="0">Trip Type</mat-option>
+											<mat-option value="1">Location 1</mat-option>
+											<mat-option value="2">Location 2</mat-option>
+											<mat-option value="3">Location 3</mat-option>
+										</mat-select>
+									</div>
+									<div class="form-group">
+										<label>Max Budget</label>
+										<input name="s" class="form-control" value="" placeholder="Max budget ($)" type="text">
+									</div>
+									<div class="text-center">
+										<button class="btn-primary" type="button">Proceed</button>
+									</div>
+								</form>
+							</div>
+							<div class="tab-pane" id="hotel">
+								<form class="form-horizontal" method="post">
+									<div class="form-group">
+										<h2>Where</h2>
+										<label>Destination</label>
+										<input name="s" class="form-control" value="" placeholder="Enter a destination or tour type.." type="text">
+									</div>	
+									<div class="form-group">
+										<h2>When</h2>
+										<div class="date">
+											<label>check in</label>
+											<input name="s" class="form-control" value="" placeholder="dd/mm/yy" type="text">
+											<button type="button" class="calender"><i class="fa fa-calendar-o" aria-hidden="true"></i></button>
+										</div>
+									</div>	
+									<div class="date form-group">
+										<label>check out</label>
+										<input name="s" class="form-control" value="" placeholder="dd/mm/yy" type="text">
+										<button type="button" class="calender"><i class="fa fa-calendar-o" aria-hidden="true"></i></button>
+									</div>
+									<div class="row">
+										<div class="col-md-6 col-sm-12">
+											<div class="form-group">
+												<label>Rooms</label>
+												<select class="selectpicker form-control" name=	"location">
+													<option value="1">01</option>
+													<option value="0">02</option>
+													<option value="0">03</option>
+													<option value="0">04</option>
+												</select>
+											</div>
+										</div>
+										<div class="col-md-6 col-sm-12">
+											<div class="form-group">
+												<label>adults</label>
+												<select class="selectpicker form-control" name=	"location">
+													<option value="1">01</option>
+													<option value="0">02</option>
+													<option value="0">03</option>
+													<option value="0">04</option>
+												</select>
+											</div>
+										</div>
+									</div>
+									<div class="row">
+										<div class="col-md-6 col-sm-12">
+											<div class="form-group">
+												<label>kids</label>
+												<select class="selectpicker form-control" name=	"location">
+													<option value="1">01</option>
+													<option value="0">02</option>
+													<option value="0">03</option>
+													<option value="0">04</option>
+												</select>
+											</div>
+										</div>
+									</div>
+									<div class="text-center">
+										<button class="btn-primary" type="button">Proceed</button>
+									</div>
+								</form>
+							</div>
+							<div class="tab-pane" id="flight">
+								<form class="form-horizontal" method="post">
+									<div class="form-group">
+										<h2>Where</h2>
+										<label>Leaving from</label>
+										<input name="s" class="form-control" value="" placeholder="City,district,specific airport.." type="text">
+									</div>
+									<div class="form-group">
+										<label>Going to</label>
+										<input name="s" class="form-control" value="" placeholder="City,district,specific airport.." type="text">
+									</div>	
+									<div class="form-group">
+										<h2>When</h2>
+										<div class="date">
+											<label>Departing 0n</label>
+											<input name="s" class="form-control" value="" placeholder="dd/mm/yy" type="text">
+											<button type="button" class="calender"><i class="fa fa-calendar-o" aria-hidden="true"></i></button>
+										</div>
+									</div>	
+									<div class="date form-group">
+										<label>Arriving on</label>
+										<input name="s" class="form-control" value="" placeholder="dd/mm/yy" type="text">
+										<button type="button" class="calender"><i class="fa fa-calendar-o" aria-hidden="true"></i></button>
+									</div>
+									<div class="row">
+										<div class="col-md-6 col-sm-12">
+											<div class="form-group">
+												<label>adults</label>
+												<select class="selectpicker form-control" name=	"location">
+													<option value="1">01</option>
+													<option value="0">02</option>
+													<option value="0">03</option>
+													<option value="0">04</option>
+												</select>
+											</div>
+										</div>
+										<div class="col-md-6 col-sm-12">
+											<div class="form-group">
+												<label>Infact</label>
+												<select class="selectpicker form-control" name=	"location">
+													<option value="1">01</option>
+													<option value="0">02</option>
+													<option value="0">03</option>
+													<option value="0">04</option>
+												</select>
+											</div>
+										</div>
+										
+									</div>
+									<div class="row">
+										<div class="col-md-6 col-sm-12">
+											<div class="form-group">
+												<label>kids</label>
+												<select class="selectpicker form-control" name=	"location">
+													<option value="1">01</option>
+													<option value="0">02</option>
+													<option value="0">03</option>
+													<option value="0">04</option>
+												</select>
+											</div>
+										</div>
+										<div class="col-md-6 col-sm-12">
+											<div class="form-group">
+												<label>Promo code</label>
+												<input type="text" name="code" class="form-control" placeholder="type here"/>
+											</div>
+										</div>
+									</div>
+									<div class="text-center">
+										<button class="btn-primary" type="button">Proceed</button>
+									</div>
+								</form>			
+							</div>
+							<div class="tab-pane" id="package">
+								<form class="form-horizontal" method="post">
+									<div class="form-group">
+										<label>Destination</label>
+										<input name="s" class="form-control" value="" placeholder="Enter a destination or tour type.." type="text">
+									</div>	
+									<div class="form-group">
+										<label>City</label>
+										<select class="selectpicker form-control" name=	"location">
+											<option value="1">Choose city</option>
+											<option value="0">02</option>
+											<option value="0">03</option>
+											<option value="0">04</option>
+										</select>
+									</div>
+									<div class="form-group">
+										<label>Category</label>
+										<select class="selectpicker form-control" name=	"location">
+											<option value="1">Choose category</option>
+											<option value="0">02</option>
+											<option value="0">03</option>
+											<option value="0">04</option>
+										</select>
+									</div>
+									<div class="form-group">
+										<label>No.of persons</label>
+										<select class="selectpicker form-control" name=	"location">
+											<option value="1">Choose no.of persons</option>
+											<option value="0">02</option>
+											<option value="0">03</option>
+											<option value="0">04</option>
+										</select>
+									</div>
+									<div class="row">
+										<div class="col-md-6 col-sm-12">
+											<div class="form-group">
+												<label>min price</label>
+												<select class="selectpicker form-control" name=	"location">
+													<option value="1">Min Price</option>
+													<option value="0">02</option>
+													<option value="0">03</option>
+													<option value="0">04</option>
+												</select>
+											</div>
+										</div>
+										<div class="col-md-6 col-sm-12">
+											<div class="form-group">
+												<label>Max Price</label>
+												<select class="selectpicker form-control" name=	"location">
+													<option value="1">Max Price</option>
+													<option value="0">02</option>
+													<option value="0">03</option>
+													<option value="0">04</option>
+												</select>
+											</div>
+										</div>
+									</div>
+									<div class="text-center">
+										<button class="btn-primary" type="button">Proceed</button>
+									</div>
+								</form>
+							</div>
+							<div class="tab-pane" id="place">
+								<form class="form-horizontal" method="post">
+									<div class="form-group">
+										<label>country</label>
+										<input name="s" class="form-control" value="" placeholder="Type country here" type="text">
+									</div>	
+									<div class="form-group">
+										<label>City</label>
+										<select class="selectpicker form-control" name=	"location">
+											<option value="1">Choose city</option>
+											<option value="0">Delhi</option>
+											<option value="0">Ludhaiana</option>
+											<option value="0">Jalandhar</option>
+										</select>
+									</div>
+									<div class="form-group">
+										<label>Category	</label>
+										<select class="selectpicker form-control" name=	"location">
+											<option value="1">Choose category</option>
+											<option value="0">Delhi</option>
+											<option value="0">Ludhaiana</option>
+											<option value="0">Jalandhar</option>
+										</select>
+									</div>
+									<div class="text-center">
+										<button class="btn-primary" type="button">Proceed</button>
+									</div>
+								</form>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="left-box">
+					<h6>CATEGORIES</h6>
+					<div class="who">
+						<div class="panel-group" id="accordion">
+							<div class="panel panel-default active">
+								<div class="panel-heading">
+									<a data-toggle="collapse" data-parent="#accordion" href="#collapse1">
+										<h4 class="panel-title">
+											Tours <i class="fa fa-caret-down" aria-hidden="true"></i>
+										</h4>
+									</a>
+								</div>
+								<div id="collapse1" class="panel-collapse collapse in">
+									<div class="panel-body">
+										<p>Seas Tours (980)</p>
+										<p>Romantic Tours (130)</p>
+										<p>Honeymoon Tours (123)</p>
+										<p>Mountains Tours (160)</p>
+										<p>Advantages Tours (60)</p>
+										<p>Sports Tours (120)</p>
+									</div>
+								</div>
+							</div>
+							<div class="panel panel-default">
+								<div class="panel-heading">
+									<a data-toggle="collapse" data-parent="#accordion" href="#collapse2">
+										<h4 class="panel-title">
+											Hotels <i class="fa fa-caret-right" aria-hidden="true"></i>
+										</h4>
+									</a>
+								</div>
+								<div id="collapse2" class="panel-collapse collapse">
+									<div class="panel-body">
+										<p>Seas Tours (980)</p>
+										<p>Romantic Tours (130)</p>
+										<p>Honeymoon Tours (123)</p>
+										<p>Mountains Tours (160)</p>
+										<p>Advantages Tours (60)</p>
+										<p>Sports Tours (120)</p>
+									</div>
+								</div>
+							</div>
+							<div class="panel panel-default">
+								<div class="panel-heading">
+									<a data-toggle="collapse" data-parent="#accordion" href="#collapse3">
+										<h4 class="panel-title">
+											Packages <i class="fa fa-caret-right" aria-hidden="true"></i>
+										</h4>
+									</a>
+								</div>
+								<div id="collapse3" class="panel-collapse collapse">
+									<div class="panel-body">
+										<p>Seas Tours (980)</p>
+										<p>Romantic Tours (130)</p>
+										<p>Honeymoon Tours (123)</p>
+										<p>Mountains Tours (160)</p>
+										<p>Advantages Tours (60)</p>
+										<p>Sports Tours (120)</p>
+									</div>
+								</div>
+							</div>
+							<div class="panel panel-default">
+								<div class="panel-heading">
+									<a data-toggle="collapse" data-parent="#accordion" href="#collapse4">
+										<h4 class="panel-title">
+											Flights <i class="fa fa-caret-right" aria-hidden="true"></i>
+										</h4>
+									</a>
+								</div>
+								<div id="collapse4" class="panel-collapse collapse">
+									<div class="panel-body">
+										<p>Seas Tours (980)</p>
+										<p>Romantic Tours (130)</p>
+										<p>Honeymoon Tours (123)</p>
+										<p>Mountains Tours (160)</p>
+										<p>Advantages Tours (60)</p>
+										<p>Sports Tours (120)</p>
+									</div>
+								</div>
+							</div>
+						</div> 
+					</div>
+				</div>
+				<div class="left-box">
+					<h6>PRICE RANGE</h6>
+					<div class="attribute price-filter">
+						<span class="min">$30</span>
+						<a href="#" class="slider-handle"></a>
+						<div class="price-range"><div class="bg"></div></div>
+						<span class="max">$5000</span>
+					</div>
+				</div>
+				<div class="left-box">
+					<h6>STAR RATING</h6>
+					<div class="rating">
+						<ul class="list-unstyled">
+							<li>
+								<mat-checkbox></mat-checkbox>
+								<i class="fa fa-star" aria-hidden="true"></i>
+								<i class="fa fa-star" aria-hidden="true"></i>
+								<i class="fa fa-star" aria-hidden="true"></i>
+								<i class="fa fa-star" aria-hidden="true"></i>
+								<i class="fa fa-star" aria-hidden="true"></i>				
+							</li>
+							<li>
+								<mat-checkbox></mat-checkbox>
+								<i class="fa fa-star" aria-hidden="true"></i>
+								<i class="fa fa-star" aria-hidden="true"></i>
+								<i class="fa fa-star" aria-hidden="true"></i>
+								<i class="fa fa-star" aria-hidden="true"></i>
+							</li>
+							<li>
+								<mat-checkbox></mat-checkbox>
+								<i class="fa fa-star" aria-hidden="true"></i>
+								<i class="fa fa-star" aria-hidden="true"></i>
+								<i class="fa fa-star" aria-hidden="true"></i>
+							</li>
+							<li>
+								<mat-checkbox></mat-checkbox>
+								<i class="fa fa-star" aria-hidden="true"></i>
+								<i class="fa fa-star" aria-hidden="true"></i>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="col-sm-9 mainpage">
+				<div class="row sort">
+					<div class="col-sm-3">
+						<div class="form-group input-group">
+							<label class="input-group-addon" for="input-sort">Sort By :    </label>
+							<mat-select class="selectpicker form-control bs-select-hidden" name="categoryType" [(value)]="categoryType">
+								<mat-option value="0">Categories</mat-option>
+								<mat-option value="1">Name (A - Z)</mat-option>
+								<mat-option value="2">Name (Z - A)</mat-option>
+								<mat-option value="3">Price (Low &gt; High)</mat-option>
+								<mat-option value="4">Price (High &gt; Low)</mat-option>
+								<mat-option value="5">Rating (Highest)</mat-option>
+							</mat-select>
+						</div>
+					</div>
+					<div class="col-sm-2">
+						<div class="form-group input-group">
+							<mat-select class="selectpicker form-control bs-select-hidden" name="nameType" [(value)]="nameType">
+								<mat-option value="0">Name</mat-option>
+								<mat-option value="1">Name (A - Z)</mat-option>
+								<mat-option value="2">Name (Z - A)</mat-option>
+							</mat-select>
+						</div>
+					</div>
+					<div class="col-sm-2">
+						<div class="form-group input-group">
+							<mat-select class="selectpicker form-control bs-select-hidden" name="ratingType" [(value)]="ratingType">
+								<mat-option value="0">Name</mat-option>
+								<mat-option value="1">Name (A - Z)</mat-option>
+								<mat-option value="2">Name (Z - A)</mat-option>
+								<mat-option value="3">Price (Low &gt; High)</mat-option>
+							</mat-select>
+						</div>
+					</div>
+					<div class="col-sm-2">
+						<div class="form-group input-group">
+							<mat-select class="selectpicker form-control bs-select-hidden" name="popularityType" [(value)]="popularityType">
+								<mat-option value="0">Popularity</mat-option>
+								<mat-option value="1">Price (High &gt; Low)</mat-option>
+								<mat-option value="2">Rating (Highest)</mat-option>
+								<mat-option value="3">Rating (Lowest)</mat-option>
+								<mat-option value="4">Model (A - Z)</mat-option>
+								<mat-option value="5">Model (Z - A)</mat-option>
+							</mat-select>
+						</div>
+					</div>
+					<div class="col-sm-3 list hidden-xs">
+						<div class="btn-group btn-group-sm pull-right">
+							<button type="button" id="grid-view" class="btn btn-default btngrid active" data-toggle="tooltip" title="Grid"><i class="fa fa-th-large" aria-hidden="true"></i></button>
+							
+							<button  type="button" id="list-view" class="btn btn-default btngrid" data-toggle="tooltip" title="List"><i class="fa fa-list-ul" aria-hidden="true"></i></button>
+						</div>
+					</div>
+				</div>
+				
+				<div class="row tour">
+					<div class="product-layout product-grid col-lg-4 col-md-4 col-sm-6 col-xs-12">
+						<div class="product-thumb">
+							<div class="image">
+								<a href="#"><img src="assets/images/t1.jpg" alt="t1" title="t1" class="img-responsive" /></a>
+								<div class="hoverbox">
+									<div class="icon_plus" aria-hidden="true"></div>
+								</div>
+								<div class="matter">
+									<p>grand switerland  <span>$575.00</span></p>
+								</div>
+							</div>
+							<div class="caption">
+								<div class="inner">
+									<h4>Grand Switerland</h4>
+									<div class="rate">
+										<span>HOT DEALS</span>
+										<i class="fa fa-star" aria-hidden="true"></i>
+										<i class="fa fa-star" aria-hidden="true"></i>
+										<i class="fa fa-star" aria-hidden="true"></i>
+										<i class="fa fa-star" aria-hidden="true"></i>
+										<i class="fa fa-star-half-o" aria-hidden="true"></i>
+									</div>
+									<div class="matter">
+										<p>grand switerland  <span>$575.00</span></p>
+									</div>
+									<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis elementum, dolor sit amet[...]</p>
+								</div>
+								<div class="text-left">
+									<button type="button" onclick="location.href='tour-booking-form.html'">Book Now <i class="fa fa-angle-double-right" aria-hidden="true"></i></button>
+									<button type="button" onclick="location.href='tour-detail-view.html'">View More <i class="fa fa-angle-double-right" aria-hidden="true"></i></button>
+								</div>	
+							</div>
+						</div>
+					</div>
+									
+					<div class="product-layout product-grid col-lg-4 col-md-4 col-sm-6 col-xs-12">
+						<div class="product-thumb">
+							<div class="image">
+								<a href="#"><img src="assets/images/t2.jpg" alt="t2" title="t2" class="img-responsive" /></a>
+								<div class="hoverbox">
+									<div class="icon_plus" aria-hidden="true"></div>
+								</div>
+								<div class="matter">
+									<p>discover japan  <span>$575.00</span></p>
+								</div>
+							</div>
+							<div class="caption">
+								<div class="inner">
+									<h4>Discover Japan</h4>
+									<div class="rate">
+										<span>HOT DEALS</span>
+										<i class="fa fa-star" aria-hidden="true"></i>
+										<i class="fa fa-star" aria-hidden="true"></i>
+										<i class="fa fa-star" aria-hidden="true"></i>
+										<i class="fa fa-star" aria-hidden="true"></i>
+										<i class="fa fa-star-half-o" aria-hidden="true"></i>
+									</div>
+									<div class="matter">
+										<p>discover japan  <span>$575.00</span></p>
+									</div>
+									<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis elementum, dolor sit amet[...]</p>
+								</div>
+								<div class="text-left">
+									<button type="button" onclick="location.href='tour-booking-form.html'">Book Now <i class="fa fa-angle-double-right" aria-hidden="true"></i></button>
+									<button type="button" onclick="location.href='tour-detail-view.html'">View More <i class="fa fa-angle-double-right" aria-hidden="true"></i></button>
+								</div>	
+							</div>
+						</div>
+					</div>
+									
+					<div class="product-layout product-grid col-lg-4 col-md-4 col-sm-6 col-xs-12">
+						<div class="product-thumb">
+							<div class="image">
+								<a href="#"><img src="assets/images/t3.jpg" alt="t3" title="t3" class="img-responsive" /></a>
+								<div class="hoverbox">
+									<div class="icon_plus" aria-hidden="true"></div>
+								</div>
+								<div class="matter">
+									<p>Niko Trip  <span>$575.00</span></p>
+								</div>
+							</div>
+							<div class="caption">
+								<div class="inner">
+									<h4>Niko Trip</h4>
+									<div class="rate">
+										<span>HOT DEALS</span>
+										<i class="fa fa-star" aria-hidden="true"></i>
+										<i class="fa fa-star" aria-hidden="true"></i>
+										<i class="fa fa-star" aria-hidden="true"></i>
+										<i class="fa fa-star" aria-hidden="true"></i>
+										<i class="fa fa-star-half-o" aria-hidden="true"></i>
+									</div>
+									<div class="matter">
+										<p>Niko Trip  <span>$575.00</span></p>
+									</div>
+									<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis elementum, dolor sit amet[...]</p>
+								</div>
+								<div class="text-left">
+									<button type="button" onclick="location.href='tour-booking-form.html'">Book Now <i class="fa fa-angle-double-right" aria-hidden="true"></i></button>
+									<button type="button" onclick="location.href='tour-detail-view.html'">View More <i class="fa fa-angle-double-right" aria-hidden="true"></i></button>
+								</div>	
+							</div>
+						</div>
+					</div>
+									
+					<div class="product-layout product-grid col-lg-4 col-md-4 col-sm-6 col-xs-12">
+						<div class="product-thumb">
+							<div class="image">
+								<a href="#"><img src="assets/images/t4.jpg" alt="t4" title="t4" class="img-responsive" /></a>
+								<div class="hoverbox">
+									<div class="icon_plus" aria-hidden="true"></div>
+								</div>
+								<div class="matter">
+									<p>Singapore Trip  <span>$575.00</span></p>
+								</div>
+							</div>
+							<div class="caption">
+								<div class="inner">
+									<h4>Singapore Trip</h4>
+									<div class="rate">
+										<span>HOT DEALS</span>
+										<i class="fa fa-star" aria-hidden="true"></i>
+										<i class="fa fa-star" aria-hidden="true"></i>
+										<i class="fa fa-star" aria-hidden="true"></i>
+										<i class="fa fa-star" aria-hidden="true"></i>
+										<i class="fa fa-star-half-o" aria-hidden="true"></i>
+									</div>
+									<div class="matter">
+										<p>Singapore Trip  <span>$575.00</span></p>
+									</div>
+									<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis elementum, dolor sit amet[...]</p>
+								</div>
+								<div class="text-left">
+									<button type="button" onclick="location.href='tour-booking-form.html'">Book Now <i class="fa fa-angle-double-right" aria-hidden="true"></i></button>
+									<button type="button" onclick="location.href='tour-detail-view.html'">View More <i class="fa fa-angle-double-right" aria-hidden="true"></i></button>
+								</div>	
+							</div>
+						</div>
+					</div>
+								
+					<div class="product-layout product-grid col-lg-4 col-md-4 col-sm-6 col-xs-12">
+						<div class="product-thumb">
+							<div class="image">
+								<a href="#"><img src="assets/images/t5.jpg" alt="t5" title="t5" class="img-responsive" /></a>
+								<div class="hoverbox">
+									<div class="icon_plus" aria-hidden="true"></div>
+								</div>
+								<div class="matter">
+									<p>The New California  <span>$575.00</span></p>
+								</div>
+							</div>
+							<div class="caption">
+								<div class="inner">
+									<h4>The New California</h4>
+									<div class="rate">
+										<span>HOT DEALS</span>
+										<i class="fa fa-star" aria-hidden="true"></i>
+										<i class="fa fa-star" aria-hidden="true"></i>
+										<i class="fa fa-star" aria-hidden="true"></i>
+										<i class="fa fa-star" aria-hidden="true"></i>
+										<i class="fa fa-star-half-o" aria-hidden="true"></i>
+									</div>
+									<div class="matter">
+										<p>The New California  <span>$575.00</span></p>
+									</div>
+									<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis elementum, dolor sit amet[...]</p>
+								</div>
+								<div class="text-left">
+									<button type="button" onclick="location.href='tour-booking-form.html'">Book Now <i class="fa fa-angle-double-right" aria-hidden="true"></i></button>
+									<button type="button" onclick="location.href='tour-detail-view.html'">View More <i class="fa fa-angle-double-right" aria-hidden="true"></i></button>
+								</div>	
+							</div>
+						</div>
+					</div>
+									
+					<div class="product-layout product-grid col-lg-4 col-md-4 col-sm-6 col-xs-12">
+						<div class="product-thumb">
+							<div class="image">
+								<a href="#"><img src="assets/images/t6.jpg" alt="t6" title="t6" class="img-responsive" /></a>
+								<div class="hoverbox">
+									<div class="icon_plus" aria-hidden="true"></div>
+								</div>
+								<div class="matter">
+									<p>greece, santormi  <span>$575.00</span></p>
+								</div>
+							</div>
+							<div class="caption">
+								<div class="inner">
+									<h4>Astro Place Hotels</h4>
+									<div class="rate">
+										<span>HOT DEALS</span>
+										<i class="fa fa-star" aria-hidden="true"></i>
+										<i class="fa fa-star" aria-hidden="true"></i>
+										<i class="fa fa-star" aria-hidden="true"></i>
+										<i class="fa fa-star" aria-hidden="true"></i>
+										<i class="fa fa-star-half-o" aria-hidden="true"></i>
+									</div>
+									<div class="matter">
+										<p>greece, santormi  <span>$575.00</span></p>
+									</div>
+									<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis elementum, dolor sit amet[...]</p>
+								</div>
+								<div class="text-left">
+									<button type="button" onclick="location.href='tour-booking-form.html'">Book Now <i class="fa fa-angle-double-right" aria-hidden="true"></i></button>
+									<button type="button" onclick="location.href='tour-detail-view.html'">View More <i class="fa fa-angle-double-right" aria-hidden="true"></i></button>
+								</div>	
+							</div>
+						</div>
+					</div>
+					
+					<div class="product-layout product-grid col-lg-4 col-md-4 col-sm-6 col-xs-12">
+						<div class="product-thumb">
+							<div class="image">
+								<a href="#"><img src="assets/images/t1.jpg" alt="t1" title="t1" class="img-responsive" /></a>
+								<div class="hoverbox">
+									<div class="icon_plus" aria-hidden="true"></div>
+								</div>
+								<div class="matter">
+									<p>grand switerland  <span>$575.00</span></p>
+								</div>
+							</div>
+							<div class="caption">
+								<div class="inner">
+									<h4>Grand Switerland</h4>
+									<div class="rate">
+										<span>HOT DEALS</span>
+										<i class="fa fa-star" aria-hidden="true"></i>
+										<i class="fa fa-star" aria-hidden="true"></i>
+										<i class="fa fa-star" aria-hidden="true"></i>
+										<i class="fa fa-star" aria-hidden="true"></i>
+										<i class="fa fa-star-half-o" aria-hidden="true"></i>
+									</div>
+									<div class="matter">
+										<p>grand switerland  <span>$575.00</span></p>
+									</div>
+									<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis elementum, dolor sit amet[...]</p>
+								</div>
+								<div class="text-left">
+									<button type="button" onclick="location.href='tour-booking-form.html'">Book Now <i class="fa fa-angle-double-right" aria-hidden="true"></i></button>
+									<button type="button" onclick="location.href='tour-detail-view.html'">View More <i class="fa fa-angle-double-right" aria-hidden="true"></i></button>
+								</div>	
+							</div>
+						</div>
+					</div>
+									
+					<div class="product-layout product-grid col-lg-4 col-md-4 col-sm-6 col-xs-12">
+						<div class="product-thumb">
+							<div class="image">
+								<a href="#"><img src="assets/images/t2.jpg" alt="t2" title="t2" class="img-responsive" /></a>
+								<div class="hoverbox">
+									<div class="icon_plus" aria-hidden="true"></div>
+								</div>
+								<div class="matter">
+									<p>discover japan  <span>$575.00</span></p>
+								</div>
+							</div>
+							<div class="caption">
+								<div class="inner">
+									<h4>Discover Japan</h4>
+									<div class="rate">
+										<span>HOT DEALS</span>
+										<i class="fa fa-star" aria-hidden="true"></i>
+										<i class="fa fa-star" aria-hidden="true"></i>
+										<i class="fa fa-star" aria-hidden="true"></i>
+										<i class="fa fa-star" aria-hidden="true"></i>
+										<i class="fa fa-star-half-o" aria-hidden="true"></i>
+									</div>
+									<div class="matter">
+										<p>discover japan  <span>$575.00</span></p>
+									</div>
+									<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis elementum, dolor sit amet[...]</p>
+								</div>
+								<div class="text-left">
+									<button type="button" onclick="location.href='tour-booking-form.html'">Book Now <i class="fa fa-angle-double-right" aria-hidden="true"></i></button>
+									<button type="button" onclick="location.href='tour-detail-view.html'">View More <i class="fa fa-angle-double-right" aria-hidden="true"></i></button>
+								</div>	
+							</div>
+						</div>
+					</div>
+									
+					<div class="product-layout product-grid col-lg-4 col-md-4 col-sm-6 col-xs-12">
+						<div class="product-thumb">
+							<div class="image">
+								<a href="#"><img src="assets/images/t3.jpg" alt="t3" title="t3" class="img-responsive" /></a>
+								<div class="hoverbox">
+									<div class="icon_plus" aria-hidden="true"></div>
+								</div>
+								<div class="matter">
+									<p>Niko Trip  <span>$575.00</span></p>
+								</div>
+							</div>
+							<div class="caption">
+								<div class="inner">
+									<h4>Niko Trip</h4>
+									<div class="rate">
+										<span>HOT DEALS</span>
+										<i class="fa fa-star" aria-hidden="true"></i>
+										<i class="fa fa-star" aria-hidden="true"></i>
+										<i class="fa fa-star" aria-hidden="true"></i>
+										<i class="fa fa-star" aria-hidden="true"></i>
+										<i class="fa fa-star-half-o" aria-hidden="true"></i>
+									</div>
+									<div class="matter">
+										<p>Niko Trip  <span>$575.00</span></p>
+									</div>
+									<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis elementum, dolor sit amet[...]</p>
+								</div>
+								<div class="text-left">
+									<button type="button" onclick="location.href='tour-booking-form.html'">Book Now <i class="fa fa-angle-double-right" aria-hidden="true"></i></button>
+									<button type="button" onclick="location.href='tour-detail-view.html'">View More <i class="fa fa-angle-double-right" aria-hidden="true"></i></button>
+								</div>	
+							</div>
+						</div>
+					</div>
+									
+					<div class="product-layout product-grid col-lg-4 col-md-4 col-sm-6 col-xs-12">
+						<div class="product-thumb">
+							<div class="image">
+								<a href="#"><img src="assets/images/t4.jpg" alt="t4" title="t4" class="img-responsive" /></a>
+								<div class="hoverbox">
+									<div class="icon_plus" aria-hidden="true"></div>
+								</div>
+								<div class="matter">
+									<p>Singapore Trip  <span>$575.00</span></p>
+								</div>
+							</div>
+							<div class="caption">
+								<div class="inner">
+									<h4>Singapore Trip</h4>
+									<div class="rate">
+										<span>HOT DEALS</span>
+										<i class="fa fa-star" aria-hidden="true"></i>
+										<i class="fa fa-star" aria-hidden="true"></i>
+										<i class="fa fa-star" aria-hidden="true"></i>
+										<i class="fa fa-star" aria-hidden="true"></i>
+										<i class="fa fa-star-half-o" aria-hidden="true"></i>
+									</div>
+									<div class="matter">
+										<p>Singapore Trip  <span>$575.00</span></p>
+									</div>
+									<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis elementum, dolor sit amet[...]</p>
+								</div>
+								<div class="text-left">
+									<button type="button" onclick="location.href='tour-booking-form.html'">Book Now <i class="fa fa-angle-double-right" aria-hidden="true"></i></button>
+									<button type="button" onclick="location.href='tour-detail-view.html'">View More <i class="fa fa-angle-double-right" aria-hidden="true"></i></button>
+								</div>	
+							</div>
+						</div>
+					</div>
+								
+					<div class="product-layout product-grid col-lg-4 col-md-4 col-sm-6 col-xs-12">
+						<div class="product-thumb">
+							<div class="image">
+								<a href="#"><img src="assets/images/t5.jpg" alt="t5" title="t5" class="img-responsive" /></a>
+								<div class="hoverbox">
+									<div class="icon_plus" aria-hidden="true"></div>
+								</div>
+								<div class="matter">
+									<p>The New California  <span>$575.00</span></p>
+								</div>
+							</div>
+							<div class="caption">
+								<div class="inner">
+									<h4>The New California</h4>
+									<div class="rate">
+										<span>HOT DEALS</span>
+										<i class="fa fa-star" aria-hidden="true"></i>
+										<i class="fa fa-star" aria-hidden="true"></i>
+										<i class="fa fa-star" aria-hidden="true"></i>
+										<i class="fa fa-star" aria-hidden="true"></i>
+										<i class="fa fa-star-half-o" aria-hidden="true"></i>
+									</div>
+									<div class="matter">
+										<p>The New California  <span>$575.00</span></p>
+									</div>
+									<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis elementum, dolor sit amet[...]</p>
+								</div>
+								<div class="text-left">
+									<button type="button" onclick="location.href='tour-booking-form.html'">Book Now <i class="fa fa-angle-double-right" aria-hidden="true"></i></button>
+									<button type="button" onclick="location.href='tour-detail-view.html'">View More <i class="fa fa-angle-double-right" aria-hidden="true"></i></button>
+								</div>	
+							</div>
+						</div>
+					</div>
+									
+					<div class="product-layout product-grid col-lg-4 col-md-4 col-sm-6 col-xs-12">
+						<div class="product-thumb">
+							<div class="image">
+								<a href="#"><img src="assets/images/t6.jpg" alt="t6" title="t6" class="img-responsive" /></a>
+								<div class="hoverbox">
+									<div class="icon_plus" aria-hidden="true"></div>
+								</div>
+								<div class="matter">
+									<p>greece, santormi  <span>$575.00</span></p>
+								</div>
+							</div>
+							<div class="caption">
+								<div class="inner">
+									<h4>Astro Place Hotels</h4>
+									<div class="rate">
+										<span>HOT DEALS</span>
+										<i class="fa fa-star" aria-hidden="true"></i>
+										<i class="fa fa-star" aria-hidden="true"></i>
+										<i class="fa fa-star" aria-hidden="true"></i>
+										<i class="fa fa-star" aria-hidden="true"></i>
+										<i class="fa fa-star-half-o" aria-hidden="true"></i>
+									</div>
+									<div class="matter">
+										<p>greece, santormi  <span>$575.00</span></p>
+									</div>
+									<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis elementum, dolor sit amet[...]</p>
+								</div>
+								<div class="text-left">
+									<button type="button" onclick="location.href='tour-booking-form.html'">Book Now <i class="fa fa-angle-double-right" aria-hidden="true"></i></button>
+									<button type="button" onclick="location.href='tour-detail-view.html'">View More <i class="fa fa-angle-double-right" aria-hidden="true"></i></button>
+								</div>	
+							</div>
+						</div>
+					</div>
+				</div>
+				
+				<ul class="pagination">
+					<li>
+						<a href="#" aria-label="Previous">Prev</a>
+					</li>
+					<li class="active">
+						<a href="#"> 1</a> 
+					</li>
+					<li>
+						<a href="#"> 2</a> 
+					</li>
+					<li>
+						<a href="#">3</a>
+					</li>
+					<li>
+						<a href="#"> 4</a> 
+					</li>
+					<li>
+						<a href="#">...</a> 
+					</li>
+					<li>
+						<a href="#">10</a> 
+					</li>
+					<li>
+						<a href="#" aria-label="Next">Next</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- main container end here -->
+
+<!-- news start here -->
+<div class="news">
+	<img src="assets/images/subscribe-bg.jpg" class="img-responsive sub" alt="subscribe-bg" title="subscribe-bg" />
+	<div class="newsinner">
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-4 col-xs-12">
+				<div class="product-thumb">
+					<div class="image">
+						<a href="#"><img src="assets/images/foot-banner1.png" alt="foot-banner1" title="foot-banner1" class="img-responsive" /></a>
+						<div class="hoverbox"></div>
+						<div class="matter">
+							<p class="des"><span class="icon_building_alt"></span> Hotel</p>
+							<button type="button"> Booking Now</button>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="col-sm-4 col-xs-12">
+				<div class="product-thumb">
+					<div class="image">
+						<a href="#"><img src="assets/images/foot-banner2.png" alt="foot-banner2" title="foot-banner2" class="img-responsive" /></a>
+						<div class="hoverbox"></div>
+						<div class="off">
+							<span>Best Packages</span>
+						</div>
+						<div class="matter">
+							<p class="des1">$1000 <span>Package</span> to <small>Dubai</small></p>
+							<button type="button"> Booking Now</button>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="col-sm-4 col-xs-12">
+				<div class="product-thumb">
+					<div class="image">
+						<a href="#"><img src="assets/images/foot-banner3.png" alt="foot-banner3" title="foot-banner3" class="img-responsive" /></a>
+						<div class="hoverbox"></div>
+						<div class="matter">
+							<p class="des2"><i class="icon_percent_alt"></i> 25% off<br> to <span>Island</span></p>
+							<button type="button"> Booking Now</button>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="col-sm-12 col-xs-12">
+				<form class="subscribe">
+					<div class="form-group">
+						<div class="input-group">
+							<label>Subscribe to our newsletter</label>
+							<input placeholder="Enter your email" name="subscribe_email" value="" type="text">
+							<button class="btn btn-default btn-lg" type="submit">Subscribe Now</button>
+						</div>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+	</div>
+</div>
+<!-- news end here -->

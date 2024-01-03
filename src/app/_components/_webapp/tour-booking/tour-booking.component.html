@@ -1,0 +1,226 @@
+<!-- breadcrumb start here -->
+<div class="bread-crumb">
+	<div class="container">
+		<h2>Tour booking</h2>
+		<ul class="list-inline">
+			<li><a href="index-2.html">home</a></li>
+			<li><a href="tour-booking-form.html">tour booking</a></li>
+		</ul>
+	</div>
+</div>
+<!-- breadcrumb end here -->
+
+<!-- main container start here -->
+<div class="placetop mar-top">
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-12">
+				<div class="booking-form">
+					<div class="col-md-6 col-lg-6 col-sm-8 col-xs-12">
+						<div class="astro">
+							<img src="assets/images/header4/image1.jpg" class="img-responsive" alt="image1" title="image1" />
+							<div class="caption">
+								<h3>Astro Place Hotels & Sites..</h3>
+								<div class="rate">
+									<span>HOT DEALS</span>
+									<i class="fa fa-star" aria-hidden="true"></i>
+									<i class="fa fa-star" aria-hidden="true"></i>
+									<i class="fa fa-star" aria-hidden="true"></i>
+									<i class="fa fa-star" aria-hidden="true"></i>
+									<i class="fa fa-star-half-o" aria-hidden="true"></i>
+								</div>
+								<p class="des">GREECE, SANTORMI</p>	
+								<ul class="list-inline">
+									<li>
+										<span>CHECK IN</span>
+										<p>5 JAN 2017</p>
+										<p>10.00 AM</p>
+									</li>
+									<li>
+										<span>CHECK OUT</span>
+										<p>7 JAN 2017</p>
+										<p>6.00 PM</p>
+									</li>
+								</ul>
+								<h5><i class="icon_pencil-edit"></i>Edit</h5>
+							</div>
+							<p class="des1">Lorem Ipsum dolor sit amet, consectetur adipiscing elit. Quisque tempus lectus ac nibh sodales porttitor. Nunc sit amet lectus porttitor.</p>
+						</div>	
+					</div>
+					<div class="col-md-6 col-lg-6 col-sm-4 col-xs-12">
+						<div class="detail">
+							<h3>OTHER DETAIL</h3>
+							<ul class="list-unstyled">
+								<li><p>Tour<span>Greece, Santormi</span></p></li>
+								<li><p>Tour Type<span>Honeymoon</span></p></li>
+								<li><p>Price<span>$ 1230</span></p></li>
+								<li><p>Taxes<span>$ 200</span></p></li>
+								<li><h6>Total<span>$ 1430</span></h6></li>
+							</ul>
+						</div>	
+					</div>
+					<div class="clearfix"></div>
+					<form class="form-horizontal row" method="post">
+						<div class="col-sm-12">
+							<div class="col-sm-12">
+								<h4>YOUR PERSONAL INFORMATION</h4>
+							</div>	
+							<div class="form-group col-sm-6">
+								<label>FIRST NAME*</label>
+								<input name="first-name" class="form-control" value=""  type="text">
+							</div>	
+							<div class="form-group col-sm-6">
+								<label>LAST NAME*</label>
+								<input name="last-name" class="form-control" value=""  type="text">
+							</div>	
+							<div class="form-group col-sm-6">
+								<label>EMAIL*</label>
+								<input name="email" class="form-control" value=""  type="text">
+							</div>
+							<div class="form-group col-sm-6">
+								<label>VERIFY EMAIL*</label>
+								<input name="verify-email" class="form-control" value=""  type="text">
+							</div>
+							<div class="form-group col-sm-6">
+								<label>COUNTRY CODE*</label>
+								<mat-select class="selectpicker form-control" name="countryType" [(value)]="countryType">
+									<mat-option value="0">India (+91)</mat-option>
+									<mat-option value="1">Location 1</mat-option>
+									<mat-option value="2">Location 2</mat-option>
+									<mat-option value="3">Location 3</mat-option>
+								</mat-select>
+							</div>
+							<div class="form-group col-sm-6">
+								<label>PHONE NO.</label>
+								<input name="phone" class="form-control" value="" type="text">
+							</div>
+							<div class="col-sm-12">
+								<hr>
+							</div>
+							<div class="col-sm-12">
+								<h4>YOUR CARD INFORMATION</h4>
+							</div>
+							<div class="form-group col-sm-6">
+								<label>CREDIT CARD TYPE*</label>
+								<mat-select class="selectpicker form-control" name="cardType" [(value)]="cardType">
+									<mat-option value="0">Select a card</mat-option>
+									<mat-option value="1">Card 1</mat-option>
+									<mat-option value="2">Card 2</mat-option>
+									<mat-option value="3">Card 3</mat-option>
+								</mat-select>
+							</div>
+							<div class="form-group col-sm-6">
+								<label>CARD HOLDER NAME*</label>
+								<input name="holder-name" class="form-control" value=""  type="text">
+							</div>	
+							<div class="form-group col-sm-6">
+								<label>CARD NUMBER*</label>
+								<input name="card-number" class="form-control" value=""  type="text">
+							</div>
+							<div class="form-group col-sm-6">
+								<label>CARD INDENTIFICATION NUMBER*</label>
+								<input name="indentification-number" class="form-control" value=""  type="text">
+							</div>
+							<div class="form-group col-sm-6">
+								<label>EXPIRATION DATE*</label>
+								<div class="row">
+									<div class="col-sm-6">
+										<mat-select class="selectpicker form-control" name="month1" [(value)]="month1">
+											<mat-option value="0">Month</mat-option>
+											<mat-option value="1">January</mat-option>
+											<mat-option value="2">Februray</mat-option>
+											<mat-option value="3">March</mat-option>
+										</mat-select>
+									</div>
+									<div class="col-sm-6">
+										<mat-select class="selectpicker form-control" name="month2" [(value)]="month2">
+											<mat-option value="0">Month</mat-option>
+											<mat-option value="1">January</mat-option>
+											<mat-option value="2">Februray</mat-option>
+											<mat-option value="3">March</mat-option>
+										</mat-select>
+									</div>
+								</div>
+							</div>
+							<div class="form-group col-sm-6">
+								<label>BILLING ZIP CODE*</label>
+								<input name="billing" class="form-control" value="" type="text">
+							</div>
+							<div class="col-sm-12 confirmation">
+								<label>
+									<input name="confirmation" value="yes" type="checkbox">By continuing, you agree to <a href="#">Terms & Conditions.</a>
+								</label>
+							</div>
+							<div class="col-sm-12">
+								<button class="btn-primary" type="submit" onclick="location.href='thank-you.html'">Confirm Booking</button>
+							</div>
+						</div>
+					</form>		
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- main container end here -->
+
+<!-- news start here -->
+<div class="news">
+	<img src="assets/images/subscribe-bg.jpg" class="img-responsive sub" alt="subscribe-bg" title="subscribe-bg" />
+	<div class="newsinner">
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-4 col-xs-12">
+				<div class="product-thumb">
+					<div class="image">
+						<a href="#"><img src="assets/images/foot-banner1.png" alt="foot-banner1" title="foot-banner1" class="img-responsive" /></a>
+						<div class="hoverbox"></div>
+						<div class="matter">
+							<p class="des"><span class="icon_building_alt"></span> Hotel</p>
+							<button type="button"> Booking Now</button>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="col-sm-4 col-xs-12">
+				<div class="product-thumb">
+					<div class="image">
+						<a href="#"><img src="assets/images/foot-banner2.png" alt="foot-banner2" title="foot-banner2" class="img-responsive" /></a>
+						<div class="hoverbox"></div>
+						<div class="off">
+							<span>Best Packages</span>
+						</div>
+						<div class="matter">
+							<p class="des1">$1000 <span>Package</span> to <small>Dubai</small></p>
+							<button type="button"> Booking Now</button>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="col-sm-4 col-xs-12">
+				<div class="product-thumb">
+					<div class="image">
+						<a href="#"><img src="assets/images/foot-banner3.png" alt="foot-banner3" title="foot-banner3" class="img-responsive" /></a>
+						<div class="hoverbox"></div>
+						<div class="matter">
+							<p class="des2"><i class="icon_percent_alt"></i> 25% off<br> to <span>Island</span></p>
+							<button type="button"> Booking Now</button>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="col-sm-12 col-xs-12">
+				<form class="subscribe">
+					<div class="form-group">
+						<div class="input-group">
+							<label>Subscribe to our newsletter</label>
+							<input placeholder="Enter your email" name="subscribe_email" value="" type="text">
+							<button class="btn btn-default btn-lg" type="submit">Subscribe Now</button>
+						</div>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+	</div>
+</div>
+<!-- news end here -->

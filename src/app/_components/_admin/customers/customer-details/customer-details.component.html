@@ -1,0 +1,141 @@
+<form *ngIf="customer" [formGroup]="form" novalidate>
+  <h1 class="row mt-2">
+    <span class="col-md-8">Customer</span>
+    <span class="text-right col-md-2">
+      <a class="btn btn-info" [routerLink]="['payment']">Payment</a>
+    </span>
+    <span class="text-right col-md-2">
+      <a target="_blank" class="btn btn-info" href="https://c35.qbo.intuit.com/app/customerdetail?nameId={{customer.quickBooksId}}">QuickBooks</a>
+    </span>
+  </h1>
+
+  <section class="card p-4" formGroupName="customer" novalidate>
+    <ng-template ngFor let-item [ngForOf]="formErrors" let-i="index">
+      <div class="alert alert-danger" role="alert">{{ formErrors[i] }}</div>
+    </ng-template>
+
+    <input type="hidden" formControlName="id" />
+    <input type="hidden" formControlName="quickBooksId" />
+    <input type="hidden" formControlName="stepId" />
+    <input type="hidden" formControlName="locale" />
+    <input type="hidden" formControlName="created" />
+    <input type="hidden" formControlName="updated" />
+    <input type="hidden" formControlName="passportPhotoFile" />
+
+    <div class="row mb-3">
+      <div class="col-md-6">
+        <label>Title</label>
+        <input formControlName="title" type="text" class="form-control" placeholder="Dr\Mr\Mrs\Ms">
+      </div>
+      <div class="col-md-6">
+        <label>Goes By</label>
+        <input formControlName="goesBy" type="text" class="form-control">
+      </div>
+    </div>
+
+    <div class="row mb-3">
+      <div class="col-md-3">
+        <label>First Name</label>
+        <input formControlName="firstName" type="text" class="form-control" placeholder="First Name...">
+      </div>
+      <div class="col-md-3">
+        <label>Middle Name</label>
+        <input formControlName="middleName" type="text" class="form-control" placeholder="Middle Name...">
+      </div>
+      <div class="col-md-3">
+        <label>Last Name</label>
+        <input formControlName="lastName" type="text" class="form-control" placeholder="Last Name...">
+      </div>
+      <div class="col-md-3">
+        <label>Email</label>
+        <input formControlName="email" type="text" class="form-control" placeholder="Email@email.com">
+      </div>
+    </div>
+
+    <div class="row mb-3">
+      <div class="col-md-3">
+        <label>Phone</label>
+        <input formControlName="phone" type="text" class="form-control" placeholder="123-123-1234">
+      </div>
+      <div class="col-md-3">
+        <label>Sales Person</label>
+        <input formControlName="salesPersonName" type="text" class="form-control">
+      </div>
+      <div class="col-md-3">
+        <label>Last Reached</label>
+        <input [owlDateTime]="lastReached" [owlDateTimeTrigger]="lastReached" formControlName="lastReached" class="form-control" />
+        <owl-date-time #lastReached></owl-date-time>
+      </div>
+      <div class="col-md-3">
+        <label>Total Spent</label>
+        <input formControlName="totalSpent" type="text" class="form-control">
+      </div>
+    </div>
+
+    <div class="row mb-3">
+      <div class="col-md-3">
+        <label>Country</label>
+        <input formControlName="country" type="text" class="form-control">
+      </div>
+      <div class="col-md-3">
+        <label>City</label>
+        <input formControlName="city" type="text" class="form-control">
+      </div>
+      <div class="col-md-3">
+        <label>Street</label>
+        <input formControlName="street" type="text" class="form-control">
+      </div>
+      <div class="col-md-3">
+        <label>Zip Code</label>
+        <input formControlName="postalCode" type="text" class="form-control">
+      </div>
+    </div>
+
+    <div class="row mb-3">
+      <div class="col-md-12">
+        <label>Date of Birth</label>
+        <input [owlDateTime]="dob" [owlDateTimeTrigger]="dob" formControlName="dob" class="form-control" />
+        <owl-date-time #dob></owl-date-time>
+      </div>
+    </div>
+
+    <div class="card p-3 mb-3">
+      <h5>Passport Info.</h5>
+      <div class="row mb-3">
+        <div class="col-md-3">
+          <label>Passport Number</label>
+          <input formControlName="passportNumber" type="text" class="form-control">
+        </div>
+        <div class="col-md-3">
+          <label>Name on Passport</label>
+          <input formControlName="passportName" type="text" class="form-control">
+        </div>
+        <div class="col-md-3">
+          <label>Issue Date</label>
+          <input [owlDateTime]="passportIssueDate" [owlDateTimeTrigger]="passportIssueDate" formControlName="passportIssueDate" class="form-control" />
+          <owl-date-time [pickerType]="'calendar'" #passportIssueDate></owl-date-time>
+        </div>
+        <div class="col-md-3">
+          <label>Expiry Date</label>
+          <input [owlDateTime]="passportExpiryDate" [owlDateTimeTrigger]="passportExpiryDate" formControlName="passportExpiryDate" class="form-control" />
+          <owl-date-time [pickerType]="'calendar'" #passportExpiryDate></owl-date-time>
+        </div>
+      </div>
+
+      <div class="row mb-3">
+        <div class="col-md-4">
+          <input type="file" (change)="onFileChange($event)" />
+        </div>
+        <div class="col-md-8">
+          <img id="passportImg" />
+        </div>
+      </div>
+    </div>
+
+    <div class="row text-right">
+      <div class="col-md-12">
+        <button type="button" class="btn btn-success" [disabled]="form.pristine" (click)="save();">Save Customer</button>
+      </div>
+    </div>
+  </section>
+</form>

@@ -1,0 +1,50 @@
+<form>
+  <h1>Customers</h1>
+
+<div class="row mb-3">
+  <div class="col-md-5">
+    <input (keyup)="search()" class="form-control" type="text" placeholder="Search customer name..." #customerName />
+  </div>
+  <div class="col-md-5">
+    <select (change)="search();" class="form-control" #customerType>
+      <option value=''>-- Please select Customer Search Type --</option>
+      <option value='1'>Over 7500$ worth of spending</option>
+      <option value='2'>Under 2000$ worth of Spending</option>
+    </select>
+  </div>
+  <div class="col-md-2">
+    <input (click)="clear();customerName.value='';customerType.value='';" class="btn btn-info col-md-12" type="button" value="Clear" />
+  </div>
+</div>
+<table class="table table-striped">
+  <thead class="thead-light">
+    <tr>
+      <th scope="col">Customer Name</th>
+      <th scope="col">Goes By</th>
+      <th scope="col">Phone</th>
+      <th scope="col">Last Reached</th>
+      <th scope="col">Total Spending</th>
+      <th scope="col">Sales Person</th>
+    </tr>
+  </thead>
+  <tbody>
+     <ng-container *ngFor="let customer of customersList">
+        <tr routerLink="/admin/customers/{{customer.id}}">
+          <td>{{customer.firstName}} {{customer.lastName}}</td>
+          <td>{{customer.goesBy}}</td>
+          <td>{{customer.phone}}</td>
+          <td>{{customer.lastReached}}</td>
+          <td>{{customer.totalSpent}}</td>
+          <td>{{customer.salesPersonName}}</td>
+        </tr>
+     </ng-container>
+  </tbody>
+</table>
+
+  <hr />
+  <div class="row">
+    <div class="col-md-12">
+      <a routerLink="/admin/customers/0" href="#" class="btn btn-primary">Add a Customer</a>
+    </div>
+  </div>
+</form>

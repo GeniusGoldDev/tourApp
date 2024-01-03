@@ -1,0 +1,102 @@
+<app-grand-service-header *ngIf="grandService" [grandServiceName]="grandService.name" [activeTab]="activeTab"></app-grand-service-header>
+
+<datalist id="listVendorsList">
+    <option *ngFor="let vendorName of vendorsList" value="{{ vendorName }}">
+</datalist>
+
+<form id="myForm" *ngIf="grandService" [formGroup]="form" novalidate>
+  <section class="card p-3" novalidate>
+    <ng-template ngFor let-item [ngForOf]="formErrors" let-i="index">
+        <div class="alert alert-danger" role="alert">{{ formErrors[i] }}</div>
+    </ng-template>
+
+    <div formArrayName="products">
+      <div *ngFor="let PRODUCT of form['controls'].products['controls']; let iINDEX=index">
+        <div class="row">
+          <h3 class="col-md-9">{{ productLabel }} {{ iINDEX + 1 }}</h3>
+          <span class="col-md-3 text-right"><i class="fa fa-trash fa-3x" (click)="deleteProduct(PRODUCT.controls.id.value);" aria-hidden="true"></i></span>
+        </div>
+        <div class="card mb-4 p-2" formGroupName="{{ iINDEX }}">
+          <input type="hidden" formControlName="id" />
+          <input type="hidden" formControlName="grandServiceId" />
+          <input type="hidden" formControlName="productTypeName" />
+
+          <div class="row mb-2">
+            <div class="col-md-4">
+                <label>Vendor Name:</label>
+                <input class="form-control" formControlName="vendorName" list="listVendorsList" (focusout)="validateVendor($event);" />
+            </div>
+            <div class="col-md-4">
+                <label>From:</label>
+                <input [owlDateTime]="dateTimeFrom" [owlDateTimeTrigger]="dateTimeFrom" formControlName="dateTimeFrom" class="form-control" />
+                <owl-date-time [pickerType]="'calendar'" #dateTimeFrom></owl-date-time>
+            </div>
+            <div class="col-md-4">
+                <label>To:</label>
+                <input [owlDateTime]="dateTimeTo" [owlDateTimeTrigger]="dateTimeTo" formControlName="dateTimeTo" class="form-control" />
+                <owl-date-time [pickerType]="'calendar'" #dateTimeTo></owl-date-time>
+            </div>
+          </div>
+
+          <div class="card mb-4 p-2" formArrayName="services">
+            <div *ngFor="let SERVICE of PRODUCT['controls'].services['controls']; let iSERVICE=index">
+              <div class="row">
+                <h5 class="col-md-9">{{ serviceLabel }}  {{ iSERVICE + 1 }}</h5>
+                <span class="col-md-3 text-right"><i class="fa fa-trash fa-2x" (click)="deleteService(PRODUCT.controls.id.value, SERVICE.controls.id.value);" aria-hidden="true"></i></span>
+              </div>
+
+              <div class="" formGroupName="{{ iSERVICE }}">
+                <input type="hidden" formControlName="id" />
+                <input type="hidden" formControlName="quickBooksId" />
+
+                <div class="row mb-1">
+                  <div *ngIf="showRoomOccupancy" class="col-md-2">
+                      <label>Name:</label>
+                      <input formControlName="name" type="text" class="form-control" />
+                  </div>
+                  <div *ngIf="showRoomOccupancy" class="col-md-2">
+                      <label>Occ.:</label>
+                      <select formControlName="roomOccupancy" type="text" class="form-control">
+                        <option value="1">Single</option>
+                        <option value="2">Double</option>
+                        <option value="3">Triple</option>
+                        <option value="4">Quad</option>
+                      </select>
+                  </div>
+
+                  <div *ngIf="!showRoomOccupancy" class="col-md-4">
+                      <label>Name:</label>
+                      <input formControlName="name" type="text" class="form-control" />
+                  </div>
+                  <div class="col-md-4">
+                      <label>Avail. #:</label>
+                      <input formControlName="availNum" type="text" class="form-control" />
+                  </div>
+                  <div class="col-md-4">
+                      <label title="Upgrade cost per person, for the entire duration">Upgrade cost:</label>
+                      <input title="Upgrade cost per person, for the entire duration" formControlName="cost" type="text" class="form-control" />
+                  </div>
+                  <!--<div class="col-md-2">
+                      <label>Min. T.:</label>
+                      <input formControlName="minOccupancy" type="text" class="form-control" />
+                  </div>
+                  <div class="col-md-2">
+                      <label>Max. T.:</label>
+                      <input formControlName="maxOccupancy" type="text" class="form-control" />
+                  </div>-->
+                </div>
+
+                <hr />
+              </div>
+            </div>
+
+            <button type="button" class="btn btn-warning" (click)="addService(iINDEX);">Add a {{ serviceLabel }}</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <button type="button" class="btn btn-warning mt-3" (click)="addProduct();">Add a {{ productLabel }}</button>
+    <button type="button" class="btn btn-success mt-3" [disabled]="form.pristine" (click)="save();">Save All</button>
+  </section>
+</form>

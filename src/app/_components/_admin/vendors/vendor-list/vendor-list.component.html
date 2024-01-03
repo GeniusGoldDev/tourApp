@@ -1,0 +1,43 @@
+<form>
+  <h1>Vendors</h1>
+
+<div class="row mb-3">
+  <div class="col-md-5">
+    <input (keyup)="search()" class="form-control" type="text" placeholder="Search vendor name..." #vendorName />
+  </div>
+  <div class="col-md-5">
+    <select (change)="search();" class="form-control" #vendorType>
+      <option value=''>-- Please select Type of Vendor --</option>
+      <ng-template ngFor let-item [ngForOf]="vendorTypes" let-i="index">
+        <option value='{{ vendorTypes[i].name }}'>{{ vendorTypes[i].name }}</option>
+      </ng-template>
+    </select>
+  </div>
+  <div class="col-md-2">
+    <input (click)="clear();vendorName.value='';vendorType.value='';" class="btn btn-info col-md-12" type="button" value="Clear" />
+  </div>
+</div>
+<table class="table table-striped">
+  <thead class="thead-light">
+    <tr>
+      <th scope="col">Vendor Name</th>
+      <th scope="col">Type</th>
+    </tr>
+  </thead>
+  <tbody>
+     <ng-container *ngFor="let vendor of vendorsList">
+        <tr routerLink="/admin/vendors/{{vendor.name}}">
+          <td>{{vendor.name}}</td>
+          <td>{{vendor.typeName}}</td>
+        </tr>
+     </ng-container>
+  </tbody>
+</table>
+
+  <hr />
+  <div class="row">
+    <div class="col-md-12">
+      <a routerLink="/admin/vendors/0" href="#" class="btn btn-primary">Add a Vendor</a>
+    </div>
+  </div>
+</form>

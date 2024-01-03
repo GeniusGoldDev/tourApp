@@ -1,0 +1,57 @@
+<app-grand-service-header *ngIf="grandService" [grandServiceName]="grandService.name" [activeTab]="8"></app-grand-service-header>
+
+<form *ngIf="grandService" novalidate>
+  <section class="card p-4" novalidate>
+    <ng-template ngFor let-item [ngForOf]="formErrors" let-i="index">
+      <div class="alert alert-danger" role="alert">{{ formErrors[i] }}</div>
+    </ng-template>
+
+    <div class="row mb-3">
+      <div class="col-md-12">
+        <table class="table">
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Email</th>
+              <th>Phone</th>
+              <th>Date Purchased</th>
+              <th>Total Paid</th>
+              <th>Total Cost</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let cust of customers; let i=index">
+              <td>{{ cust.firstName }} {{ cust.lastName }}</td>
+              <td>{{ cust.email }}</td>
+              <td>{{ cust.phone }}</td>
+              <td>{{ cust.purchaseDate }}</td>
+              <td>{{ cust.totalSpent }}</td>
+              <td>{{ cust.totalCost }}</td>
+              <td><a href="javascript:void(0)" (click)="editUserPurchase(cust.customerId);">Edit Purchase</a></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+</form>
+
+<form class="mt-3" [formGroup]='usersForm'>
+  <div class="row">
+    <div class="col-md-12">
+      <input placeholder="Add an Existing Customer..." style="border: 1px solid #cecece; display: inline;" class="form-control" matInput [matAutocomplete]="auto" formControlName='userInput'>
+    </div>
+  </div>
+
+
+
+  <mat-autocomplete #auto="matAutocomplete">
+    <mat-option *ngIf="isLoading" class="is-loading"><mat-spinner diameter="50"></mat-spinner></mat-option>
+    <ng-container *ngIf="!isLoading">
+      <mat-option *ngFor="let user of filteredUsers" [value]="user">
+        <span (click)="editUserPurchase(user.id);" class="singleResult">Name: {{ user.firstName }} {{ user.lastName }} | Phone: {{ user.phone }} | Email: {{ user.email }} | Id: {{user.id}}</span>
+      </mat-option>
+    </ng-container>
+  </mat-autocomplete>
+</form>

@@ -1,0 +1,13 @@
+<app-grand-service-header *ngIf="grandService" [grandServiceName]="grandService.name" [activeTab]="9"></app-grand-service-header>
+
+<form *ngIf="grandService" novalidate>
+
+  <h3>{{ grandService.name }}</h3>
+
+  <div class="card p-2 mb-3">
+    <a target="_blank" href="{{ PickupUrl }}">pickup_excel</a>
+    <a target="_blank" href="{{ PaxOneUrl }}">pax_one</a>
+    <a target="_blank" href="{{ PaxCruiseUrl }}">pax_cruise</a>
+    <a target="_blank" href="{{ BusUrl }}">bus_manifest</a>
+  </div>
+</form>

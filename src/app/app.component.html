@@ -1,0 +1,23 @@
+
+<div *ngIf="isAdmin">
+  <app-admin-navbar></app-admin-navbar>
+
+  <div class="container">
+    <router-outlet></router-outlet>
+
+    <footer class="my-5 text-muted text-center text-small">
+      <p class="mb-1">© 2019 Collins Tours</p>
+      <ul class="list-inline">
+        <li class="list-inline-item"><a href="#">Privacy</a></li>
+        <li class="list-inline-item"><a href="#">Terms</a></li>
+        <li class="list-inline-item"><a href="#">Support</a></li>
+      </ul>
+    </footer>
+  </div>
+</div>
+
+<div *ngIf="!isAdmin">
+  <app-navbar></app-navbar>
+  <router-outlet></router-outlet>
+  <app-footer></app-footer>
+</div>

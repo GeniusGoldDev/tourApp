@@ -1,0 +1,3137 @@
+<div class="slice">
+	<slideshow	[height]="'700px'"
+				[autoPlay]="true"
+				[showDots]="true"
+				[showArrows]="false"
+				[imageUrls]="imageUrlArray"
+				[lazyLoad]="imageUrlArray?.length > 1"
+				[autoPlayWaitForLazyLoad]="true">
+	</slideshow>
+
+	<!-- slide-detail start here -->
+	<div class="slide-detail">
+		<div class="container">
+			<form class="form-horizontal" method="post">
+				<div class="form-group">
+					<div class="col-sm-2 wid">
+						<h2>Where</h2>
+						<label>Destination</label>
+						<input name="s" class="form-control" value="" placeholder="Enter a destination or tour type.." type="text">
+					</div>
+
+					<div class="col-sm-10 wid1">
+						<h2>When</h2>
+						<div class="col-sm-2 paddleft wid date">
+							<label>From</label>
+							<input class="form-control" placeholder="dd/mm/yy" [matDatepicker]="dateFrom">
+							<mat-datepicker-toggle [for]="dateFrom"></mat-datepicker-toggle>
+							<mat-datepicker #dateFrom></mat-datepicker>
+						</div>
+						<div class="col-sm-2 wid date padd-left">
+							<label>To</label>
+							<input class="form-control" placeholder="dd/mm/yy" [matDatepicker]="dateTo">
+							<mat-datepicker-toggle [for]="dateTo"></mat-datepicker-toggle>
+							<mat-datepicker #dateTo></mat-datepicker>
+						</div>
+						<div class="col-sm-2 wid padd-left">
+							<label>Trip Type</label>
+							<mat-select class="selectpicker form-control bs-select-hidden" name="location" [(value)]="selected">
+								<mat-option value="0">Trip Type</mat-option>
+								<mat-option value="1">Location 1</mat-option>
+								<mat-option value="2">Location 2</mat-option>
+								<mat-option value="3">Location 3</mat-option>
+							</mat-select>
+						</div>
+						<div class="col-sm-3 wid2 padd-left">
+							<label>Max Budget</label>
+							<input name="s" class="form-control" value="" placeholder="Max budget ($)" type="text">
+						</div>
+						<div class="col-sm-3 wid2 padd-left">
+							<button class="btn-primary" type="button">Search Tours</button>
+						</div>
+					</div>
+				</div>
+			</form>
+		</div>
+	</div>
+	<!-- slide-detail end here -->
+</div>
+
+<div class="placetop">
+	<div class="container">
+		<div class="row">
+			<div class="places">
+				<h1>MOst popular places</h1>
+				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas a suscipit quam, ut vestibulum lorem.</p>
+				<hr>
+				<ul class="nav nav-tabs list-inline">
+					<li class="active">
+						<a href="#all" data-toggle="tab" aria-expanded="true">all</a>
+					</li>
+					<li class="">
+						<a href="#usa" data-toggle="tab" aria-expanded="false">usa</a>
+					</li>
+					<li class="">
+						<a href="#canada" data-toggle="tab" aria-expanded="false">canada</a>
+					</li>
+					<li class="">
+						<a href="#europe" data-toggle="tab" aria-expanded="false">europe</a>
+					</li>
+					<li class="">
+						<a href="#india" data-toggle="tab" aria-expanded="false">india</a>
+					</li>
+					<li class="">
+						<a href="#china" data-toggle="tab" aria-expanded="false">china</a>
+					</li>
+					<li class="">
+						<a href="#singapore" data-toggle="tab" aria-expanded="false">singapore</a>
+					</li>
+					<li class="">
+						<a href="#two" data-toggle="tab" aria-expanded="false">usa &amp; canada</a>
+					</li>
+				</ul>
+			</div>
+			<div class="tab-content">
+				<div class="tab-pane active" id="all">
+					<div class="col-md-4 col-lg-4 col-sm-6 col-xs-12">
+						<div class="product-thumb">
+							<div class="image">
+								<a href="#"><img src="assets/images/p1.jpg" alt="p1" title="p1" class="img-responsive"></a>
+								<div class="hoverbox">
+									<div class="icon_plus" aria-hidden="true"></div>
+								</div>
+								<div class="matter">
+									<h2>New York city</h2>
+									<p>start from $375.00</p>
+									<ul class="list-inline">
+										<li><a href="#">top rates</a></li>
+										<li><a href="#">hotels deals </a></li>
+									</ul>
+								</div>
+							</div>
+							<div class="caption">
+								<div class="inner">
+									<img src="assets/images/icon-map.png" class="img-responsive" title="map" alt="map">
+									<h4>Central Park</h4>
+									<div class="rate">
+										<span>1270 Reviews</span>
+										<i class="fa fa-star" aria-hidden="true"></i>
+										<i class="fa fa-star" aria-hidden="true"></i>
+										<i class="fa fa-star" aria-hidden="true"></i>
+										<i class="fa fa-star" aria-hidden="true"></i>
+										<i class="fa fa-star-half-o" aria-hidden="true"></i>
+									</div>
+								</div>
+								<div class="inner">
+									<img src="assets/images/icon-map.png" class="img-responsive" title="map" alt="map">
+									<h4>Metropolitan Museum of Art</h4>
+									<div class="rate">
+										<span>1270 Reviews</span>
+										<i class="fa fa-star" aria-hidden="true"></i>
+										<i class="fa fa-star" aria-hidden="true"></i>
+										<i class="fa fa-star" aria-hidden="true"></i>
+										<i class="fa fa-star" aria-hidden="true"></i>
+										<i class="fa fa-star-half-o" aria-hidden="true"></i>
+									</div>
+								</div>
+								<div class="text-center">
+									<button type="button" onclick="location.href='tour-grid-view.html'">View More <i class="fa fa-angle-double-right" aria-hidden="true"></i></button>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="col-md-4 col-lg-4 col-sm-6 col-xs-12">
+						<div class="product-thumb">
+							<div class="image">
+								<a href="#"><img src="assets/images/p2.jpg" alt="p2" title="p2" class="img-responsive"></a>
+								<div class="hoverbox">
+									<div class="icon_plus" aria-hidden="true"></div>
+								</div>
+								<div class="matter">
+									<h2>las vegas</h2>
+									<p>start from $375.00</p>
+									<ul class="list-inline">
+										<li><a href="#">top rates</a></li>
+										<li><a href="#">hotels deals </a></li>
+									</ul>
+								</div>
+							</div>
+							<div class="caption">
+								<div class="inner">
+									<img src="assets/images/icon-map.png" class="img-responsive" title="map" alt="map">
+									<h4>Las Vegas Strip</h4>
+									<div class="rate">
+										<span>1270 Reviews</span>
+										<i class="fa fa-star" aria-hidden="true"></i>
+										<i class="fa fa-star" aria-hidden="true"></i>
+										<i class="fa fa-star" aria-hidden="true"></i>
+										<i class="fa fa-star" aria-hidden="true"></i>
+										<i class="fa fa-star-half-o" aria-hidden="true"></i>
+									</div>
+								</div>
+								<div class="inner">
+									<img src="assets/images/icon-map.png" class="img-responsive" title="map" alt="map">
+									<h4>The Mirage</h4>
+									<div class="rate">
+										<span>1270 Reviews</span>
+										<i class="fa fa-star" aria-hidden="true"></i>
+										<i class="fa fa-star" aria-hidden="true"></i>
+										<i class="fa fa-star" aria-hidden="true"></i>
+										<i class="fa fa-star" aria-hidden="true"></i>
+										<i class="fa fa-star-half-o" aria-hidden="true"></i>
+									</div>
+								</div>
+								<div class="text-center">
+									<button type="button" onclick="location.href='tour-grid-view.html'">View More <i class="fa fa-angle-double-right" aria-hidden="true"></i></button>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="col-md-4 col-lg-4 col-sm-6 col-xs-12">
+						<div class="product-thumb">
+							<div class="image">
+								<a href="#"><img src="assets/images/p3.jpg" alt="p3" title="p3" class="img-responsive"></a>
+								<div class="hoverbox">
+									<div class="icon_plus" aria-hidden="true"></div>
+								</div>
+								<div class="matter">
+									<h2>Los angelas</h2>
+									<p>start from $375.00</p>
+									<ul class="list-inline">
+										<li><a href="#">top rates</a></li>
+										<li><a href="#">hotels deals </a></li>
+									</ul>
+								</div>
+							</div>
+							<div class="caption">
+								<div class="inner">
+									<img src="assets/images/icon-map.png" class="img-responsive" title="map" alt="map">
+									<h4>Universal Studios Hollywood</h4>
+									<div class="rate">
+										<span>1270 Reviews</span>
+										<i class="fa fa-star" aria-hidden="true"></i>
+										<i class="fa fa-star" aria-hidden="true"></i>
+										<i class="fa fa-star" aria-hidden="true"></i>
+										<i class="fa fa-star" aria-hidden="true"></i>
+										<i class="fa fa-star-half-o" aria-hidden="true"></i>
+									</div>
+								</div>
+								<div class="inner">
+									<img src="assets/images/icon-map.png" class="img-responsive" title="map" alt="map">
+									<h4>Griffith Park</h4>
+									<div class="rate">
+										<span>1270 Reviews</span>
+										<i class="fa fa-star" aria-hidden="true"></i>
+										<i class="fa fa-star" aria-hidden="true"></i>
+										<i class="fa fa-star" aria-hidden="true"></i>
+										<i class="fa fa-star" aria-hidden="true"></i>
+										<i class="fa fa-star-half-o" aria-hidden="true"></i>
+									</div>
+								</div>
+								<div class="text-center">
+									<button type="button" onclick="location.href='tour-grid-view.html'">View More <i class="fa fa-angle-double-right" aria-hidden="true"></i></button>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="col-md-4 col-lg-4 col-sm-6 col-xs-12">
+						<div class="product-thumb">
+							<div class="image">
+								<a href="#"><img src="assets/images/p4.jpg" alt="p4" title="p4" class="img-responsive"></a>
+								<div class="hoverbox">
+									<div class="icon_plus" aria-hidden="true"></div>
+								</div>
+								<div class="matter">
+									<h2>san francisco</h2>
+									<p>start from $375.00</p>
+									<ul class="list-inline">
+										<li><a href="#">top rates</a></li>
+										<li><a href="#">hotels deals </a></li>
+									</ul>
+								</div>
+							</div>
+							<div class="caption">
+								<div class="inner">
+									<img src="assets/images/icon-map.png" class="img-responsive" title="map" alt="map">
+									<h4>Golden Gate Bridge</h4>
+									<div class="rate">
+										<span>1270 Reviews</span>
+										<i class="fa fa-star" aria-hidden="true"></i>
+										<i class="fa fa-star" aria-hidden="true"></i>
+										<i class="fa fa-star" aria-hidden="true"></i>
+										<i class="fa fa-star" aria-hidden="true"></i>
+										<i class="fa fa-star-half-o" aria-hidden="true"></i>
+									</div>
+								</div>
+								<div class="inner">
+									<img src="assets/images/icon-map.png" class="img-responsive" title="map" alt="map">
+									<h4>Alcatraz Island</h4>
+									<div class="rate">
+										<span>1270 Reviews</span>
+										<i class="fa fa-star" aria-hidden="true"></i>
+										<i class="fa fa-star" aria-hidden="true"></i>
+										<i class="fa fa-star" aria-hidden="true"></i>
+										<i class="fa fa-star" aria-hidden="true"></i>
+										<i class="fa fa-star-half-o" aria-hidden="true"></i>
+									</div>
+								</div>
+								<div class="text-center">
+									<button type="button" onclick="location.href='tour-grid-view.html'">View More <i class="fa fa-angle-double-right" aria-hidden="true"></i></button>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="col-md-4 col-lg-4 col-sm-6 col-xs-12">
+						<div class="product-thumb">
+							<div class="image">
+								<a href="#"><img src="assets/images/p5.jpg" alt="p5" title="p5" class="img-responsive"></a>
+								<div class="hoverbox">
+									<div class="icon_plus" aria-hidden="true"></div>
+								</div>
+								<div class="matter">
+									<h2>boston</h2>
+									<p>start from $375.00</p>
+									<ul class="list-inline">
+										<li><a href="#">top rates</a></li>
+										<li><a href="#">hotels deals </a></li>
+									</ul>
+								</div>
+							</div>
+							<div class="caption">
+								<div class="inner">
+									<img src="assets/images/icon-map.png" class="img-responsive" title="map" alt="map">
+									<h4>Freedom Trail</h4>
+									<div class="rate">
+										<span>1270 Reviews</span>
+										<i class="fa fa-star" aria-hidden="true"></i>
+										<i class="fa fa-star" aria-hidden="true"></i>
+										<i class="fa fa-star" aria-hidden="true"></i>
+										<i class="fa fa-star" aria-hidden="true"></i>
+										<i class="fa fa-star-half-o" aria-hidden="true"></i>
+									</div>
+								</div>
+								<div class="inner">
+									<img src="assets/images/icon-map.png" class="img-responsive" title="map" alt="map">
+									<h4>Faneuil Hall Marketplace</h4>
+									<div class="rate">
+										<span>1270 Reviews</span>
+										<i class="fa fa-star" aria-hidden="true"></i>
+										<i class="fa fa-star" aria-hidden="true"></i>
+										<i class="fa fa-star" aria-hidden="true"></i>
+										<i class="fa fa-star" aria-hidden="true"></i>
+										<i class="fa fa-star-half-o" aria-hidden="true"></i>
+									</div>
+								</div>
+								<div class="text-center">
+									<button type="button" onclick="location.href='tour-grid-view.html'">View More <i class="fa fa-angle-double-right" aria-hidden="true"></i></button>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="col-md-4 col-lg-4 col-sm-6 col-xs-12">
+						<div class="product-thumb">
+							<div class="image">
+								<a href="#"><img src="assets/images/p6.jpg" alt="p6" title="p6" class="img-responsive"></a>
+								<div class="hoverbox">
+									<div class="icon_plus" aria-hidden="true"></div>
+								</div>
+								<div class="matter">
+									<h2>washington, d.c.</h2>
+									<p>start from $375.00</p>
+									<ul class="list-inline">
+										<li><a href="#">top rates</a></li>
+										<li><a href="#">hotels deals </a></li>
+									</ul>
+								</div>
+							</div>
+							<div class="caption">
+								<div class="inner">
+									<img src="assets/images/icon-map.png" class="img-responsive" title="map" alt="map">
+									<h4>Lincoln Memorial</h4>
+									<div class="rate">
+										<span>1270 Reviews</span>
+										<i class="fa fa-star" aria-hidden="true"></i>
+										<i class="fa fa-star" aria-hidden="true"></i>
+										<i class="fa fa-star" aria-hidden="true"></i>
+										<i class="fa fa-star" aria-hidden="true"></i>
+										<i class="fa fa-star-half-o" aria-hidden="true"></i>
+									</div>
+								</div>
+								<div class="inner">
+									<img src="assets/images/icon-map.png" class="img-responsive" title="map" alt="map">
+									<h4>National Museum of Natural..</h4>
+									<div class="rate">
+										<span>1270 Reviews</span>
+										<i class="fa fa-star" aria-hidden="true"></i>
+										<i class="fa fa-star" aria-hidden="true"></i>
+										<i class="fa fa-star" aria-hidden="true"></i>
+										<i class="fa fa-star" aria-hidden="true"></i>
+										<i class="fa fa-star-half-o" aria-hidden="true"></i>
+									</div>
+								</div>
+								<div class="text-center">
+									<button type="button" onclick="location.href='tour-grid-view.html'">View More <i class="fa fa-angle-double-right" aria-hidden="true"></i></button>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="tab-pane" id="usa">
+					<div class="col-md-4 col-lg-4 col-sm-6 col-xs-12">
+						<div class="product-thumb">
+							<div class="image">
+								<a href="#"><img src="assets/images/p1.jpg" alt="p1" title="p1" class="img-responsive"></a>
+								<div class="hoverbox">
+									<div class="icon_plus" aria-hidden="true"></div>
+								</div>
+								<div class="matter">
+									<h2>New York city</h2>
+									<p>start from $375.00</p>
+									<ul class="list-inline">
+										<li><a href="#">top rates</a></li>
+										<li><a href="#">hotels deals </a></li>
+									</ul>
+								</div>
+							</div>
+							<div class="caption">
+								<div class="inner">
+									<img src="assets/images/icon-map.png" class="img-responsive" title="map" alt="map">
+									<h4>Central Park</h4>
+									<div class="rate">
+										<span>1270 Reviews</span>
+										<i class="fa fa-star" aria-hidden="true"></i>
+										<i class="fa fa-star" aria-hidden="true"></i>
+										<i class="fa fa-star" aria-hidden="true"></i>
+										<i class="fa fa-star" aria-hidden="true"></i>
+										<i class="fa fa-star-half-o" aria-hidden="true"></i>
+									</div>
+								</div>
+								<div class="inner">
+									<img src="assets/images/icon-map.png" class="img-responsive" title="map" alt="map">
+									<h4>Metropolitan Museum of Art</h4>
+									<div class="rate">
+										<span>1270 Reviews</span>
+										<i class="fa fa-star" aria-hidden="true"></i>
+										<i class="fa fa-star" aria-hidden="true"></i>
+										<i class="fa fa-star" aria-hidden="true"></i>
+										<i class="fa fa-star" aria-hidden="true"></i>
+										<i class="fa fa-star-half-o" aria-hidden="true"></i>
+									</div>
+								</div>
+								<div class="text-center">
+									<button type="button" onclick="location.href='tour-grid-view.html'">View More <i class="fa fa-angle-double-right" aria-hidden="true"></i></button>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="col-md-4 col-lg-4 col-sm-6 col-xs-12">
+						<div class="product-thumb">
+							<div class="image">
+								<a href="#"><img src="assets/images/p2.jpg" alt="p2" title="p2" class="img-responsive"></a>
+								<div class="hoverbox">
+									<div class="icon_plus" aria-hidden="true"></div>
+								</div>
+								<div class="matter">
+									<h2>las vegas</h2>
+									<p>start from $375.00</p>
+									<ul class="list-inline">
+										<li><a href="#">top rates</a></li>
+										<li><a href="#">hotels deals </a></li>
+									</ul>
+								</div>
+							</div>
+							<div class="caption">
+								<div class="inner">
+									<img src="assets/images/icon-map.png" class="img-responsive" title="map" alt="map">
+									<h4>Las Vegas Strip</h4>
+									<div class="rate">
+										<span>1270 Reviews</span>
+										<i class="fa fa-star" aria-hidden="true"></i>
+										<i class="fa fa-star" aria-hidden="true"></i>
+										<i class="fa fa-star" aria-hidden="true"></i>
+										<i class="fa fa-star" aria-hidden="true"></i>
+										<i class="fa fa-star-half-o" aria-hidden="true"></i>
+									</div>
+								</div>
+								<div class="inner">
+									<img src="assets/images/icon-map.png" class="img-responsive" title="map" alt="map">
+									<h4>The Mirage</h4>
+									<div class="rate">
+										<span>1270 Reviews</span>
+										<i class="fa fa-star" aria-hidden="true"></i>
+										<i class="fa fa-star" aria-hidden="true"></i>
+										<i class="fa fa-star" aria-hidden="true"></i>
+										<i class="fa fa-star" aria-hidden="true"></i>
+										<i class="fa fa-star-half-o" aria-hidden="true"></i>
+									</div>
+								</div>
+								<div class="text-center">
+									<button type="button" onclick="location.href='tour-grid-view.html'">View More <i class="fa fa-angle-double-right" aria-hidden="true"></i></button>
+								</div>
+							</div>
+						</div>
+					</div>
+
+
+					<div class="col-md-4 col-lg-4 col-sm-6 col-xs-12">
+						<div class="product-thumb">
+							<div class="image">
+								<a href="#"><img src="assets/images/p6.jpg" alt="p6" title="p6" class="img-responsive"></a>
+								<div class="hoverbox">
+									<div class="icon_plus" aria-hidden="true"></div>
+								</div>
+								<div class="matter">
+									<h2>washington, d.c.</h2>
+									<p>start from $375.00</p>
+									<ul class="list-inline">
+										<li><a href="#">top rates</a></li>
+										<li><a href="#">hotels deals </a></li>
+									</ul>
+								</div>
+							</div>
+							<div class="caption">
+								<div class="inner">
+									<img src="assets/images/icon-map.png" class="img-responsive" title="map" alt="map">
+									<h4>Lincoln Memorial</h4>
+									<div class="rate">
+										<span>1270 Reviews</span>
+										<i class="fa fa-star" aria-hidden="true"></i>
+										<i class="fa fa-star" aria-hidden="true"></i>
+										<i class="fa fa-star" aria-hidden="true"></i>
+										<i class="fa fa-star" aria-hidden="true"></i>
+										<i class="fa fa-star-half-o" aria-hidden="true"></i>
+									</div>
+								</div>
+								<div class="inner">
+									<img src="assets/images/icon-map.png" class="img-responsive" title="map" alt="map">
+									<h4>National Museum of Natural..</h4>
+									<div class="rate">
+										<span>1270 Reviews</span>
+										<i class="fa fa-star" aria-hidden="true"></i>
+										<i class="fa fa-star" aria-hidden="true"></i>
+										<i class="fa fa-star" aria-hidden="true"></i>
+										<i class="fa fa-star" aria-hidden="true"></i>
+										<i class="fa fa-star-half-o" aria-hidden="true"></i>
+									</div>
+								</div>
+								<div class="text-center">
+									<button type="button" onclick="location.href='tour-grid-view.html'">View More <i class="fa fa-angle-double-right" aria-hidden="true"></i></button>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="tab-pane" id="canada">
+					<div class="col-md-4 col-lg-4 col-sm-6 col-xs-12">
+						<div class="product-thumb">
+							<div class="image">
+								<a href="#"><img src="assets/images/p4.jpg" alt="p4" title="p4" class="img-responsive"></a>
+								<div class="hoverbox">
+									<div class="icon_plus" aria-hidden="true"></div>
+								</div>
+								<div class="matter">
+									<h2>san francisco</h2>
+									<p>start from $375.00</p>
+									<ul class="list-inline">
+										<li><a href="#">top rates</a></li>
+										<li><a href="#">hotels deals </a></li>
+									</ul>
+								</div>
+							</div>
+							<div class="caption">
+								<div class="inner">
+									<img src="assets/images/icon-map.png" class="img-responsive" title="map" alt="map">
+									<h4>Golden Gate Bridge</h4>
+									<div class="rate">
+										<span>1270 Reviews</span>
+										<i class="fa fa-star" aria-hidden="true"></i>
+										<i class="fa fa-star" aria-hidden="true"></i>
+										<i class="fa fa-star" aria-hidden="true"></i>
+										<i class="fa fa-star" aria-hidden="true"></i>
+										<i class="fa fa-star-half-o" aria-hidden="true"></i>
+									</div>
+								</div>
+								<div class="inner">
+									<img src="assets/images/icon-map.png" class="img-responsive" title="map" alt="map">
+									<h4>Alcatraz Island</h4>
+									<div class="rate">
+										<span>1270 Reviews</span>
+										<i class="fa fa-star" aria-hidden="true"></i>
+										<i class="fa fa-star" aria-hidden="true"></i>
+										<i class="fa fa-star" aria-hidden="true"></i>
+										<i class="fa fa-star" aria-hidden="true"></i>
+										<i class="fa fa-star-half-o" aria-hidden="true"></i>
+									</div>
+								</div>
+								<div class="text-center">
+									<button type="button" onclick="location.href='tour-grid-view.html'">View More <i class="fa fa-angle-double-right" aria-hidden="true"></i></button>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="col-md-4 col-lg-4 col-sm-6 col-xs-12">
+						<div class="product-thumb">
+							<div class="image">
+								<a href="#"><img src="assets/images/p5.jpg" alt="p5" title="p5" class="img-responsive"></a>
+								<div class="hoverbox">
+									<div class="icon_plus" aria-hidden="true"></div>
+								</div>
+								<div class="matter">
+									<h2>boston</h2>
+									<p>start from $375.00</p>
+									<ul class="list-inline">
+										<li><a href="#">top rates</a></li>
+										<li><a href="#">hotels deals </a></li>
+									</ul>
+								</div>
+							</div>
+							<div class="caption">
+								<div class="inner">
+									<img src="assets/images/icon-map.png" class="img-responsive" title="map" alt="map">
+									<h4>Freedom Trail</h4>
+									<div class="rate">
+										<span>1270 Reviews</span>
+										<i class="fa fa-star" aria-hidden="true"></i>
+										<i class="fa fa-star" aria-hidden="true"></i>
+										<i class="fa fa-star" aria-hidden="true"></i>
+										<i class="fa fa-star" aria-hidden="true"></i>
+										<i class="fa fa-star-half-o" aria-hidden="true"></i>
+									</div>
+								</div>
+								<div class="inner">
+									<img src="assets/images/icon-map.png" class="img-responsive" title="map" alt="map">
+									<h4>Faneuil Hall Marketplace</h4>
+									<div class="rate">
+										<span>1270 Reviews</span>
+										<i class="fa fa-star" aria-hidden="true"></i>
+										<i class="fa fa-star" aria-hidden="true"></i>
+										<i class="fa fa-star" aria-hidden="true"></i>
+										<i class="fa fa-star" aria-hidden="true"></i>
+										<i class="fa fa-star-half-o" aria-hidden="true"></i>
+									</div>
+								</div>
+								<div class="text-center">
+									<button type="button" onclick="location.href='tour-grid-view.html'">View More <i class="fa fa-angle-double-right" aria-hidden="true"></i></button>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="col-md-4 col-lg-4 col-sm-6 col-xs-12">
+						<div class="product-thumb">
+							<div class="image">
+								<a href="#"><img src="assets/images/p6.jpg" alt="p6" title="p6" class="img-responsive"></a>
+								<div class="hoverbox">
+									<div class="icon_plus" aria-hidden="true"></div>
+								</div>
+								<div class="matter">
+									<h2>washington, d.c.</h2>
+									<p>start from $375.00</p>
+									<ul class="list-inline">
+										<li><a href="#">top rates</a></li>
+										<li><a href="#">hotels deals </a></li>
+									</ul>
+								</div>
+							</div>
+							<div class="caption">
+								<div class="inner">
+									<img src="assets/images/icon-map.png" class="img-responsive" title="map" alt="map">
+									<h4>Lincoln Memorial</h4>
+									<div class="rate">
+										<span>1270 Reviews</span>
+										<i class="fa fa-star" aria-hidden="true"></i>
+										<i class="fa fa-star" aria-hidden="true"></i>
+										<i class="fa fa-star" aria-hidden="true"></i>
+										<i class="fa fa-star" aria-hidden="true"></i>
+										<i class="fa fa-star-half-o" aria-hidden="true"></i>
+									</div>
+								</div>
+								<div class="inner">
+									<img src="assets/images/icon-map.png" class="img-responsive" title="map" alt="map">
+									<h4>National Museum of Natural..</h4>
+									<div class="rate">
+										<span>1270 Reviews</span>
+										<i class="fa fa-star" aria-hidden="true"></i>
+										<i class="fa fa-star" aria-hidden="true"></i>
+										<i class="fa fa-star" aria-hidden="true"></i>
+										<i class="fa fa-star" aria-hidden="true"></i>
+										<i class="fa fa-star-half-o" aria-hidden="true"></i>
+									</div>
+								</div>
+								<div class="text-center">
+									<button type="button" onclick="location.href='tour-grid-view.html'">View More <i class="fa fa-angle-double-right" aria-hidden="true"></i></button>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="tab-pane" id="europe">
+					<div class="col-md-4 col-lg-4 col-sm-6 col-xs-12">
+						<div class="product-thumb">
+							<div class="image">
+								<a href="#"><img src="assets/images/p1.jpg" alt="p1" title="p1" class="img-responsive"></a>
+								<div class="hoverbox">
+									<div class="icon_plus" aria-hidden="true"></div>
+								</div>
+								<div class="matter">
+									<h2>New York city</h2>
+									<p>start from $375.00</p>
+									<ul class="list-inline">
+										<li><a href="#">top rates</a></li>
+										<li><a href="#">hotels deals </a></li>
+									</ul>
+								</div>
+							</div>
+							<div class="caption">
+								<div class="inner">
+									<img src="assets/images/icon-map.png" class="img-responsive" title="map" alt="map">
+									<h4>Central Park</h4>
+									<div class="rate">
+										<span>1270 Reviews</span>
+										<i class="fa fa-star" aria-hidden="true"></i>
+										<i class="fa fa-star" aria-hidden="true"></i>
+										<i class="fa fa-star" aria-hidden="true"></i>
+										<i class="fa fa-star" aria-hidden="true"></i>
+										<i class="fa fa-star-half-o" aria-hidden="true"></i>
+									</div>
+								</div>
+								<div class="inner">
+									<img src="assets/images/icon-map.png" class="img-responsive" title="map" alt="map">
+									<h4>Metropolitan Museum of Art</h4>
+									<div class="rate">
+										<span>1270 Reviews</span>
+										<i class="fa fa-star" aria-hidden="true"></i>
+										<i class="fa fa-star" aria-hidden="true"></i>
+										<i class="fa fa-star" aria-hidden="true"></i>
+										<i class="fa fa-star" aria-hidden="true"></i>
+										<i class="fa fa-star-half-o" aria-hidden="true"></i>
+									</div>
+								</div>
+								<div class="text-center">
+									<button type="button" onclick="location.href='tour-grid-view.html'">View More <i class="fa fa-angle-double-right" aria-hidden="true"></i></button>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="col-md-4 col-lg-4 col-sm-6 col-xs-12">
+						<div class="product-thumb">
+							<div class="image">
+								<a href="#"><img src="assets/images/p2.jpg" alt="p2" title="p2" class="img-responsive"></a>
+								<div class="hoverbox">
+									<div class="icon_plus" aria-hidden="true"></div>
+								</div>
+								<div class="matter">
+									<h2>las vegas</h2>
+									<p>start from $375.00</p>
+									<ul class="list-inline">
+										<li><a href="#">top rates</a></li>
+										<li><a href="#">hotels deals </a></li>
+									</ul>
+								</div>
+							</div>
+							<div class="caption">
+								<div class="inner">
+									<img src="assets/images/icon-map.png" class="img-responsive" title="map" alt="map">
+									<h4>Las Vegas Strip</h4>
+									<div class="rate">
+										<span>1270 Reviews</span>
+										<i class="fa fa-star" aria-hidden="true"></i>
+										<i class="fa fa-star" aria-hidden="true"></i>
+										<i class="fa fa-star" aria-hidden="true"></i>
+										<i class="fa fa-star" aria-hidden="true"></i>
+										<i class="fa fa-star-half-o" aria-hidden="true"></i>
+									</div>
+								</div>
+								<div class="inner">
+									<img src="assets/images/icon-map.png" class="img-responsive" title="map" alt="map">
+									<h4>The Mirage</h4>
+									<div class="rate">
+										<span>1270 Reviews</span>
+										<i class="fa fa-star" aria-hidden="true"></i>
+										<i class="fa fa-star" aria-hidden="true"></i>
+										<i class="fa fa-star" aria-hidden="true"></i>
+										<i class="fa fa-star" aria-hidden="true"></i>
+										<i class="fa fa-star-half-o" aria-hidden="true"></i>
+									</div>
+								</div>
+								<div class="text-center">
+									<button type="button" onclick="location.href='tour-grid-view.html'">View More <i class="fa fa-angle-double-right" aria-hidden="true"></i></button>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="col-md-4 col-lg-4 col-sm-6 col-xs-12">
+						<div class="product-thumb">
+							<div class="image">
+								<a href="#"><img src="assets/images/p3.jpg" alt="p3" title="p3" class="img-responsive"></a>
+								<div class="hoverbox">
+									<div class="icon_plus" aria-hidden="true"></div>
+								</div>
+								<div class="matter">
+									<h2>Los angelas</h2>
+									<p>start from $375.00</p>
+									<ul class="list-inline">
+										<li><a href="#">top rates</a></li>
+										<li><a href="#">hotels deals </a></li>
+									</ul>
+								</div>
+							</div>
+							<div class="caption">
+								<div class="inner">
+									<img src="assets/images/icon-map.png" class="img-responsive" title="map" alt="map">
+									<h4>Universal Studios Hollywood</h4>
+									<div class="rate">
+										<span>1270 Reviews</span>
+										<i class="fa fa-star" aria-hidden="true"></i>
+										<i class="fa fa-star" aria-hidden="true"></i>
+										<i class="fa fa-star" aria-hidden="true"></i>
+										<i class="fa fa-star" aria-hidden="true"></i>
+										<i class="fa fa-star-half-o" aria-hidden="true"></i>
+									</div>
+								</div>
+								<div class="inner">
+									<img src="assets/images/icon-map.png" class="img-responsive" title="map" alt="map">
+									<h4>Griffith Park</h4>
+									<div class="rate">
+										<span>1270 Reviews</span>
+										<i class="fa fa-star" aria-hidden="true"></i>
+										<i class="fa fa-star" aria-hidden="true"></i>
+										<i class="fa fa-star" aria-hidden="true"></i>
+										<i class="fa fa-star" aria-hidden="true"></i>
+										<i class="fa fa-star-half-o" aria-hidden="true"></i>
+									</div>
+								</div>
+								<div class="text-center">
+									<button type="button" onclick="location.href='tour-grid-view.html'">View More <i class="fa fa-angle-double-right" aria-hidden="true"></i></button>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="tab-pane" id="india">
+					<div class="col-md-4 col-lg-4 col-sm-6 col-xs-12">
+						<div class="product-thumb">
+							<div class="image">
+								<a href="#"><img src="assets/images/p3.jpg" alt="p3" title="p3" class="img-responsive"></a>
+								<div class="hoverbox">
+									<div class="icon_plus" aria-hidden="true"></div>
+								</div>
+								<div class="matter">
+									<h2>Los angelas</h2>
+									<p>start from $375.00</p>
+									<ul class="list-inline">
+										<li><a href="#">top rates</a></li>
+										<li><a href="#">hotels deals </a></li>
+									</ul>
+								</div>
+							</div>
+							<div class="caption">
+								<div class="inner">
+									<img src="assets/images/icon-map.png" class="img-responsive" title="map" alt="map">
+									<h4>Universal Studios Hollywood</h4>
+									<div class="rate">
+										<span>1270 Reviews</span>
+										<i class="fa fa-star" aria-hidden="true"></i>
+										<i class="fa fa-star" aria-hidden="true"></i>
+										<i class="fa fa-star" aria-hidden="true"></i>
+										<i class="fa fa-star" aria-hidden="true"></i>
+										<i class="fa fa-star-half-o" aria-hidden="true"></i>
+									</div>
+								</div>
+								<div class="inner">
+									<img src="assets/images/icon-map.png" class="img-responsive" title="map" alt="map">
+									<h4>Griffith Park</h4>
+									<div class="rate">
+										<span>1270 Reviews</span>
+										<i class="fa fa-star" aria-hidden="true"></i>
+										<i class="fa fa-star" aria-hidden="true"></i>
+										<i class="fa fa-star" aria-hidden="true"></i>
+										<i class="fa fa-star" aria-hidden="true"></i>
+										<i class="fa fa-star-half-o" aria-hidden="true"></i>
+									</div>
+								</div>
+								<div class="text-center">
+									<button type="button" onclick="location.href='tour-grid-view.html'">View More <i class="fa fa-angle-double-right" aria-hidden="true"></i></button>
+								</div>
+							</div>
+						</div>
+					</div>
+
+
+					<div class="col-md-4 col-lg-4 col-sm-6 col-xs-12">
+						<div class="product-thumb">
+							<div class="image">
+								<a href="#"><img src="assets/images/p5.jpg" alt="p5" title="p5" class="img-responsive"></a>
+								<div class="hoverbox">
+									<div class="icon_plus" aria-hidden="true"></div>
+								</div>
+								<div class="matter">
+									<h2>boston</h2>
+									<p>start from $375.00</p>
+									<ul class="list-inline">
+										<li><a href="#">top rates</a></li>
+										<li><a href="#">hotels deals </a></li>
+									</ul>
+								</div>
+							</div>
+							<div class="caption">
+								<div class="inner">
+									<img src="assets/images/icon-map.png" class="img-responsive" title="map" alt="map">
+									<h4>Freedom Trail</h4>
+									<div class="rate">
+										<span>1270 Reviews</span>
+										<i class="fa fa-star" aria-hidden="true"></i>
+										<i class="fa fa-star" aria-hidden="true"></i>
+										<i class="fa fa-star" aria-hidden="true"></i>
+										<i class="fa fa-star" aria-hidden="true"></i>
+										<i class="fa fa-star-half-o" aria-hidden="true"></i>
+									</div>
+								</div>
+								<div class="inner">
+									<img src="assets/images/icon-map.png" class="img-responsive" title="map" alt="map">
+									<h4>Faneuil Hall Marketplace</h4>
+									<div class="rate">
+										<span>1270 Reviews</span>
+										<i class="fa fa-star" aria-hidden="true"></i>
+										<i class="fa fa-star" aria-hidden="true"></i>
+										<i class="fa fa-star" aria-hidden="true"></i>
+										<i class="fa fa-star" aria-hidden="true"></i>
+										<i class="fa fa-star-half-o" aria-hidden="true"></i>
+									</div>
+								</div>
+								<div class="text-center">
+									<button type="button" onclick="location.href='tour-grid-view.html'">View More <i class="fa fa-angle-double-right" aria-hidden="true"></i></button>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="col-md-4 col-lg-4 col-sm-6 col-xs-12">
+						<div class="product-thumb">
+							<div class="image">
+								<a href="#"><img src="assets/images/p6.jpg" alt="p6" title="p6" class="img-responsive"></a>
+								<div class="hoverbox">
+									<div class="icon_plus" aria-hidden="true"></div>
+								</div>
+								<div class="matter">
+									<h2>washington, d.c.</h2>
+									<p>start from $375.00</p>
+									<ul class="list-inline">
+										<li><a href="#">top rates</a></li>
+										<li><a href="#">hotels deals </a></li>
+									</ul>
+								</div>
+							</div>
+							<div class="caption">
+								<div class="inner">
+									<img src="assets/images/icon-map.png" class="img-responsive" title="map" alt="map">
+									<h4>Lincoln Memorial</h4>
+									<div class="rate">
+										<span>1270 Reviews</span>
+										<i class="fa fa-star" aria-hidden="true"></i>
+										<i class="fa fa-star" aria-hidden="true"></i>
+										<i class="fa fa-star" aria-hidden="true"></i>
+										<i class="fa fa-star" aria-hidden="true"></i>
+										<i class="fa fa-star-half-o" aria-hidden="true"></i>
+									</div>
+								</div>
+								<div class="inner">
+									<img src="assets/images/icon-map.png" class="img-responsive" title="map" alt="map">
+									<h4>National Museum of Natural..</h4>
+									<div class="rate">
+										<span>1270 Reviews</span>
+										<i class="fa fa-star" aria-hidden="true"></i>
+										<i class="fa fa-star" aria-hidden="true"></i>
+										<i class="fa fa-star" aria-hidden="true"></i>
+										<i class="fa fa-star" aria-hidden="true"></i>
+										<i class="fa fa-star-half-o" aria-hidden="true"></i>
+									</div>
+								</div>
+								<div class="text-center">
+									<button type="button" onclick="location.href='tour-grid-view.html'">View More <i class="fa fa-angle-double-right" aria-hidden="true"></i></button>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="tab-pane" id="china">
+					<div class="col-md-4 col-lg-4 col-sm-6 col-xs-12">
+						<div class="product-thumb">
+							<div class="image">
+								<a href="#"><img src="assets/images/p1.jpg" alt="p1" title="p1" class="img-responsive"></a>
+								<div class="hoverbox">
+									<div class="icon_plus" aria-hidden="true"></div>
+								</div>
+								<div class="matter">
+									<h2>New York city</h2>
+									<p>start from $375.00</p>
+									<ul class="list-inline">
+										<li><a href="#">top rates</a></li>
+										<li><a href="#">hotels deals </a></li>
+									</ul>
+								</div>
+							</div>
+							<div class="caption">
+								<div class="inner">
+									<img src="assets/images/icon-map.png" class="img-responsive" title="map" alt="map">
+									<h4>Central Park</h4>
+									<div class="rate">
+										<span>1270 Reviews</span>
+										<i class="fa fa-star" aria-hidden="true"></i>
+										<i class="fa fa-star" aria-hidden="true"></i>
+										<i class="fa fa-star" aria-hidden="true"></i>
+										<i class="fa fa-star" aria-hidden="true"></i>
+										<i class="fa fa-star-half-o" aria-hidden="true"></i>
+									</div>
+								</div>
+								<div class="inner">
+									<img src="assets/images/icon-map.png" class="img-responsive" title="map" alt="map">
+									<h4>Metropolitan Museum of Art</h4>
+									<div class="rate">
+										<span>1270 Reviews</span>
+										<i class="fa fa-star" aria-hidden="true"></i>
+										<i class="fa fa-star" aria-hidden="true"></i>
+										<i class="fa fa-star" aria-hidden="true"></i>
+										<i class="fa fa-star" aria-hidden="true"></i>
+										<i class="fa fa-star-half-o" aria-hidden="true"></i>
+									</div>
+								</div>
+								<div class="text-center">
+									<button type="button" onclick="location.href='tour-grid-view.html'">View More <i class="fa fa-angle-double-right" aria-hidden="true"></i></button>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="col-md-4 col-lg-4 col-sm-6 col-xs-12">
+						<div class="product-thumb">
+							<div class="image">
+								<a href="#"><img src="assets/images/p2.jpg" alt="p2" title="p2" class="img-responsive"></a>
+								<div class="hoverbox">
+									<div class="icon_plus" aria-hidden="true"></div>
+								</div>
+								<div class="matter">
+									<h2>las vegas</h2>
+									<p>start from $375.00</p>
+									<ul class="list-inline">
+										<li><a href="#">top rates</a></li>
+										<li><a href="#">hotels deals </a></li>
+									</ul>
+								</div>
+							</div>
+							<div class="caption">
+								<div class="inner">
+									<img src="assets/images/icon-map.png" class="img-responsive" title="map" alt="map">
+									<h4>Las Vegas Strip</h4>
+									<div class="rate">
+										<span>1270 Reviews</span>
+										<i class="fa fa-star" aria-hidden="true"></i>
+										<i class="fa fa-star" aria-hidden="true"></i>
+										<i class="fa fa-star" aria-hidden="true"></i>
+										<i class="fa fa-star" aria-hidden="true"></i>
+										<i class="fa fa-star-half-o" aria-hidden="true"></i>
+									</div>
+								</div>
+								<div class="inner">
+									<img src="assets/images/icon-map.png" class="img-responsive" title="map" alt="map">
+									<h4>The Mirage</h4>
+									<div class="rate">
+										<span>1270 Reviews</span>
+										<i class="fa fa-star" aria-hidden="true"></i>
+										<i class="fa fa-star" aria-hidden="true"></i>
+										<i class="fa fa-star" aria-hidden="true"></i>
+										<i class="fa fa-star" aria-hidden="true"></i>
+										<i class="fa fa-star-half-o" aria-hidden="true"></i>
+									</div>
+								</div>
+								<div class="text-center">
+									<button type="button" onclick="location.href='tour-grid-view.html'">View More <i class="fa fa-angle-double-right" aria-hidden="true"></i></button>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="col-md-4 col-lg-4 col-sm-6 col-xs-12">
+						<div class="product-thumb">
+							<div class="image">
+								<a href="#"><img src="assets/images/p3.jpg" alt="p3" title="p3" class="img-responsive"></a>
+								<div class="hoverbox">
+									<div class="icon_plus" aria-hidden="true"></div>
+								</div>
+								<div class="matter">
+									<h2>Los angelas</h2>
+									<p>start from $375.00</p>
+									<ul class="list-inline">
+										<li><a href="#">top rates</a></li>
+										<li><a href="#">hotels deals </a></li>
+									</ul>
+								</div>
+							</div>
+							<div class="caption">
+								<div class="inner">
+									<img src="assets/images/icon-map.png" class="img-responsive" title="map" alt="map">
+									<h4>Universal Studios Hollywood</h4>
+									<div class="rate">
+										<span>1270 Reviews</span>
+										<i class="fa fa-star" aria-hidden="true"></i>
+										<i class="fa fa-star" aria-hidden="true"></i>
+										<i class="fa fa-star" aria-hidden="true"></i>
+										<i class="fa fa-star" aria-hidden="true"></i>
+										<i class="fa fa-star-half-o" aria-hidden="true"></i>
+									</div>
+								</div>
+								<div class="inner">
+									<img src="assets/images/icon-map.png" class="img-responsive" title="map" alt="map">
+									<h4>Griffith Park</h4>
+									<div class="rate">
+										<span>1270 Reviews</span>
+										<i class="fa fa-star" aria-hidden="true"></i>
+										<i class="fa fa-star" aria-hidden="true"></i>
+										<i class="fa fa-star" aria-hidden="true"></i>
+										<i class="fa fa-star" aria-hidden="true"></i>
+										<i class="fa fa-star-half-o" aria-hidden="true"></i>
+									</div>
+								</div>
+								<div class="text-center">
+									<button type="button" onclick="location.href='tour-grid-view.html'">View More <i class="fa fa-angle-double-right" aria-hidden="true"></i></button>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="col-md-4 col-lg-4 col-sm-6 col-xs-12">
+						<div class="product-thumb">
+							<div class="image">
+								<a href="#"><img src="assets/images/p4.jpg" alt="p4" title="p4" class="img-responsive"></a>
+								<div class="hoverbox">
+									<div class="icon_plus" aria-hidden="true"></div>
+								</div>
+								<div class="matter">
+									<h2>san francisco</h2>
+									<p>start from $375.00</p>
+									<ul class="list-inline">
+										<li><a href="#">top rates</a></li>
+										<li><a href="#">hotels deals </a></li>
+									</ul>
+								</div>
+							</div>
+							<div class="caption">
+								<div class="inner">
+									<img src="assets/images/icon-map.png" class="img-responsive" title="map" alt="map">
+									<h4>Golden Gate Bridge</h4>
+									<div class="rate">
+										<span>1270 Reviews</span>
+										<i class="fa fa-star" aria-hidden="true"></i>
+										<i class="fa fa-star" aria-hidden="true"></i>
+										<i class="fa fa-star" aria-hidden="true"></i>
+										<i class="fa fa-star" aria-hidden="true"></i>
+										<i class="fa fa-star-half-o" aria-hidden="true"></i>
+									</div>
+								</div>
+								<div class="inner">
+									<img src="assets/images/icon-map.png" class="img-responsive" title="map" alt="map">
+									<h4>Alcatraz Island</h4>
+									<div class="rate">
+										<span>1270 Reviews</span>
+										<i class="fa fa-star" aria-hidden="true"></i>
+										<i class="fa fa-star" aria-hidden="true"></i>
+										<i class="fa fa-star" aria-hidden="true"></i>
+										<i class="fa fa-star" aria-hidden="true"></i>
+										<i class="fa fa-star-half-o" aria-hidden="true"></i>
+									</div>
+								</div>
+								<div class="text-center">
+									<button type="button" onclick="location.href='tour-grid-view.html'">View More <i class="fa fa-angle-double-right" aria-hidden="true"></i></button>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="col-md-4 col-lg-4 col-sm-6 col-xs-12">
+						<div class="product-thumb">
+							<div class="image">
+								<a href="#"><img src="assets/images/p5.jpg" alt="p5" title="p5" class="img-responsive"></a>
+								<div class="hoverbox">
+									<div class="icon_plus" aria-hidden="true"></div>
+								</div>
+								<div class="matter">
+									<h2>boston</h2>
+									<p>start from $375.00</p>
+									<ul class="list-inline">
+										<li><a href="#">top rates</a></li>
+										<li><a href="#">hotels deals </a></li>
+									</ul>
+								</div>
+							</div>
+							<div class="caption">
+								<div class="inner">
+									<img src="assets/images/icon-map.png" class="img-responsive" title="map" alt="map">
+									<h4>Freedom Trail</h4>
+									<div class="rate">
+										<span>1270 Reviews</span>
+										<i class="fa fa-star" aria-hidden="true"></i>
+										<i class="fa fa-star" aria-hidden="true"></i>
+										<i class="fa fa-star" aria-hidden="true"></i>
+										<i class="fa fa-star" aria-hidden="true"></i>
+										<i class="fa fa-star-half-o" aria-hidden="true"></i>
+									</div>
+								</div>
+								<div class="inner">
+									<img src="assets/images/icon-map.png" class="img-responsive" title="map" alt="map">
+									<h4>Faneuil Hall Marketplace</h4>
+									<div class="rate">
+										<span>1270 Reviews</span>
+										<i class="fa fa-star" aria-hidden="true"></i>
+										<i class="fa fa-star" aria-hidden="true"></i>
+										<i class="fa fa-star" aria-hidden="true"></i>
+										<i class="fa fa-star" aria-hidden="true"></i>
+										<i class="fa fa-star-half-o" aria-hidden="true"></i>
+									</div>
+								</div>
+								<div class="text-center">
+									<button type="button" onclick="location.href='tour-grid-view.html'">View More <i class="fa fa-angle-double-right" aria-hidden="true"></i></button>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="col-md-4 col-lg-4 col-sm-6 col-xs-12">
+						<div class="product-thumb">
+							<div class="image">
+								<a href="#"><img src="assets/images/p6.jpg" alt="p6" title="p6" class="img-responsive"></a>
+								<div class="hoverbox">
+									<div class="icon_plus" aria-hidden="true"></div>
+								</div>
+								<div class="matter">
+									<h2>washington, d.c.</h2>
+									<p>start from $375.00</p>
+									<ul class="list-inline">
+										<li><a href="#">top rates</a></li>
+										<li><a href="#">hotels deals </a></li>
+									</ul>
+								</div>
+							</div>
+							<div class="caption">
+								<div class="inner">
+									<img src="assets/images/icon-map.png" class="img-responsive" title="map" alt="map">
+									<h4>Lincoln Memorial</h4>
+									<div class="rate">
+										<span>1270 Reviews</span>
+										<i class="fa fa-star" aria-hidden="true"></i>
+										<i class="fa fa-star" aria-hidden="true"></i>
+										<i class="fa fa-star" aria-hidden="true"></i>
+										<i class="fa fa-star" aria-hidden="true"></i>
+										<i class="fa fa-star-half-o" aria-hidden="true"></i>
+									</div>
+								</div>
+								<div class="inner">
+									<img src="assets/images/icon-map.png" class="img-responsive" title="map" alt="map">
+									<h4>National Museum of Natural..</h4>
+									<div class="rate">
+										<span>1270 Reviews</span>
+										<i class="fa fa-star" aria-hidden="true"></i>
+										<i class="fa fa-star" aria-hidden="true"></i>
+										<i class="fa fa-star" aria-hidden="true"></i>
+										<i class="fa fa-star" aria-hidden="true"></i>
+										<i class="fa fa-star-half-o" aria-hidden="true"></i>
+									</div>
+								</div>
+								<div class="text-center">
+									<button type="button" onclick="location.href='tour-grid-view.html'">View More <i class="fa fa-angle-double-right" aria-hidden="true"></i></button>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="tab-pane" id="singapore">
+					<div class="col-md-4 col-lg-4 col-sm-6 col-xs-12">
+						<div class="product-thumb">
+							<div class="image">
+								<a href="#"><img src="assets/images/p4.jpg" alt="p4" title="p4" class="img-responsive"></a>
+								<div class="hoverbox">
+									<div class="icon_plus" aria-hidden="true"></div>
+								</div>
+								<div class="matter">
+									<h2>san francisco</h2>
+									<p>start from $375.00</p>
+									<ul class="list-inline">
+										<li><a href="#">top rates</a></li>
+										<li><a href="#">hotels deals </a></li>
+									</ul>
+								</div>
+							</div>
+							<div class="caption">
+								<div class="inner">
+									<img src="assets/images/icon-map.png" class="img-responsive" title="map" alt="map">
+									<h4>Golden Gate Bridge</h4>
+									<div class="rate">
+										<span>1270 Reviews</span>
+										<i class="fa fa-star" aria-hidden="true"></i>
+										<i class="fa fa-star" aria-hidden="true"></i>
+										<i class="fa fa-star" aria-hidden="true"></i>
+										<i class="fa fa-star" aria-hidden="true"></i>
+										<i class="fa fa-star-half-o" aria-hidden="true"></i>
+									</div>
+								</div>
+								<div class="inner">
+									<img src="assets/images/icon-map.png" class="img-responsive" title="map" alt="map">
+									<h4>Alcatraz Island</h4>
+									<div class="rate">
+										<span>1270 Reviews</span>
+										<i class="fa fa-star" aria-hidden="true"></i>
+										<i class="fa fa-star" aria-hidden="true"></i>
+										<i class="fa fa-star" aria-hidden="true"></i>
+										<i class="fa fa-star" aria-hidden="true"></i>
+										<i class="fa fa-star-half-o" aria-hidden="true"></i>
+									</div>
+								</div>
+								<div class="text-center">
+									<button type="button" onclick="location.href='tour-grid-view.html'">View More <i class="fa fa-angle-double-right" aria-hidden="true"></i></button>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="col-md-4 col-lg-4 col-sm-6 col-xs-12">
+						<div class="product-thumb">
+							<div class="image">
+								<a href="#"><img src="assets/images/p5.jpg" alt="p5" title="p5" class="img-responsive"></a>
+								<div class="hoverbox">
+									<div class="icon_plus" aria-hidden="true"></div>
+								</div>
+								<div class="matter">
+									<h2>boston</h2>
+									<p>start from $375.00</p>
+									<ul class="list-inline">
+										<li><a href="#">top rates</a></li>
+										<li><a href="#">hotels deals </a></li>
+									</ul>
+								</div>
+							</div>
+							<div class="caption">
+								<div class="inner">
+									<img src="assets/images/icon-map.png" class="img-responsive" title="map" alt="map">
+									<h4>Freedom Trail</h4>
+									<div class="rate">
+										<span>1270 Reviews</span>
+										<i class="fa fa-star" aria-hidden="true"></i>
+										<i class="fa fa-star" aria-hidden="true"></i>
+										<i class="fa fa-star" aria-hidden="true"></i>
+										<i class="fa fa-star" aria-hidden="true"></i>
+										<i class="fa fa-star-half-o" aria-hidden="true"></i>
+									</div>
+								</div>
+								<div class="inner">
+									<img src="assets/images/icon-map.png" class="img-responsive" title="map" alt="map">
+									<h4>Faneuil Hall Marketplace</h4>
+									<div class="rate">
+										<span>1270 Reviews</span>
+										<i class="fa fa-star" aria-hidden="true"></i>
+										<i class="fa fa-star" aria-hidden="true"></i>
+										<i class="fa fa-star" aria-hidden="true"></i>
+										<i class="fa fa-star" aria-hidden="true"></i>
+										<i class="fa fa-star-half-o" aria-hidden="true"></i>
+									</div>
+								</div>
+								<div class="text-center">
+									<button type="button" onclick="location.href='tour-grid-view.html'">View More <i class="fa fa-angle-double-right" aria-hidden="true"></i></button>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="col-md-4 col-lg-4 col-sm-6 col-xs-12">
+						<div class="product-thumb">
+							<div class="image">
+								<a href="#"><img src="assets/images/p6.jpg" alt="p6" title="p6" class="img-responsive"></a>
+								<div class="hoverbox">
+									<div class="icon_plus" aria-hidden="true"></div>
+								</div>
+								<div class="matter">
+									<h2>washington, d.c.</h2>
+									<p>start from $375.00</p>
+									<ul class="list-inline">
+										<li><a href="#">top rates</a></li>
+										<li><a href="#">hotels deals </a></li>
+									</ul>
+								</div>
+							</div>
+							<div class="caption">
+								<div class="inner">
+									<img src="assets/images/icon-map.png" class="img-responsive" title="map" alt="map">
+									<h4>Lincoln Memorial</h4>
+									<div class="rate">
+										<span>1270 Reviews</span>
+										<i class="fa fa-star" aria-hidden="true"></i>
+										<i class="fa fa-star" aria-hidden="true"></i>
+										<i class="fa fa-star" aria-hidden="true"></i>
+										<i class="fa fa-star" aria-hidden="true"></i>
+										<i class="fa fa-star-half-o" aria-hidden="true"></i>
+									</div>
+								</div>
+								<div class="inner">
+									<img src="assets/images/icon-map.png" class="img-responsive" title="map" alt="map">
+									<h4>National Museum of Natural..</h4>
+									<div class="rate">
+										<span>1270 Reviews</span>
+										<i class="fa fa-star" aria-hidden="true"></i>
+										<i class="fa fa-star" aria-hidden="true"></i>
+										<i class="fa fa-star" aria-hidden="true"></i>
+										<i class="fa fa-star" aria-hidden="true"></i>
+										<i class="fa fa-star-half-o" aria-hidden="true"></i>
+									</div>
+								</div>
+								<div class="text-center">
+									<button type="button" onclick="location.href='tour-grid-view.html'">View More <i class="fa fa-angle-double-right" aria-hidden="true"></i></button>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="tab-pane" id="two">
+					<div class="col-md-4 col-lg-4 col-sm-6 col-xs-12">
+						<div class="product-thumb">
+							<div class="image">
+								<a href="#"><img src="assets/images/p1.jpg" alt="p1" title="p1" class="img-responsive"></a>
+								<div class="hoverbox">
+									<div class="icon_plus" aria-hidden="true"></div>
+								</div>
+								<div class="matter">
+									<h2>New York city</h2>
+									<p>start from $375.00</p>
+									<ul class="list-inline">
+										<li><a href="#">top rates</a></li>
+										<li><a href="#">hotels deals </a></li>
+									</ul>
+								</div>
+							</div>
+							<div class="caption">
+								<div class="inner">
+									<img src="assets/images/icon-map.png" class="img-responsive" title="map" alt="map">
+									<h4>Central Park</h4>
+									<div class="rate">
+										<span>1270 Reviews</span>
+										<i class="fa fa-star" aria-hidden="true"></i>
+										<i class="fa fa-star" aria-hidden="true"></i>
+										<i class="fa fa-star" aria-hidden="true"></i>
+										<i class="fa fa-star" aria-hidden="true"></i>
+										<i class="fa fa-star-half-o" aria-hidden="true"></i>
+									</div>
+								</div>
+								<div class="inner">
+									<img src="assets/images/icon-map.png" class="img-responsive" title="map" alt="map">
+									<h4>Metropolitan Museum of Art</h4>
+									<div class="rate">
+										<span>1270 Reviews</span>
+										<i class="fa fa-star" aria-hidden="true"></i>
+										<i class="fa fa-star" aria-hidden="true"></i>
+										<i class="fa fa-star" aria-hidden="true"></i>
+										<i class="fa fa-star" aria-hidden="true"></i>
+										<i class="fa fa-star-half-o" aria-hidden="true"></i>
+									</div>
+								</div>
+								<div class="text-center">
+									<button type="button" onclick="location.href='tour-grid-view.html'">View More <i class="fa fa-angle-double-right" aria-hidden="true"></i></button>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="col-md-4 col-lg-4 col-sm-6 col-xs-12">
+						<div class="product-thumb">
+							<div class="image">
+								<a href="#"><img src="assets/images/p2.jpg" alt="p2" title="p2" class="img-responsive"></a>
+								<div class="hoverbox">
+									<div class="icon_plus" aria-hidden="true"></div>
+								</div>
+								<div class="matter">
+									<h2>las vegas</h2>
+									<p>start from $375.00</p>
+									<ul class="list-inline">
+										<li><a href="#">top rates</a></li>
+										<li><a href="#">hotels deals </a></li>
+									</ul>
+								</div>
+							</div>
+							<div class="caption">
+								<div class="inner">
+									<img src="assets/images/icon-map.png" class="img-responsive" title="map" alt="map">
+									<h4>Las Vegas Strip</h4>
+									<div class="rate">
+										<span>1270 Reviews</span>
+										<i class="fa fa-star" aria-hidden="true"></i>
+										<i class="fa fa-star" aria-hidden="true"></i>
+										<i class="fa fa-star" aria-hidden="true"></i>
+										<i class="fa fa-star" aria-hidden="true"></i>
+										<i class="fa fa-star-half-o" aria-hidden="true"></i>
+									</div>
+								</div>
+								<div class="inner">
+									<img src="assets/images/icon-map.png" class="img-responsive" title="map" alt="map">
+									<h4>The Mirage</h4>
+									<div class="rate">
+										<span>1270 Reviews</span>
+										<i class="fa fa-star" aria-hidden="true"></i>
+										<i class="fa fa-star" aria-hidden="true"></i>
+										<i class="fa fa-star" aria-hidden="true"></i>
+										<i class="fa fa-star" aria-hidden="true"></i>
+										<i class="fa fa-star-half-o" aria-hidden="true"></i>
+									</div>
+								</div>
+								<div class="text-center">
+									<button type="button" onclick="location.href='tour-grid-view.html'">View More <i class="fa fa-angle-double-right" aria-hidden="true"></i></button>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="col-md-4 col-lg-4 col-sm-6 col-xs-12">
+						<div class="product-thumb">
+							<div class="image">
+								<a href="#"><img src="assets/images/p3.jpg" alt="p3" title="p3" class="img-responsive"></a>
+								<div class="hoverbox">
+									<div class="icon_plus" aria-hidden="true"></div>
+								</div>
+								<div class="matter">
+									<h2>Los angelas</h2>
+									<p>start from $375.00</p>
+									<ul class="list-inline">
+										<li><a href="#">top rates</a></li>
+										<li><a href="#">hotels deals </a></li>
+									</ul>
+								</div>
+							</div>
+							<div class="caption">
+								<div class="inner">
+									<img src="assets/images/icon-map.png" class="img-responsive" title="map" alt="map">
+									<h4>Universal Studios Hollywood</h4>
+									<div class="rate">
+										<span>1270 Reviews</span>
+										<i class="fa fa-star" aria-hidden="true"></i>
+										<i class="fa fa-star" aria-hidden="true"></i>
+										<i class="fa fa-star" aria-hidden="true"></i>
+										<i class="fa fa-star" aria-hidden="true"></i>
+										<i class="fa fa-star-half-o" aria-hidden="true"></i>
+									</div>
+								</div>
+								<div class="inner">
+									<img src="assets/images/icon-map.png" class="img-responsive" title="map" alt="map">
+									<h4>Griffith Park</h4>
+									<div class="rate">
+										<span>1270 Reviews</span>
+										<i class="fa fa-star" aria-hidden="true"></i>
+										<i class="fa fa-star" aria-hidden="true"></i>
+										<i class="fa fa-star" aria-hidden="true"></i>
+										<i class="fa fa-star" aria-hidden="true"></i>
+										<i class="fa fa-star-half-o" aria-hidden="true"></i>
+									</div>
+								</div>
+								<div class="text-center">
+									<button type="button" onclick="location.href='tour-grid-view.html'">View More <i class="fa fa-angle-double-right" aria-hidden="true"></i></button>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="text-center">
+					<button class="btn-primary" type="button" onclick="location.href='tour-grid-view.html'">View More <i class="fa fa-angle-double-right" aria-hidden="true"></i></button>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="video">
+	<img src="assets/images/video-bg.jpg" class="img-responsive" alt="video-bg" title="video-bg">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12">
+				<div class="matter text-center">
+					<i class="fa fa-play" aria-hidden="true"></i>
+					<h5>Awesome Experiences for</h5>
+					<h6>Tourism &amp; Traveling.</h6>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="placetop">
+	<div class="container">
+		<div class="row">
+			<div class="places">
+				<h1>book now by categories</h1>
+				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas a suscipit quam, ut vestibulum lorem.</p>
+				<hr>
+				<ul class="nav nav-tabs list-inline">
+					<li class="active">
+						<a href="#hotels" data-toggle="tab" aria-expanded="true">Hotels</a>
+					</li>
+					<li class="">
+						<a href="#tours" data-toggle="tab" aria-expanded="false">Tours</a>
+					</li>
+					<li class="">
+						<a href="#packages" data-toggle="tab" aria-expanded="false">packages</a>
+					</li>
+					<li class="">
+						<a href="#flights" data-toggle="tab" aria-expanded="false">flights</a>
+					</li>
+				</ul>
+			</div>
+			<div class="tab-content tour">
+				<div class="tab-pane active" id="hotels">
+					<div class="col-md-4 col-lg-4 col-sm-6 col-xs-12">
+						<div class="product-thumb">
+							<div class="image">
+								<a href="#"><img src="assets/images/t1.jpg" alt="t1" title="t1" class="img-responsive"></a>
+								<div class="hoverbox">
+									<div class="icon_plus" aria-hidden="true"></div>
+								</div>
+								<div class="matter">
+									<p>grand switerland  <span>$575.00</span></p>
+								</div>
+							</div>
+							<div class="caption">
+								<div class="inner">
+									<h4>Grand Switerland</h4>
+									<div class="rate">
+										<div class="pull-left">
+											<span>HOT DEALS</span>
+										</div>
+										<div class="pull-right">
+											<i class="fa fa-star" aria-hidden="true"></i>
+											<i class="fa fa-star" aria-hidden="true"></i>
+											<i class="fa fa-star" aria-hidden="true"></i>
+											<i class="fa fa-star" aria-hidden="true"></i>
+											<i class="fa fa-star-half-o" aria-hidden="true"></i>
+										</div>
+									</div>
+									<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis elementum, dolor sit amet luctus phare-tra, turpis lacus rhoncus ipsum...</p>
+								</div>
+								<div class="text-left">
+									<button type="button" onclick="location.href='tour-booking-form.html'">Book Now <i class="fa fa-angle-double-right" aria-hidden="true"></i></button>
+									<button type="button" onclick="location.href='tour-grid-view.html'">View More <i class="fa fa-angle-double-right" aria-hidden="true"></i></button>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="col-md-4 col-lg-4 col-sm-6 col-xs-12">
+						<div class="product-thumb">
+							<div class="image">
+								<a href="#"><img src="assets/images/t2.jpg" alt="t2" title="t2" class="img-responsive"></a>
+								<div class="hoverbox">
+									<div class="icon_plus" aria-hidden="true"></div>
+								</div>
+								<div class="matter">
+									<p>discover japan  <span>$575.00</span></p>
+								</div>
+							</div>
+							<div class="caption">
+								<div class="inner">
+									<h4>Discover Japan</h4>
+									<div class="rate">
+										<div class="pull-left">
+											<span>HOT DEALS</span>
+										</div>
+										<div class="pull-right">
+											<i class="fa fa-star" aria-hidden="true"></i>
+											<i class="fa fa-star" aria-hidden="true"></i>
+											<i class="fa fa-star" aria-hidden="true"></i>
+											<i class="fa fa-star" aria-hidden="true"></i>
+											<i class="fa fa-star-half-o" aria-hidden="true"></i>
+										</div>
+									</div>
+									<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis elementum, dolor sit amet luctus phare-tra, turpis lacus rhoncus ipsum...</p>
+								</div>
+								<div class="text-left">
+									<button type="button" onclick="location.href='tour-booking-form.html'">Book Now <i class="fa fa-angle-double-right" aria-hidden="true"></i></button>
+									<button type="button" onclick="location.href='tour-grid-view.html'">View More <i class="fa fa-angle-double-right" aria-hidden="true"></i></button>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="col-md-4 col-lg-4 col-sm-6 col-xs-12">
+						<div class="product-thumb">
+							<div class="image">
+								<a href="#"><img src="assets/images/t3.jpg" alt="t3" title="t3" class="img-responsive"></a>
+								<div class="hoverbox">
+									<div class="icon_plus" aria-hidden="true"></div>
+								</div>
+								<div class="matter">
+									<p>Niko Trip  <span>$575.00</span></p>
+								</div>
+							</div>
+							<div class="caption">
+								<div class="inner">
+									<h4>Niko Trip</h4>
+									<div class="rate">
+										<div class="pull-left">
+											<span>HOT DEALS</span>
+										</div>
+										<div class="pull-right">
+											<i class="fa fa-star" aria-hidden="true"></i>
+											<i class="fa fa-star" aria-hidden="true"></i>
+											<i class="fa fa-star" aria-hidden="true"></i>
+											<i class="fa fa-star" aria-hidden="true"></i>
+											<i class="fa fa-star-half-o" aria-hidden="true"></i>
+										</div>
+									</div>
+									<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis elementum, dolor sit amet luctus phare-tra, turpis lacus rhoncus ipsum...</p>
+								</div>
+								<div class="text-left">
+									<button type="button" onclick="location.href='tour-booking-form.html'">Book Now <i class="fa fa-angle-double-right" aria-hidden="true"></i></button>
+									<button type="button" onclick="location.href='tour-grid-view.html'">View More <i class="fa fa-angle-double-right" aria-hidden="true"></i></button>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="col-md-4 col-lg-4 col-sm-6 col-xs-12">
+						<div class="product-thumb">
+							<div class="image">
+								<a href="#"><img src="assets/images/t4.jpg" alt="t4" title="t4" class="img-responsive"></a>
+								<div class="hoverbox">
+									<div class="icon_plus" aria-hidden="true"></div>
+								</div>
+								<div class="matter">
+									<p>Singapore Trip  <span>$575.00</span></p>
+								</div>
+							</div>
+							<div class="caption">
+								<div class="inner">
+									<h4>Singapore Trip</h4>
+									<div class="rate">
+										<div class="pull-left">
+											<span>HOT DEALS</span>
+										</div>
+										<div class="pull-right">
+											<i class="fa fa-star" aria-hidden="true"></i>
+											<i class="fa fa-star" aria-hidden="true"></i>
+											<i class="fa fa-star" aria-hidden="true"></i>
+											<i class="fa fa-star" aria-hidden="true"></i>
+											<i class="fa fa-star-half-o" aria-hidden="true"></i>
+										</div>
+									</div>
+									<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis elementum, dolor sit amet luctus phare-tra, turpis lacus rhoncus ipsum...</p>
+								</div>
+								<div class="text-left">
+									<button type="button" onclick="location.href='tour-booking-form.html'">Book Now <i class="fa fa-angle-double-right" aria-hidden="true"></i></button>
+									<button type="button" onclick="location.href='tour-grid-view.html'">View More <i class="fa fa-angle-double-right" aria-hidden="true"></i></button>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="col-md-4 col-lg-4 col-sm-6 col-xs-12">
+						<div class="product-thumb">
+							<div class="image">
+								<a href="#"><img src="assets/images/t5.jpg" alt="t5" title="t5" class="img-responsive"></a>
+								<div class="hoverbox">
+									<div class="icon_plus" aria-hidden="true"></div>
+								</div>
+								<div class="matter">
+									<p>The New California  <span>$575.00</span></p>
+								</div>
+							</div>
+							<div class="caption">
+								<div class="inner">
+									<h4>The New California</h4>
+									<div class="rate">
+										<div class="pull-left">
+											<span>HOT DEALS</span>
+										</div>
+										<div class="pull-right">
+											<i class="fa fa-star" aria-hidden="true"></i>
+											<i class="fa fa-star" aria-hidden="true"></i>
+											<i class="fa fa-star" aria-hidden="true"></i>
+											<i class="fa fa-star" aria-hidden="true"></i>
+											<i class="fa fa-star-half-o" aria-hidden="true"></i>
+										</div>
+									</div>
+									<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis elementum, dolor sit amet luctus phare-tra, turpis lacus rhoncus ipsum...</p>
+								</div>
+								<div class="text-left">
+									<button type="button" onclick="location.href='tour-booking-form.html'">Book Now <i class="fa fa-angle-double-right" aria-hidden="true"></i></button>
+									<button type="button" onclick="location.href='tour-grid-view.html'">View More <i class="fa fa-angle-double-right" aria-hidden="true"></i></button>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="col-md-4 col-lg-4 col-sm-6 col-xs-12">
+						<div class="product-thumb">
+							<div class="image">
+								<a href="#"><img src="assets/images/t6.jpg" alt="t6" title="t6" class="img-responsive"></a>
+								<div class="hoverbox">
+									<div class="icon_plus" aria-hidden="true"></div>
+								</div>
+								<div class="matter">
+									<p>greece, santormi  <span>$575.00</span></p>
+								</div>
+							</div>
+							<div class="caption">
+								<div class="inner">
+									<h4>Astro Place Hotels</h4>
+									<div class="rate">
+										<div class="pull-left">
+											<span>HOT DEALS</span>
+										</div>
+										<div class="pull-right">
+											<i class="fa fa-star" aria-hidden="true"></i>
+											<i class="fa fa-star" aria-hidden="true"></i>
+											<i class="fa fa-star" aria-hidden="true"></i>
+											<i class="fa fa-star" aria-hidden="true"></i>
+											<i class="fa fa-star-half-o" aria-hidden="true"></i>
+										</div>
+									</div>
+									<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis elementum, dolor sit amet luctus phare-tra, turpis lacus rhoncus ipsum...</p>
+								</div>
+								<div class="text-left">
+									<button type="button" onclick="location.href='tour-booking-form.html'">Book Now <i class="fa fa-angle-double-right" aria-hidden="true"></i></button>
+									<button type="button" onclick="location.href='tour-grid-view.html'">View More <i class="fa fa-angle-double-right" aria-hidden="true"></i></button>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="tab-pane" id="tours">
+					<div class="col-md-4 col-lg-4 col-sm-6 col-xs-12">
+						<div class="product-thumb">
+							<div class="image">
+								<a href="#"><img src="assets/images/t4.jpg" alt="t4" title="t4" class="img-responsive"></a>
+								<div class="hoverbox">
+									<div class="icon_plus" aria-hidden="true"></div>
+								</div>
+								<div class="matter">
+									<p>Singapore Trip  <span>$575.00</span></p>
+								</div>
+							</div>
+							<div class="caption">
+								<div class="inner">
+									<h4>Singapore Trip</h4>
+									<div class="rate">
+										<div class="pull-left">
+											<span>HOT DEALS</span>
+										</div>
+										<div class="pull-right">
+											<i class="fa fa-star" aria-hidden="true"></i>
+											<i class="fa fa-star" aria-hidden="true"></i>
+											<i class="fa fa-star" aria-hidden="true"></i>
+											<i class="fa fa-star" aria-hidden="true"></i>
+											<i class="fa fa-star-half-o" aria-hidden="true"></i>
+										</div>
+									</div>
+									<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis elementum, dolor sit amet luctus phare-tra, turpis lacus rhoncus ipsum...</p>
+								</div>
+								<div class="text-left">
+									<button type="button" onclick="location.href='tour-booking-form.html'">Book Now <i class="fa fa-angle-double-right" aria-hidden="true"></i></button>
+									<button type="button" onclick="location.href='tour-grid-view.html'">View More <i class="fa fa-angle-double-right" aria-hidden="true"></i></button>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="col-md-4 col-lg-4 col-sm-6 col-xs-12">
+						<div class="product-thumb">
+							<div class="image">
+								<a href="#"><img src="assets/images/t5.jpg" alt="t5" title="t5" class="img-responsive"></a>
+								<div class="hoverbox">
+									<div class="icon_plus" aria-hidden="true"></div>
+								</div>
+								<div class="matter">
+									<p>The New California  <span>$575.00</span></p>
+								</div>
+							</div>
+							<div class="caption">
+								<div class="inner">
+									<h4>The New California</h4>
+									<div class="rate">
+										<div class="pull-left">
+											<span>HOT DEALS</span>
+										</div>
+										<div class="pull-right">
+											<i class="fa fa-star" aria-hidden="true"></i>
+											<i class="fa fa-star" aria-hidden="true"></i>
+											<i class="fa fa-star" aria-hidden="true"></i>
+											<i class="fa fa-star" aria-hidden="true"></i>
+											<i class="fa fa-star-half-o" aria-hidden="true"></i>
+										</div>
+									</div>
+									<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis elementum, dolor sit amet luctus phare-tra, turpis lacus rhoncus ipsum...</p>
+								</div>
+								<div class="text-left">
+									<button type="button" onclick="location.href='tour-booking-form.html'">Book Now <i class="fa fa-angle-double-right" aria-hidden="true"></i></button>
+									<button type="button" onclick="location.href='tour-grid-view.html'">View More <i class="fa fa-angle-double-right" aria-hidden="true"></i></button>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="col-md-4 col-lg-4 col-sm-6 col-xs-12">
+						<div class="product-thumb">
+							<div class="image">
+								<a href="#"><img src="assets/images/t6.jpg" alt="t6" title="t6" class="img-responsive"></a>
+								<div class="hoverbox">
+									<div class="icon_plus" aria-hidden="true"></div>
+								</div>
+								<div class="matter">
+									<p>greece, santormi  <span>$575.00</span></p>
+								</div>
+							</div>
+							<div class="caption">
+								<div class="inner">
+									<h4>Astro Place Hotels</h4>
+									<div class="rate">
+										<div class="pull-left">
+											<span>HOT DEALS</span>
+										</div>
+										<div class="pull-right">
+											<i class="fa fa-star" aria-hidden="true"></i>
+											<i class="fa fa-star" aria-hidden="true"></i>
+											<i class="fa fa-star" aria-hidden="true"></i>
+											<i class="fa fa-star" aria-hidden="true"></i>
+											<i class="fa fa-star-half-o" aria-hidden="true"></i>
+										</div>
+									</div>
+									<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis elementum, dolor sit amet luctus phare-tra, turpis lacus rhoncus ipsum...</p>
+								</div>
+								<div class="text-left">
+									<button type="button" onclick="location.href='tour-booking-form.html'">Book Now <i class="fa fa-angle-double-right" aria-hidden="true"></i></button>
+									<button type="button" onclick="location.href='tour-grid-view.html'">View More <i class="fa fa-angle-double-right" aria-hidden="true"></i></button>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="tab-pane" id="packages">
+					<div class="col-md-4 col-lg-4 col-sm-6 col-xs-12">
+						<div class="product-thumb">
+							<div class="image">
+								<a href="#"><img src="assets/images/t1.jpg" alt="t1" title="t1" class="img-responsive"></a>
+								<div class="hoverbox">
+									<div class="icon_plus" aria-hidden="true"></div>
+								</div>
+								<div class="matter">
+									<p>grand switerland  <span>$575.00</span></p>
+								</div>
+							</div>
+							<div class="caption">
+								<div class="inner">
+									<h4>Grand Switerland</h4>
+									<div class="rate">
+										<div class="pull-left">
+											<span>HOT DEALS</span>
+										</div>
+										<div class="pull-right">
+											<i class="fa fa-star" aria-hidden="true"></i>
+											<i class="fa fa-star" aria-hidden="true"></i>
+											<i class="fa fa-star" aria-hidden="true"></i>
+											<i class="fa fa-star" aria-hidden="true"></i>
+											<i class="fa fa-star-half-o" aria-hidden="true"></i>
+										</div>
+									</div>
+									<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis elementum, dolor sit amet luctus phare-tra, turpis lacus rhoncus ipsum...</p>
+								</div>
+								<div class="text-left">
+									<button type="button" onclick="location.href='tour-booking-form.html'">Book Now <i class="fa fa-angle-double-right" aria-hidden="true"></i></button>
+									<button type="button" onclick="location.href='tour-grid-view.html'">View More <i class="fa fa-angle-double-right" aria-hidden="true"></i></button>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="col-md-4 col-lg-4 col-sm-6 col-xs-12">
+						<div class="product-thumb">
+							<div class="image">
+								<a href="#"><img src="assets/images/t2.jpg" alt="t2" title="t2" class="img-responsive"></a>
+								<div class="hoverbox">
+									<div class="icon_plus" aria-hidden="true"></div>
+								</div>
+								<div class="matter">
+									<p>discover japan  <span>$575.00</span></p>
+								</div>
+							</div>
+							<div class="caption">
+								<div class="inner">
+									<h4>Discover Japan</h4>
+									<div class="rate">
+										<div class="pull-left">
+											<span>HOT DEALS</span>
+										</div>
+										<div class="pull-right">
+											<i class="fa fa-star" aria-hidden="true"></i>
+											<i class="fa fa-star" aria-hidden="true"></i>
+											<i class="fa fa-star" aria-hidden="true"></i>
+											<i class="fa fa-star" aria-hidden="true"></i>
+											<i class="fa fa-star-half-o" aria-hidden="true"></i>
+										</div>
+									</div>
+									<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis elementum, dolor sit amet luctus phare-tra, turpis lacus rhoncus ipsum...</p>
+								</div>
+								<div class="text-left">
+									<button type="button" onclick="location.href='tour-booking-form.html'">Book Now <i class="fa fa-angle-double-right" aria-hidden="true"></i></button>
+									<button type="button" onclick="location.href='tour-grid-view.html'">View More <i class="fa fa-angle-double-right" aria-hidden="true"></i></button>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="col-md-4 col-lg-4 col-sm-6 col-xs-12">
+						<div class="product-thumb">
+							<div class="image">
+								<a href="#"><img src="assets/images/t3.jpg" alt="t3" title="t3" class="img-responsive"></a>
+								<div class="hoverbox">
+									<div class="icon_plus" aria-hidden="true"></div>
+								</div>
+								<div class="matter">
+									<p>Niko Trip  <span>$575.00</span></p>
+								</div>
+							</div>
+							<div class="caption">
+								<div class="inner">
+									<h4>Niko Trip</h4>
+									<div class="rate">
+										<div class="pull-left">
+											<span>HOT DEALS</span>
+										</div>
+										<div class="pull-right">
+											<i class="fa fa-star" aria-hidden="true"></i>
+											<i class="fa fa-star" aria-hidden="true"></i>
+											<i class="fa fa-star" aria-hidden="true"></i>
+											<i class="fa fa-star" aria-hidden="true"></i>
+											<i class="fa fa-star-half-o" aria-hidden="true"></i>
+										</div>
+									</div>
+									<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis elementum, dolor sit amet luctus phare-tra, turpis lacus rhoncus ipsum...</p>
+								</div>
+								<div class="text-left">
+									<button type="button" onclick="location.href='tour-booking-form.html'">Book Now <i class="fa fa-angle-double-right" aria-hidden="true"></i></button>
+									<button type="button" onclick="location.href='tour-grid-view.html'">View More <i class="fa fa-angle-double-right" aria-hidden="true"></i></button>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="tab-pane" id="flights">
+					<div class="col-md-4 col-lg-4 col-sm-6 col-xs-12">
+						<div class="product-thumb">
+							<div class="image">
+								<a href="#"><img src="assets/images/t4.jpg" alt="t4" title="t4" class="img-responsive"></a>
+								<div class="hoverbox">
+									<div class="icon_plus" aria-hidden="true"></div>
+								</div>
+								<div class="matter">
+									<p>Singapore Trip  <span>$575.00</span></p>
+								</div>
+							</div>
+							<div class="caption">
+								<div class="inner">
+									<h4>Singapore Trip</h4>
+									<div class="rate">
+										<div class="pull-left">
+											<span>HOT DEALS</span>
+										</div>
+										<div class="pull-right">
+											<i class="fa fa-star" aria-hidden="true"></i>
+											<i class="fa fa-star" aria-hidden="true"></i>
+											<i class="fa fa-star" aria-hidden="true"></i>
+											<i class="fa fa-star" aria-hidden="true"></i>
+											<i class="fa fa-star-half-o" aria-hidden="true"></i>
+										</div>
+									</div>
+									<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis elementum, dolor sit amet luctus phare-tra, turpis lacus rhoncus ipsum...</p>
+								</div>
+								<div class="text-left">
+									<button type="button" onclick="location.href='tour-booking-form.html'">Book Now <i class="fa fa-angle-double-right" aria-hidden="true"></i></button>
+									<button type="button" onclick="location.href='tour-grid-view.html'">View More <i class="fa fa-angle-double-right" aria-hidden="true"></i></button>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="col-md-4 col-lg-4 col-sm-6 col-xs-12">
+						<div class="product-thumb">
+							<div class="image">
+								<a href="#"><img src="assets/images/t5.jpg" alt="t5" title="t5" class="img-responsive"></a>
+								<div class="hoverbox">
+									<div class="icon_plus" aria-hidden="true"></div>
+								</div>
+								<div class="matter">
+									<p>The New California  <span>$575.00</span></p>
+								</div>
+							</div>
+							<div class="caption">
+								<div class="inner">
+									<h4>The New California</h4>
+									<div class="rate">
+										<div class="pull-left">
+											<span>HOT DEALS</span>
+										</div>
+										<div class="pull-right">
+											<i class="fa fa-star" aria-hidden="true"></i>
+											<i class="fa fa-star" aria-hidden="true"></i>
+											<i class="fa fa-star" aria-hidden="true"></i>
+											<i class="fa fa-star" aria-hidden="true"></i>
+											<i class="fa fa-star-half-o" aria-hidden="true"></i>
+										</div>
+									</div>
+									<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis elementum, dolor sit amet luctus phare-tra, turpis lacus rhoncus ipsum...</p>
+								</div>
+								<div class="text-left">
+									<button type="button" onclick="location.href='tour-booking-form.html'">Book Now <i class="fa fa-angle-double-right" aria-hidden="true"></i></button>
+									<button type="button" onclick="location.href='tour-grid-view.html'">View More <i class="fa fa-angle-double-right" aria-hidden="true"></i></button>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="col-md-4 col-lg-4 col-sm-6 col-xs-12">
+						<div class="product-thumb">
+							<div class="image">
+								<a href="#"><img src="assets/images/t6.jpg" alt="t6" title="t6" class="img-responsive"></a>
+								<div class="hoverbox">
+									<div class="icon_plus" aria-hidden="true"></div>
+								</div>
+								<div class="matter">
+									<p>greece, santormi  <span>$575.00</span></p>
+								</div>
+							</div>
+							<div class="caption">
+								<div class="inner">
+									<h4>Astro Place Hotels</h4>
+									<div class="rate">
+										<div class="pull-left">
+											<span>HOT DEALS</span>
+										</div>
+										<div class="pull-right">
+											<i class="fa fa-star" aria-hidden="true"></i>
+											<i class="fa fa-star" aria-hidden="true"></i>
+											<i class="fa fa-star" aria-hidden="true"></i>
+											<i class="fa fa-star" aria-hidden="true"></i>
+											<i class="fa fa-star-half-o" aria-hidden="true"></i>
+										</div>
+									</div>
+									<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis elementum, dolor sit amet luctus phare-tra, turpis lacus rhoncus ipsum...</p>
+								</div>
+								<div class="text-left">
+									<button type="button" onclick="location.href='tour-booking-form.html'">Book Now <i class="fa fa-angle-double-right" aria-hidden="true"></i></button>
+									<button type="button" onclick="location.href='tour-grid-view.html'">View More <i class="fa fa-angle-double-right" aria-hidden="true"></i></button>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="text-center">
+					<button class="btn-primary" type="button" onclick="location.href='tour-grid-view.html'">View More <i class="fa fa-angle-double-right" aria-hidden="true"></i></button>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="testimonail">
+
+	<div class="container">
+		<div class="row">
+			<div class="places">
+				<h1>what travelers are saying</h1>
+				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas a suscipit quam, ut vestibulum lorem.</p>
+				<hr>
+			</div>
+			<div class="testimonails">
+				<swiper [config]="config" [(index)]="index">
+					<div style="display: flex;justify-content: center;">
+						<div class="owl-item" style="min-width: 485px;">
+							<div class="item">
+								<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+								<div class="box">
+									<img src="assets/images/pic1.png" alt="pic1" title="pic1" class="img-responsive">
+									<div class="caption">
+									<h4>John William</h4>
+									<div class="rate">
+										<div class="pull-right">
+										<span>FROM CANADA</span>
+										</div>
+										<div class="pull-left">
+										<i class="fa fa-star" aria-hidden="true"></i>
+										<i class="fa fa-star" aria-hidden="true"></i>
+										<i class="fa fa-star" aria-hidden="true"></i>
+										<i class="fa fa-star" aria-hidden="true"></i>
+										<i class="fa fa-star-half-o" aria-hidden="true"></i>
+										</div>
+									</div>
+									<p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut cursus suscipit malesuada. Cras nec
+										hendrerit lacus. Curabitur nec elementum justo. Sed vitae dapibus augue."</p>
+									</div>
+								</div>
+								</div>
+							</div>
+						</div>
+						<div class="owl-item" style="min-width: 485px;">
+							<div class="item">
+								<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+								<div class="box">
+									<img src="assets/images/pic2.png" alt="pic2" title="pic2" class="img-responsive">
+									<div class="caption">
+									<h4>John William</h4>
+									<div class="rate">
+										<div class="pull-right">
+										<span>FROM CANADA</span>
+										</div>
+										<div class="pull-left">
+										<i class="fa fa-star" aria-hidden="true"></i>
+										<i class="fa fa-star" aria-hidden="true"></i>
+										<i class="fa fa-star" aria-hidden="true"></i>
+										<i class="fa fa-star" aria-hidden="true"></i>
+										<i class="fa fa-star-half-o" aria-hidden="true"></i>
+										</div>
+									</div>
+									<p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut cursus suscipit malesuada. Cras nec
+										hendrerit lacus. Curabitur nec elementum justo. Sed vitae dapibus augue."</p>
+									</div>
+								</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div style="display: flex;justify-content: center;">
+						<div class="owl-item" style="min-width: 485px;">
+							<div class="item">
+								<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+								<div class="box">
+									<img src="assets/images/pic1.png" alt="pic1" title="pic1" class="img-responsive">
+									<div class="caption">
+									<h4>John William</h4>
+									<div class="rate">
+										<div class="pull-right">
+										<span>FROM CANADA</span>
+										</div>
+										<div class="pull-left">
+										<i class="fa fa-star" aria-hidden="true"></i>
+										<i class="fa fa-star" aria-hidden="true"></i>
+										<i class="fa fa-star" aria-hidden="true"></i>
+										<i class="fa fa-star" aria-hidden="true"></i>
+										<i class="fa fa-star-half-o" aria-hidden="true"></i>
+										</div>
+									</div>
+									<p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut cursus suscipit malesuada. Cras nec
+										hendrerit lacus. Curabitur nec elementum justo. Sed vitae dapibus augue."</p>
+									</div>
+								</div>
+								</div>
+							</div>
+						</div>
+						<div class="owl-item" style="min-width: 485px;">
+							<div class="item">
+								<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+								<div class="box">
+									<img src="assets/images/pic2.png" alt="pic2" title="pic2" class="img-responsive">
+									<div class="caption">
+									<h4>John William</h4>
+									<div class="rate">
+										<div class="pull-right">
+										<span>FROM CANADA</span>
+										</div>
+										<div class="pull-left">
+										<i class="fa fa-star" aria-hidden="true"></i>
+										<i class="fa fa-star" aria-hidden="true"></i>
+										<i class="fa fa-star" aria-hidden="true"></i>
+										<i class="fa fa-star" aria-hidden="true"></i>
+										<i class="fa fa-star-half-o" aria-hidden="true"></i>
+										</div>
+									</div>
+									<p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut cursus suscipit malesuada. Cras nec
+										hendrerit lacus. Curabitur nec elementum justo. Sed vitae dapibus augue."</p>
+									</div>
+								</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</swiper>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="placetop">
+	<div class="container">
+		<div class="row">
+			<div class="places">
+				<h1>our gallery </h1>
+				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas a suscipit quam, ut vestibulum lorem.</p>
+				<hr>
+				<ul class="nav nav-tabs list-inline">
+					<li class="active">
+						<a href="#alls" data-toggle="tab" aria-expanded="true">All</a>
+					</li>
+					<li class="">
+						<a href="#world" data-toggle="tab" aria-expanded="false">World tour</a>
+					</li>
+					<li class="">
+						<a href="#ocean" data-toggle="tab" aria-expanded="false">ocean tour</a>
+					</li>
+					<li class="">
+						<a href="#summer" data-toggle="tab" aria-expanded="false">summer tour</a>
+					</li>
+					<li class="">
+						<a href="#sport" data-toggle="tab" aria-expanded="false">sport tour</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<div class="tab-content gallery">
+		<div class="tab-pane active" id="alls">
+			<ul class="list-inline">
+				<li>
+					<div class="product-thumb">
+						<div class="image">
+							<a href="#"><img src="assets/images/g1.jpg" alt="g1" title="g1" class="img-responsive"></a>
+							<div class="hoverbox">
+								<div class="show">
+									<p>World Tour</p>
+									<a href="gallery.html">View More <i class="fa fa-angle-double-right" aria-hidden="true"></i></a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</li>
+				<li>
+					<div class="product-thumb">
+						<div class="image">
+							<a href="#"><img src="assets/images/g2.jpg" alt="g2" title="g2" class="img-responsive"></a>
+							<div class="hoverbox">
+								<div class="show">
+									<p>World Tour</p>
+									<a href="gallery.html">View More <i class="fa fa-angle-double-right" aria-hidden="true"></i></a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</li>
+				<li>
+					<div class="product-thumb">
+						<div class="image">
+							<a href="#"><img src="assets/images/g3.jpg" alt="g3" title="g3" class="img-responsive"></a>
+							<div class="hoverbox">
+								<div class="show">
+									<p>World Tour</p>
+									<a href="gallery.html">View More <i class="fa fa-angle-double-right" aria-hidden="true"></i></a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</li>
+				<li>
+					<div class="product-thumb">
+						<div class="image">
+							<a href="#"><img src="assets/images/g4.jpg" alt="g4" title="g4" class="img-responsive"></a>
+							<div class="hoverbox">
+								<div class="show">
+									<p>World Tour</p>
+									<a href="gallery.html">View More <i class="fa fa-angle-double-right" aria-hidden="true"></i></a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</li>
+				<li>
+					<div class="product-thumb">
+						<div class="image">
+							<a href="#"><img src="assets/images/g5.jpg" alt="g5" title="g5" class="img-responsive"></a>
+							<div class="hoverbox">
+								<div class="show">
+									<p>World Tour</p>
+									<a href="gallery.html">View More <i class="fa fa-angle-double-right" aria-hidden="true"></i></a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</li>
+				<li>
+					<div class="product-thumb">
+						<div class="image">
+							<a href="#"><img src="assets/images/g6.jpg" alt="g6" title="g6" class="img-responsive"></a>
+							<div class="hoverbox">
+								<div class="show">
+									<p>World Tour</p>
+									<a href="gallery.html">View More <i class="fa fa-angle-double-right" aria-hidden="true"></i></a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</li>
+				<li>
+					<div class="product-thumb">
+						<div class="image">
+							<a href="#"><img src="assets/images/g7.jpg" alt="g7" title="g7" class="img-responsive"></a>
+							<div class="hoverbox">
+								<div class="show">
+									<p>World Tour</p>
+									<a href="gallery.html">View More <i class="fa fa-angle-double-right" aria-hidden="true"></i></a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</li>
+				<li>
+					<div class="product-thumb">
+						<div class="image">
+							<a href="#"><img src="assets/images/g8.jpg" alt="g8" title="g8" class="img-responsive"></a>
+							<div class="hoverbox">
+								<div class="show">
+									<p>World Tour</p>
+									<a href="gallery.html">View More <i class="fa fa-angle-double-right" aria-hidden="true"></i></a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</li>
+				<li>
+					<div class="product-thumb">
+						<div class="image">
+							<a href="#"><img src="assets/images/g9.jpg" alt="g9" title="g9" class="img-responsive"></a>
+							<div class="hoverbox">
+								<div class="show">
+									<p>World Tour</p>
+									<a href="gallery.html">View More <i class="fa fa-angle-double-right" aria-hidden="true"></i></a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</li>
+				<li>
+					<div class="product-thumb">
+						<div class="image">
+							<a href="#"><img src="assets/images/g10.jpg" alt="g10" title="g10" class="img-responsive"></a>
+							<div class="hoverbox">
+								<div class="show">
+									<p>World Tour</p>
+									<a href="gallery.html">View More <i class="fa fa-angle-double-right" aria-hidden="true"></i></a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</li>
+			</ul>
+		</div>
+
+		<div class="tab-pane" id="world">
+			<ul class="list-inline">
+				<li>
+					<div class="product-thumb">
+						<div class="image">
+							<a href="#"><img src="assets/images/g4.jpg" alt="g4" title="g4" class="img-responsive"></a>
+							<div class="hoverbox">
+								<div class="show">
+									<p>World Tour</p>
+									<a href="gallery.html">View More <i class="fa fa-angle-double-right" aria-hidden="true"></i></a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</li>
+				<li>
+					<div class="product-thumb">
+						<div class="image">
+							<a href="#"><img src="assets/images/g5.jpg" alt="g5" title="g5" class="img-responsive"></a>
+							<div class="hoverbox">
+								<div class="show">
+									<p>World Tour</p>
+									<a href="gallery.html">View More <i class="fa fa-angle-double-right" aria-hidden="true"></i></a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</li>
+				<li>
+					<div class="product-thumb">
+						<div class="image">
+							<a href="#"><img src="assets/images/g1.jpg" alt="g1" title="g1" class="img-responsive"></a>
+							<div class="hoverbox">
+								<div class="show">
+									<p>World Tour</p>
+									<a href="gallery.html">View More <i class="fa fa-angle-double-right" aria-hidden="true"></i></a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</li>
+				<li>
+					<div class="product-thumb">
+						<div class="image">
+							<a href="#"><img src="assets/images/g6.jpg" alt="g6" title="g6" class="img-responsive"></a>
+							<div class="hoverbox">
+								<div class="show">
+									<p>World Tour</p>
+									<a href="gallery.html">View More <i class="fa fa-angle-double-right" aria-hidden="true"></i></a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</li>
+				<li>
+					<div class="product-thumb">
+						<div class="image">
+							<a href="#"><img src="assets/images/g2.jpg" alt="g2" title="g2" class="img-responsive"></a>
+							<div class="hoverbox">
+								<div class="show">
+									<p>World Tour</p>
+									<a href="gallery.html">View More <i class="fa fa-angle-double-right" aria-hidden="true"></i></a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</li>
+				<li>
+					<div class="product-thumb">
+						<div class="image">
+							<a href="#"><img src="assets/images/g3.jpg" alt="g3" title="g3" class="img-responsive"></a>
+							<div class="hoverbox">
+								<div class="show">
+									<p>World Tour</p>
+									<a href="gallery.html">View More <i class="fa fa-angle-double-right" aria-hidden="true"></i></a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</li>
+				<li>
+					<div class="product-thumb">
+						<div class="image">
+							<a href="#"><img src="assets/images/g7.jpg" alt="g7" title="g7" class="img-responsive"></a>
+							<div class="hoverbox">
+								<div class="show">
+									<p>World Tour</p>
+									<a href="gallery.html">View More <i class="fa fa-angle-double-right" aria-hidden="true"></i></a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</li>
+				<li>
+					<div class="product-thumb">
+						<div class="image">
+							<a href="#"><img src="assets/images/g8.jpg" alt="g8" title="g8" class="img-responsive"></a>
+							<div class="hoverbox">
+								<div class="show">
+									<p>World Tour</p>
+									<a href="gallery.html">View More <i class="fa fa-angle-double-right" aria-hidden="true"></i></a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</li>
+				<li>
+					<div class="product-thumb">
+						<div class="image">
+							<a href="#"><img src="assets/images/g9.jpg" alt="g9" title="g9" class="img-responsive"></a>
+							<div class="hoverbox">
+								<div class="show">
+									<p>World Tour</p>
+									<a href="gallery.html">View More <i class="fa fa-angle-double-right" aria-hidden="true"></i></a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</li>
+				<li>
+					<div class="product-thumb">
+						<div class="image">
+							<a href="#"><img src="assets/images/g10.jpg" alt="g10" title="g10" class="img-responsive"></a>
+							<div class="hoverbox">
+								<div class="show">
+									<p>World Tour</p>
+									<a href="gallery.html">View More <i class="fa fa-angle-double-right" aria-hidden="true"></i></a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</li>
+			</ul>
+		</div>
+
+		<div class="tab-pane" id="ocean">
+			<ul class="list-inline">
+				<li>
+					<div class="product-thumb">
+						<div class="image">
+							<a href="#"><img src="assets/images/g5.jpg" alt="g5" title="g5" class="img-responsive"></a>
+							<div class="hoverbox">
+								<div class="show">
+									<p>World Tour</p>
+									<a href="gallery.html">View More <i class="fa fa-angle-double-right" aria-hidden="true"></i></a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</li>
+				<li>
+					<div class="product-thumb">
+						<div class="image">
+							<a href="#"><img src="assets/images/g6.jpg" alt="g6" title="g6" class="img-responsive"></a>
+							<div class="hoverbox">
+								<div class="show">
+									<p>World Tour</p>
+									<a href="gallery.html">View More <i class="fa fa-angle-double-right" aria-hidden="true"></i></a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</li>
+				<li>
+					<div class="product-thumb">
+						<div class="image">
+							<a href="#"><img src="assets/images/g7.jpg" alt="g7" title="g7" class="img-responsive"></a>
+							<div class="hoverbox">
+								<div class="show">
+									<p>World Tour</p>
+									<a href="gallery.html">View More <i class="fa fa-angle-double-right" aria-hidden="true"></i></a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</li>
+				<li>
+					<div class="product-thumb">
+						<div class="image">
+							<a href="#"><img src="assets/images/g8.jpg" alt="g8" title="g8" class="img-responsive"></a>
+							<div class="hoverbox">
+								<div class="show">
+									<p>World Tour</p>
+									<a href="gallery.html">View More <i class="fa fa-angle-double-right" aria-hidden="true"></i></a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</li>
+				<li>
+					<div class="product-thumb">
+						<div class="image">
+							<a href="#"><img src="assets/images/g9.jpg" alt="g9" title="g9" class="img-responsive"></a>
+							<div class="hoverbox">
+								<div class="show">
+									<p>World Tour</p>
+									<a href="gallery.html">View More <i class="fa fa-angle-double-right" aria-hidden="true"></i></a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</li>
+				<li>
+					<div class="product-thumb">
+						<div class="image">
+							<a href="#"><img src="assets/images/g1.jpg" alt="g1" title="g1" class="img-responsive"></a>
+							<div class="hoverbox">
+								<div class="show">
+									<p>World Tour</p>
+									<a href="gallery.html">View More <i class="fa fa-angle-double-right" aria-hidden="true"></i></a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</li>
+				<li>
+					<div class="product-thumb">
+						<div class="image">
+							<a href="#"><img src="assets/images/g2.jpg" alt="g2" title="g2" class="img-responsive"></a>
+							<div class="hoverbox">
+								<div class="show">
+									<p>World Tour</p>
+									<a href="gallery.html">View More <i class="fa fa-angle-double-right" aria-hidden="true"></i></a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</li>
+				<li>
+					<div class="product-thumb">
+						<div class="image">
+							<a href="#"><img src="assets/images/g3.jpg" alt="g3" title="g3" class="img-responsive"></a>
+							<div class="hoverbox">
+								<div class="show">
+									<p>World Tour</p>
+									<a href="gallery.html">View More <i class="fa fa-angle-double-right" aria-hidden="true"></i></a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</li>
+				<li>
+					<div class="product-thumb">
+						<div class="image">
+							<a href="#"><img src="assets/images/g4.jpg" alt="g4" title="g4" class="img-responsive"></a>
+							<div class="hoverbox">
+								<div class="show">
+									<p>World Tour</p>
+									<a href="gallery.html">View More <i class="fa fa-angle-double-right" aria-hidden="true"></i></a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</li>
+				<li>
+					<div class="product-thumb">
+						<div class="image">
+							<a href="#"><img src="assets/images/g10.jpg" alt="g10" title="g10" class="img-responsive"></a>
+							<div class="hoverbox">
+								<div class="show">
+									<p>World Tour</p>
+									<a href="gallery.html">View More <i class="fa fa-angle-double-right" aria-hidden="true"></i></a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</li>
+			</ul>
+		</div>
+
+		<div class="tab-pane" id="summer">
+			<ul class="list-inline">
+				<li>
+					<div class="product-thumb">
+						<div class="image">
+							<a href="#"><img src="assets/images/g4.jpg" alt="g4" title="g4" class="img-responsive"></a>
+							<div class="hoverbox">
+								<div class="show">
+									<p>World Tour</p>
+									<a href="gallery.html">View More <i class="fa fa-angle-double-right" aria-hidden="true"></i></a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</li>
+				<li>
+					<div class="product-thumb">
+						<div class="image">
+							<a href="#"><img src="assets/images/g5.jpg" alt="g5" title="g5" class="img-responsive"></a>
+							<div class="hoverbox">
+								<div class="show">
+									<p>World Tour</p>
+									<a href="gallery.html">View More <i class="fa fa-angle-double-right" aria-hidden="true"></i></a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</li>
+				<li>
+					<div class="product-thumb">
+						<div class="image">
+							<a href="#"><img src="assets/images/g6.jpg" alt="g6" title="g6" class="img-responsive"></a>
+							<div class="hoverbox">
+								<div class="show">
+									<p>World Tour</p>
+									<a href="gallery.html">View More <i class="fa fa-angle-double-right" aria-hidden="true"></i></a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</li>
+				<li>
+					<div class="product-thumb">
+						<div class="image">
+							<a href="#"><img src="assets/images/g1.jpg" alt="g1" title="g1" class="img-responsive"></a>
+							<div class="hoverbox">
+								<div class="show">
+									<p>World Tour</p>
+									<a href="gallery.html">View More <i class="fa fa-angle-double-right" aria-hidden="true"></i></a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</li>
+				<li>
+					<div class="product-thumb">
+						<div class="image">
+							<a href="#"><img src="assets/images/g2.jpg" alt="g2" title="g2" class="img-responsive"></a>
+							<div class="hoverbox">
+								<div class="show">
+									<p>World Tour</p>
+									<a href="gallery.html">View More <i class="fa fa-angle-double-right" aria-hidden="true"></i></a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</li>
+				<li>
+					<div class="product-thumb">
+						<div class="image">
+							<a href="#"><img src="assets/images/g3.jpg" alt="g3" title="g3" class="img-responsive"></a>
+							<div class="hoverbox">
+								<div class="show">
+									<p>World Tour</p>
+									<a href="gallery.html">View More <i class="fa fa-angle-double-right" aria-hidden="true"></i></a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</li>
+				<li>
+					<div class="product-thumb">
+						<div class="image">
+							<a href="#"><img src="assets/images/g7.jpg" alt="g7" title="g7" class="img-responsive"></a>
+							<div class="hoverbox">
+								<div class="show">
+									<p>World Tour</p>
+									<a href="gallery.html">View More <i class="fa fa-angle-double-right" aria-hidden="true"></i></a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</li>
+				<li>
+					<div class="product-thumb">
+						<div class="image">
+							<a href="#"><img src="assets/images/g8.jpg" alt="g8" title="g8" class="img-responsive"></a>
+							<div class="hoverbox">
+								<div class="show">
+									<p>World Tour</p>
+									<a href="gallery.html">View More <i class="fa fa-angle-double-right" aria-hidden="true"></i></a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</li>
+				<li>
+					<div class="product-thumb">
+						<div class="image">
+							<a href="#"><img src="assets/images/g9.jpg" alt="g9" title="g9" class="img-responsive"></a>
+							<div class="hoverbox">
+								<div class="show">
+									<p>World Tour</p>
+									<a href="gallery.html">View More <i class="fa fa-angle-double-right" aria-hidden="true"></i></a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</li>
+				<li>
+					<div class="product-thumb">
+						<div class="image">
+							<a href="#"><img src="assets/images/g10.jpg" alt="g10" title="g10" class="img-responsive"></a>
+							<div class="hoverbox">
+								<div class="show">
+									<p>World Tour</p>
+									<a href="gallery.html">View More <i class="fa fa-angle-double-right" aria-hidden="true"></i></a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</li>
+			</ul>
+		</div>
+
+		<div class="tab-pane" id="sport">
+			<ul class="list-inline">
+				<li>
+					<div class="product-thumb">
+						<div class="image">
+							<a href="#"><img src="assets/images/g8.jpg" alt="g8" title="g8" class="img-responsive"></a>
+							<div class="hoverbox">
+								<div class="show">
+									<p>World Tour</p>
+									<a href="gallery.html">View More <i class="fa fa-angle-double-right" aria-hidden="true"></i></a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</li>
+				<li>
+					<div class="product-thumb">
+						<div class="image">
+							<a href="#"><img src="assets/images/g9.jpg" alt="g9" title="g9" class="img-responsive"></a>
+							<div class="hoverbox">
+								<div class="show">
+									<p>World Tour</p>
+									<a href="gallery.html">View More <i class="fa fa-angle-double-right" aria-hidden="true"></i></a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</li>
+				<li>
+					<div class="product-thumb">
+						<div class="image">
+							<a href="#"><img src="assets/images/g2.jpg" alt="g2" title="g2" class="img-responsive"></a>
+							<div class="hoverbox">
+								<div class="show">
+									<p>World Tour</p>
+									<a href="gallery.html">View More <i class="fa fa-angle-double-right" aria-hidden="true"></i></a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</li>
+				<li>
+					<div class="product-thumb">
+						<div class="image">
+							<a href="#"><img src="assets/images/g3.jpg" alt="g3" title="g3" class="img-responsive"></a>
+							<div class="hoverbox">
+								<div class="show">
+									<p>World Tour</p>
+									<a href="gallery.html">View More <i class="fa fa-angle-double-right" aria-hidden="true"></i></a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</li>
+				<li>
+					<div class="product-thumb">
+						<div class="image">
+							<a href="#"><img src="assets/images/g1.jpg" alt="g1" title="g1" class="img-responsive"></a>
+							<div class="hoverbox">
+								<div class="show">
+									<p>World Tour</p>
+									<a href="gallery.html">View More <i class="fa fa-angle-double-right" aria-hidden="true"></i></a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</li>
+				<li>
+					<div class="product-thumb">
+						<div class="image">
+							<a href="#"><img src="assets/images/g4.jpg" alt="g4" title="g4" class="img-responsive"></a>
+							<div class="hoverbox">
+								<div class="show">
+									<p>World Tour</p>
+									<a href="gallery.html">View More <i class="fa fa-angle-double-right" aria-hidden="true"></i></a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</li>
+				<li>
+					<div class="product-thumb">
+						<div class="image">
+							<a href="#"><img src="assets/images/g5.jpg" alt="g5" title="g5" class="img-responsive"></a>
+							<div class="hoverbox">
+								<div class="show">
+									<p>World Tour</p>
+									<a href="gallery.html">View More <i class="fa fa-angle-double-right" aria-hidden="true"></i></a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</li>
+				<li>
+					<div class="product-thumb">
+						<div class="image">
+							<a href="#"><img src="assets/images/g6.jpg" alt="g6" title="g6" class="img-responsive"></a>
+							<div class="hoverbox">
+								<div class="show">
+									<p>World Tour</p>
+									<a href="gallery.html">View More <i class="fa fa-angle-double-right" aria-hidden="true"></i></a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</li>
+				<li>
+					<div class="product-thumb">
+						<div class="image">
+							<a href="#"><img src="assets/images/g7.jpg" alt="g7" title="g7" class="img-responsive"></a>
+							<div class="hoverbox">
+								<div class="show">
+									<p>World Tour</p>
+									<a href="gallery.html">View More <i class="fa fa-angle-double-right" aria-hidden="true"></i></a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</li>
+				<li>
+					<div class="product-thumb">
+						<div class="image">
+							<a href="#"><img src="assets/images/g10.jpg" alt="g10" title="g10" class="img-responsive"></a>
+							<div class="hoverbox">
+								<div class="show">
+									<p>World Tour</p>
+									<a href="gallery.html">View More <i class="fa fa-angle-double-right" aria-hidden="true"></i></a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</li>
+			</ul>
+		</div>
+
+		<div class="text-center">
+			<button class="btn-primary" type="button" onclick="location.href='gallery.html'">View More <i class="fa fa-angle-double-right" aria-hidden="true"></i></button>
+		</div>
+	</div>
+</div>
+
+<div class="blog">
+	<div class="container">
+		<div class="row">
+			<div class="places">
+				<h1>our blog</h1>
+				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas a suscipit quam, ut vestibulum lorem.</p>
+				<hr>
+			</div>
+			<div class="col-sm-4 col-xs-12">
+				<div class="product-thumb">
+					<div class="image">
+						<a href="#"><img src="assets/images/blog1.jpg" alt="blog1" title="blog1" class="img-responsive"></a>
+						<div class="hoverbox">
+							<div class="icon_plus" aria-hidden="true"></div>
+						</div>
+						<div class="matter">
+							<ul class="list-inline">
+								<li><a href="#">26 Dec 2016</a></li>
+								<li><a href="#">by john doe </a></li>
+							</ul>
+						</div>
+					</div>
+					<div class="caption">
+						<div class="inner">
+							<h4>Awesome Blog Post Title</h4>
+							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis elementum, dolor sit amet luctus phare-tra, turpis lacus rhoncus ipsum...</p>
+						</div>
+						<div class="text-center">
+							<button type="button" onclick="location.href='blog.html'">Read More <i class="fa fa-angle-double-right" aria-hidden="true"></i></button>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="col-sm-4 col-xs-12">
+				<div class="product-thumb">
+					<div class="image">
+						<a href="#"><img src="assets/images/blog2.jpg" alt="blog2" title="blog2" class="img-responsive"></a>
+						<div class="hoverbox">
+							<div class="icon_plus" aria-hidden="true"></div>
+						</div>
+						<div class="matter">
+							<ul class="list-inline">
+								<li><a href="#">26 Dec 2016</a></li>
+								<li><a href="#">by john doe </a></li>
+							</ul>
+						</div>
+					</div>
+					<div class="caption">
+						<div class="inner">
+							<h4>Awesome Blog Post Title</h4>
+							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis elementum, dolor sit amet luctus phare-tra, turpis lacus rhoncus ipsum...</p>
+						</div>
+						<div class="text-center">
+							<button type="button" onclick="location.href='blog.html'">Read More <i class="fa fa-angle-double-right" aria-hidden="true"></i></button>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="col-sm-4 col-xs-12">
+				<div class="product-thumb">
+					<div class="image">
+						<a href="#"><img src="assets/images/blog3.jpg" alt="blog3" title="blog3" class="img-responsive"></a>
+						<div class="hoverbox">
+							<div class="icon_plus" aria-hidden="true"></div>
+						</div>
+						<div class="matter">
+							<ul class="list-inline">
+								<li><a href="#">26 Dec 2016</a></li>
+								<li><a href="#">by john doe </a></li>
+							</ul>
+						</div>
+					</div>
+					<div class="caption">
+						<div class="inner">
+							<h4>Awesome Blog Post Title</h4>
+							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis elementum, dolor sit amet luctus phare-tra, turpis lacus rhoncus ipsum...</p>
+						</div>
+						<div class="text-center">
+							<button type="button" onclick="location.href='blog.html'">Read More <i class="fa fa-angle-double-right" aria-hidden="true"></i></button>
+						</div>
+					</div>
+				</div>
+			</div>
+
+		</div>
+	</div>
+</div>
+
+<div class="news">
+	<img src="assets/images/subscribe-bg.jpg" class="img-responsive sub" alt="subscribe-bg" title="subscribe-bg">
+	<div class="newsinner">
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-4 col-xs-12">
+				<div class="product-thumb">
+					<div class="image">
+						<a href="#"><img src="assets/images/foot-banner1.png" alt="foot-banner1" title="foot-banner1" class="img-responsive"></a>
+						<div class="hoverbox"></div>
+						<div class="matter">
+							<p class="des"><span class="icon_building_alt"></span> Hotel</p>
+							<button type="button"> Booking Now</button>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="col-sm-4 col-xs-12">
+				<div class="product-thumb">
+					<div class="image">
+						<a href="#"><img src="assets/images/foot-banner2.png" alt="foot-banner2" title="foot-banner2" class="img-responsive"></a>
+						<div class="hoverbox"></div>
+						<div class="off">
+							<span>Best Packages</span>
+						</div>
+						<div class="matter">
+							<p class="des1">$1000 <span>Package</span> to <small>Dubai</small></p>
+							<button type="button"> Booking Now</button>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="col-sm-4 col-xs-12">
+				<div class="product-thumb">
+					<div class="image">
+						<a href="#"><img src="assets/images/foot-banner3.png" alt="foot-banner3" title="foot-banner3" class="img-responsive"></a>
+						<div class="hoverbox"></div>
+						<div class="matter">
+							<p class="des2"><i class="icon_percent_alt"></i> 25% off<br> to <span>Island</span></p>
+							<button type="button"> Booking Now</button>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="col-sm-12 col-xs-12">
+				<form class="subscribe">
+					<div class="form-group">
+						<div class="input-group">
+							<label>Subscribe to our newsletter</label>
+							<input placeholder="Enter your email" name="subscribe_email" value="" type="text">
+							<button class="btn btn-default btn-lg" type="submit">Subscribe Now</button>
+						</div>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+	</div>
+</div>

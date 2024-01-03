@@ -1,0 +1,89 @@
+<form *ngIf="vendor" [formGroup]="form" novalidate>
+  <h1>Vendors</h1>
+
+  <section class="card p-4" formGroupName="vendor" novalidate>
+    <ng-template ngFor let-item [ngForOf]="formErrors" let-i="index">
+      <div class="alert alert-danger" role="alert">{{ formErrors[i] }}</div>
+    </ng-template>
+
+
+    <input type="hidden" formControlName="id" />
+
+    <div class="row mb-3">
+      <div class="col-md-6">
+        <label>Name (Must be unique):</label>
+        <input formControlName="name" type="text" class="form-control" placeholder="A unique product name">
+      </div>
+      <div class="col-md-6">
+        <label>Type:</label>
+        <select class="form-control" formControlName="typeName">
+          <option value=''>-- Please select Type of Vendor --</option>
+          <ng-template ngFor let-item [ngForOf]="vendorTypes" let-i="index">
+            <option value='{{ vendorTypes[i].name }}'>{{ vendorTypes[i].name }}</option>
+          </ng-template>
+        </select>
+      </div>
+    </div>
+
+    <div class="row mb-3">
+      <div class="col-md-5">
+        <label>Establishment Phone</label>
+        <input formControlName="establishmentPhone" type="text" class="form-control" placeholder="Establishment Phone...">
+      </div>
+      <div class="col-md-2">
+        <label>Establishment Ext.</label>
+        <input formControlName="establishmentExt" type="text" class="form-control" placeholder="Ext...">
+      </div>
+      <div class="col-md-5">
+        <label>Establishment Website</label>
+        <input formControlName="establishmentWebsite" type="text" class="form-control" placeholder="Establishment Website...">
+      </div>
+    </div>
+
+    <div class="row mb-3">
+      <div class="col-md-3">
+        <label for="contactName">Contact Name</label>
+        <input formControlName="contactName" type="text" class="form-control" placeholder="Contact Name...">
+      </div>
+      <div class="col-md-3">
+        <label for="contactPhone">Contact Phone</label>
+        <input formControlName="contactPhone" type="text" class="form-control" placeholder="Contact Phone...">
+      </div>
+      <div class="col-md-3">
+        <label>Contact Ext.</label>
+        <input formControlName="contactExt" type="text" class="form-control" placeholder="Ext...">
+      </div>
+      <div class="col-md-3">
+        <label>Contact Email</label>
+        <input formControlName="contactEmail" type="text" class="form-control" placeholder="Contact Email...">
+      </div>
+    </div>
+
+    <div class="row mb-3">
+      <div class="col-md-12">
+        <label>Address</label>
+        <input formControlName="address" type="text" class="form-control" placeholder="Address...">
+      </div>
+    </div>
+
+    <div class="row mb-3">
+      <div class="col-md-12">
+        <label for="parentCompany">Parent Company</label>
+        <input formControlName="parentCompany" type="text" class="form-control" placeholder="Parent Company...">
+      </div>
+    </div>
+
+    <div class="row mb-3">
+      <div class="col-md-12">
+        <label>Additional Info</label>
+        <textarea formControlName="additionalInfo" class="form-control" placeholder="Additional information..."></textarea>
+      </div>
+    </div>
+
+    <div class="row text-right">
+      <div class="col-md-12">
+        <button type="button" class="btn btn-success" [disabled]="form.pristine" (click)="save();">Save Vendor</button>
+      </div>
+    </div>
+  </section>
+</form>

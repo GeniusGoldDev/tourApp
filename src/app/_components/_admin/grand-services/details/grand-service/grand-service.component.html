@@ -1,0 +1,146 @@
+<app-grand-service-header *ngIf="grandService" [grandServiceName]="grandService.name" [activeTab]="0"></app-grand-service-header>
+
+<form id="myForm" *ngIf="grandService" [formGroup]="form" novalidate>
+
+  <section class="card p-4" formGroupName="grandService" novalidate>
+    <ng-template ngFor let-item [ngForOf]="formErrors" let-i="index">
+      <div class="alert alert-danger" role="alert">{{ formErrors[i] }}</div>
+    </ng-template>
+
+    <input type="hidden" formControlName="id" />
+    <input type="hidden" formControlName="quickBooksId" />
+
+    <div class="row mb-3">
+      <div class="col-md-12">
+        <label>Tour Director</label>
+        <input formControlName="director" type="text" class="form-control" placeholder="Tour Director...">
+      </div>
+    </div>
+
+    <div class="row mb-3">
+      <div class="col-md-7">
+        <label>Name (Must be unique):</label>
+        <input formControlName="name" type="text" class="form-control" placeholder="A unique product name">
+      </div>
+      <div class="col-md-3">
+        <label>Video Url</label>
+        <input formControlName="videoUrl" class="form-control" />
+      </div>
+      <div class="col-md-2 text-center">
+        <label>Live</label>
+        <input type="checkbox" class="form-control" formControlName="isPublished" />
+      </div>
+      <div class="col-md-1 text-center" style="display: none;">
+        <label>Tax</label>
+        <input type="checkbox" class="form-control" formControlName="isTaxIncluded" />
+      </div>
+    </div>
+
+    <div class="row mb-3">
+      <div class="row col-md-7">
+        <div class="col-md-4">
+          <label>From</label>
+          <input [owlDateTime]="dtFrom" [owlDateTimeTrigger]="dtFrom" formControlName="dateTimeFrom" class="form-control" />
+          <owl-date-time #dtFrom></owl-date-time>
+        </div>
+        <div class="col-md-4">
+          <label>To</label>
+          <input [owlDateTime]="dtTo" [owlDateTimeTrigger]="dtTo" formControlName="dateTimeTo" class="form-control" />
+          <owl-date-time #dtTo></owl-date-time>
+        </div>
+        <div class="col-md-4">
+          <label>Tax</label>
+          <select id="taxCode" class="form-control" formControlName="taxCode">
+            <option value="AB">AB</option>
+            <option value="BC">BC</option>
+            <option value="MB">MB</option>
+            <option value="NB" selected>NB</option>
+            <option value="NL">NL</option>
+            <option value="NT">NT</option>
+            <option value="NS">NS</option>
+            <option value="NU">NU</option>
+            <option value="ON">ON</option>
+            <option value="PE">PE</option>
+            <option value="QC">QC</option>
+            <option value="SK">SK</option>
+            <option value="YT">YT</option>
+            <option value="none">Exempt</option>
+          </select>
+        </div>
+      </div>
+      <div class="row col-md-5">
+        <div class="col-md-3">
+          <label>Available</label>
+          <input formControlName="availNum" type="number" class="form-control" placeholder="0" />
+        </div>
+        <div class="col-md-3">
+          <label>Guaranteed</label>
+          <input formControlName="minOrders" type="number" class="form-control" placeholder="0" />
+        </div>
+        <div class="col-md-6">
+          <label >Dbl. Occ. Price</label>
+          <input placement="top" disabled="disabled" ngbTooltip="Price based on double occupancy" formControlName="totalCost" type="number" class="form-control" placeholder="0" />
+        </div>
+      </div>
+    </div>
+
+    <hr />
+
+    <div class="row mb-3">
+      <div class="col-md-7">
+        <label>Upload Itinerary</label>
+        <input type="file" (change)="onFileChange($event.target.files)" />
+      </div>
+      <div class="col-md-5">
+        <label>Uploaded Itinerary</label>
+        <ng-container *ngFor="let item of filesFromServer">
+          <div class="center mb-1" id="file-{{ item.id }}">
+            <img src="https://cdn4.iconfinder.com/data/icons/email-2-2/32/Trash-Email-Bin-512.png" (click)="removeFile(item.id, 'file-' + item.id);" class="deleteIcon mr-3" />
+            <a target="_blank" class="btn btn-info btn-sm" href="{{ item.url }}">{{ item.name | slice:0:20 }}</a>
+          </div>
+        </ng-container>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-12">
+        <div class="upload-table">
+          <table class="table">
+            <tbody class="upload-name-style">
+              <tr *ngFor="let item of files; let i=index">
+                <td>
+                  <strong>{{ item.relativePath }}</strong>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+    <hr />
+
+    <div class="row mb-3">
+      <div class="col-md-12">
+        <label>Promotional Description</label>
+        <angular-editor id="promotionalDesc" formControlName="promotionalDesc" [config]="editorConfig"></angular-editor>
+      </div>
+    </div>
+
+    <div class="row mb-3">
+      <div class="col-md-12">
+        <label>Inclusions</label>
+        <angular-editor id="inclusions" formControlName="inclusions" [config]="editorConfig"></angular-editor>
+      </div>
+    </div>
+
+    <div class="row mb-3">
+      <div class="col-md-12">
+        <label>Price Details</label>
+        <angular-editor id="priceDetails" formControlName="priceDetails" [config]="editorConfig"></angular-editor>
+      </div>
+    </div>
+
+    <button type="button" class="btn btn-success mt-3" [disabled]="form.pristine" (click)="save();">Save Tour</button>
+    <button type="button" class="btn btn-warning mt-3" [disabled]="!form.pristine" (click)="clone();">Clone Tour <small>(Cannot clone un-saved Tour)</small></button>
+  </section>
+</form>

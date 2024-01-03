@@ -1,0 +1,38 @@
+<h1 style="display: inline-block;"> Tours</h1>
+<small *ngIf="grandServiceName"> ({{ grandServiceName }})</small>
+
+<ul class="nav nav-tabs" style="border-bottom: none;">
+  <li class="nav-item">
+    <a a data-toggle="tab" class="nav-link tournav" [routerLink]="['/admin/tours', grandServiceName, 'Tour']">Tour</a>
+  </li>
+  <li class="nav-item">
+    <a a data-toggle="tab" class="nav-link tournav" [routerLink]="['/admin/tours', grandServiceName, 'Images']" [class.disabled]="newGrandService">Images</a>
+  </li>
+  <li class="nav-item">
+    <a a data-toggle="tab" class="nav-link tournav" [routerLink]="['/admin/tours', grandServiceName, 'PaymentSteps']" [class.disabled]="newGrandService">Payment Steps</a>
+  </li>
+  <li class="nav-item">
+    <a a data-toggle="tab" class="nav-link tournav" [routerLink]="['/admin/tours', grandServiceName, 'Accommodation']" [class.disabled]="newGrandService">Accommodation</a>
+  </li>
+  <li class="nav-item">
+    <a a data-toggle="tab" class="nav-link tournav" [routerLink]="['/admin/tours', grandServiceName, 'Transportation']" [class.disabled]="newGrandService">Transportation</a>
+  </li>
+  <li class="nav-item">
+    <a a data-toggle="tab" class="nav-link tournav" [routerLink]="['/admin/tours', grandServiceName, 'Airlines']" [class.disabled]="newGrandService">Airlines</a>
+  </li>
+  <li class="nav-item">
+    <a a data-toggle="tab" class="nav-link tournav" [routerLink]="['/admin/tours', grandServiceName, 'Entertainment']" [class.disabled]="newGrandService">Entertainment</a>
+  </li>
+  <li class="nav-item">
+    <a a data-toggle="tab" class="nav-link tournav" [routerLink]="['/admin/tours', grandServiceName, 'TourGuides']" [class.disabled]="newGrandService">Op. Excursions</a>
+  </li>
+  <li class="nav-item">
+    <a a data-toggle="tab" class="nav-link tournav" [routerLink]="['/admin/tours', grandServiceName, 'Customers']" [class.disabled]="newGrandService">Customers</a>
+  </li>
+  <li class="nav-item">
+    <a a data-toggle="tab" class="nav-link tournav" [routerLink]="['/admin/tours', grandServiceName, 'TourManagment']" [class.disabled]="newGrandService">Mngt.</a>
+  </li>
+  <li class="nav-item">
+    <a a data-toggle="tab" class="nav-link tournav" [routerLink]="['/admin/tours', grandServiceName, 'Pricing']" [class.disabled]="newGrandService">Pricing</a>
+  </li>
+</ul>

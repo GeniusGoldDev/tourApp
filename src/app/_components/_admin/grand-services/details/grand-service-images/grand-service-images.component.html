@@ -1,0 +1,43 @@
+<app-grand-service-header *ngIf="grandService" [grandServiceName]="grandService.name" [activeTab]="1"></app-grand-service-header>
+
+<form *ngIf="grandService" novalidate>
+  <section class="card p-4" novalidate>
+    <ng-template ngFor let-item [ngForOf]="formErrors" let-i="index">
+      <div class="alert alert-danger" role="alert">{{ formErrors[i] }}</div>
+    </ng-template>
+
+    <ngx-image-gallery
+    [images]="images"
+    [conf]="conf"
+    (onOpen)="galleryOpened($event)"
+    (onClose)="galleryClosed()"
+    (onImageClicked)="galleryImageClicked($event)"
+    (onImageChange)="galleryImageChanged($event)"
+    (onDelete)="deleteImage($event)"
+    ></ngx-image-gallery>
+
+    <hr />
+
+    <div class="row mb-3">
+      <div class="col-md-7">
+        <div class="upload-table">
+          <table class="table">
+            <tbody class="upload-name-style">
+              <tr *ngFor="let item of files; let i=index">
+                <td>
+                  <strong>{{ item.relativePath }}</strong>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div class="col-md-5">
+        <label>Upload Itinerary</label>
+        <file-drop dropZoneLabel="Drop files here" (onFileDrop)="dropped($event)"></file-drop>
+      </div>
+    </div>
+
+    <button type="button" class="btn btn-success mt-3" [disabled]="saveDisabled" (click)="save();">Save Tour</button>
+  </section>
+</form>

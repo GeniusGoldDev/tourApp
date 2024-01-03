@@ -1,0 +1,238 @@
+<app-grand-service-header *ngIf="grandService" [grandServiceName]="grandService.name" [activeTab]="8"></app-grand-service-header>
+
+
+<form *ngIf="grandService" novalidate>
+  <section *ngIf="customerGrandService" class="card p-4" novalidate>
+    <ng-template ngFor let-item [ngForOf]="formErrors" let-i="index">
+      <div class="alert alert-danger" role="alert">{{ formErrors[i] }}</div>
+    </ng-template>
+
+    <h4>{{ grandService.name }}</h4>
+
+    <div class="card p-2 mb-3">
+      <div class="row">
+        <div class="col-md-3">{{ customerGrandService.firstName }} {{ customerGrandService.lastName }}</div>
+        <div class="col-md-3">{{ customerGrandService.phone }}</div>
+        <div class="col-md-3">{{ customerGrandService.email }}</div>
+        <div class="col-md-3">
+          <a target="_blank" href="{{ invoiceLink }}/invoice">Invoice</a>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="card p-2 mb-3">
+      <h4>Discounts</h4>
+      <table class="table" *ngIf="customerCoupons">
+        <thead>
+          <tr>
+            <th scope="col">Amount</th>
+            <th scope="col">Additional Info</th>
+            <th scope="col"></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td style="width: 10%"><input type="number" id="paymentAmountCoupon" class="form-control" /></td>
+            <td style="width: 85%"><input type="text" id="paymentAdditionalInfoCoupon" class="form-control" /></td>
+            <td style="width: 5%">
+              <img src="http://icons.iconarchive.com/icons/custom-icon-design/mono-general-1/256/add-icon.png" (click)="addCoupon();" class="addIcon mr-3" />
+            </td>
+          </tr>
+          <tr *ngFor="let custPayment of customerCoupons; let i = index">
+            <th scope="row">{{ custPayment.amount }}</th>
+            <td>{{ custPayment.additionalInfo }}</td>
+            <td>
+              <img src="https://cdn4.iconfinder.com/data/icons/email-2-2/32/Trash-Email-Bin-512.png" (click)="removeDiscount(custPayment.id);" class="addIcon mr-3" />
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="card p-2 mb-3">
+      <h3>Payments</h3>
+      <table class="table" *ngIf="customerPayments">
+        <thead>
+          <tr>
+            <th scope="col">Date</th>
+            <th scope="col">Amount</th>
+            <th scope="col">Method</th>
+            <th scope="col">Additional Info</th>
+            <th scope="col"></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th style="width: 15%" scope="row">
+              <input [min]="minPaymentDate" id="paymentDate" [owlDateTime]="dateTimePayment" [owlDateTimeTrigger]="dateTimePayment" class="form-control" />
+              <owl-date-time [pickerType]="'calendar'" #dateTimePayment></owl-date-time>
+            </th>
+            <td style="width: 10%"><input type="number" id="paymentAmount" class="form-control" /></td>
+            <td style="width: 20%">
+              <select id="paymentMethod" class="form-control">
+                <option value="Cash">Cash</option>
+                <option value="Cheque">Cheque</option>
+                <option value="Credit Card">Credit Card</option>
+                <option value="Direct Debit">Direct Debit</option>
+              </select>
+            </td>
+            <td style="width: 45%"><input type="text" id="paymentAdditionalInfo" class="form-control" /></td>
+            <td style="width: 5%">
+              <img src="http://icons.iconarchive.com/icons/custom-icon-design/mono-general-1/256/add-icon.png" (click)="addPayment();" class="addIcon mr-3" />
+            </td>
+            <td style="width: 5%">
+
+            </td>
+          </tr>
+          <tr *ngFor="let custPayment of customerPayments; let i = index">
+            <th scope="row">{{ custPayment.paymentDate | date }}</th>
+            <td>${{ custPayment.amount }}</td>
+            <td>{{ custPayment.paymentMethod }}</td>
+            <td>{{ custPayment.additionalInfo }}</td>
+            <td>
+              <img src="https://cdn4.iconfinder.com/data/icons/email-2-2/32/Trash-Email-Bin-512.png" (click)="removePayment(custPayment.id);" class="addIcon mr-3" />
+            </td>
+            <td>
+              <a target="_blank" href="https://c35.qbo.intuit.com/app/recvpayment?txnId={{ custPayment.id }}">Receipt</a>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="card p-2 mb-3">
+      <div class="row mb-2">
+        <h4 class="col-md-4">Joint Travellers</h4>
+        <div class="col-md-8">
+          <form [formGroup]='usersForm'>
+            <input placeholder="Add an Existing Customer..." style="border: 1px solid #cecece; display: inline;" class="form-control" matInput [matAutocomplete]="auto" formControlName='userInput'>
+
+            <mat-autocomplete #auto="matAutocomplete">
+              <mat-option *ngIf="isLoading" class="is-loading"><mat-spinner diameter="50"></mat-spinner></mat-option>
+              <ng-container *ngIf="!isLoading">
+                <mat-option *ngFor="let user of filteredUsers" [value]="user">
+                  <span (click)="addJoint(user.id, user.firstName, user.lastName, user.phone);" class="singleResult">Name: {{ user.firstName }} {{ user.lastName }} | Phone: {{ user.phone }} | Email: {{ user.email }} | Id: {{user.id}}</span>
+                </mat-option>
+              </ng-container>
+            </mat-autocomplete>
+          </form>
+        </div>
+      </div>
+      <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">First Name</th>
+            <th scope="col">Last Name</th>
+            <th scope="col">Phone Number</th>
+            <th scope="col"></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="selected" (click)="selectApplicant(customerGrandService.customerId);">
+            <td scope="col">{{ customerGrandService.firstName }}</td>
+            <td scope="col">{{ customerGrandService.lastName }}</td>
+            <td scope="col">{{ customerGrandService.phone }}</td>
+            <td scope="col"></td>
+          </tr>
+          <tr *ngFor="let joint of customerGrandService.jointCustomers; let i = index" (click)="selectApplicant(joint.id);">
+            <td scope="row">{{ joint.firstName }}</td>
+            <td>{{ joint.lastName }}</td>
+            <td>{{ joint.phone }}</td>
+            <td>
+              <img src="https://cdn4.iconfinder.com/data/icons/email-2-2/32/Trash-Email-Bin-512.png" (click)="removeJoint(joint.id);" class="addIcon mr-3" />
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div *ngIf="accomodations && accomodations.length > 0" class="card p-2 mb-3">
+      <h5>Accommodations</h5>
+      <div *ngFor="let acc of accomodations; let i = index">
+        <div class="row">
+          <div class="col-md-4">Vendor: {{ acc.vendorName }}</div>
+          <div class="col-md-4">From: {{ acc.dateTimeFrom | date }}</div>
+          <div class="col-md-4">To: {{ acc.dateTimeTo | date }}</div>
+        </div>
+        <div class="row service" *ngFor="let ser of acc.services; let s = index">
+          <label class="col-md-1"><input type="checkbox" id="{{ser.id}}" name="{{ser.id}}" value="{{ser.id}}" /></label>
+          <label for="{{ser.id}}" class="col-md-4">Name: {{ser.name}}</label>
+          <label for="{{ser.id}}" class="col-md-4">Cost: {{ser.cost}}</label>
+          <label for="{{ser.id}}" class="col-md-3">Availability: {{ser.availNum}}</label>
+        </div>
+      </div>
+    </div>
+
+    <div *ngIf="transportation && transportation.length > 0" class="card p-2 mb-3">
+      <h5>Transportation</h5>
+      <div *ngFor="let acc of transportation; let i = index">
+        <div class="row">
+          <div class="col-md-4">Vendor: {{ acc.vendorName }}</div>
+          <div class="col-md-4">From: {{ acc.dateTimeFrom | date }}</div>
+          <div class="col-md-4">From: {{ acc.dateTimeTo | date }}</div>
+        </div>
+        <div class="row service" *ngFor="let ser of acc.services; let s = index">
+          <label class="col-md-1"><input type="checkbox" id="{{ser.id}}" name="{{ser.id}}" value="{{ser.id}}" /></label>
+          <label for="{{ser.id}}" class="col-md-4">Name: {{ser.name}}</label>
+          <label for="{{ser.id}}" class="col-md-4">Cost: {{ser.cost}}</label>
+          <label for="{{ser.id}}" class="col-md-3">Availability: {{ser.availNum}}</label>
+        </div>
+      </div>
+    </div>
+
+    <div *ngIf="airlines && airlines.length > 0" class="card p-2 mb-3">
+      <h5>Airlines</h5>
+      <div *ngFor="let acc of airlines; let i = index">
+        <div class="row">
+          <div class="col-md-4">Vendor: {{ acc.vendorName }}</div>
+          <div class="col-md-4">From: {{ acc.dateTimeFrom | date }}</div>
+          <div class="col-md-4">From: {{ acc.dateTimeTo | date }}</div>
+        </div>
+        <div class="row service" *ngFor="let ser of acc.services; let s = index">
+          <label class="col-md-1"><input type="checkbox" id="{{ser.id}}" name="{{ser.id}}" value="{{ser.id}}" /></label>
+          <label for="{{ser.id}}" class="col-md-4">Name: {{ser.name}}</label>
+          <label for="{{ser.id}}" class="col-md-4">Cost: {{ser.cost}}</label>
+          <label for="{{ser.id}}" class="col-md-3">Availability: {{ser.availNum}}</label>
+        </div>
+      </div>
+    </div>
+
+    <div *ngIf="entertainment && entertainment.length > 0" class="card p-2 mb-3">
+      <h5>Entertainment</h5>
+      <div *ngFor="let acc of entertainment; let i = index">
+        <div class="row">
+          <div class="col-md-4">Vendor: {{ acc.vendorName }}</div>
+          <div class="col-md-4">From: {{ acc.dateTimeFrom | date }}</div>
+          <div class="col-md-4">From: {{ acc.dateTimeTo | date }}</div>
+        </div>
+        <div class="row service" *ngFor="let ser of acc.services; let s = index">
+          <label class="col-md-1"><input type="checkbox" id="{{ser.id}}" name="{{ser.id}}" value="{{ser.id}}" /></label>
+          <label for="{{ser.id}}" class="col-md-4">Name: {{ser.name}}</label>
+          <label for="{{ser.id}}" class="col-md-4">Cost: {{ser.cost}}</label>
+          <label for="{{ser.id}}" class="col-md-3">Availability: {{ser.availNum}}</label>
+        </div>
+      </div>
+    </div>
+
+
+    <div *ngIf="optionalExcusrsions && optionalExcusrsions.length > 0" class="card p-2 mb-3">
+      <h5>Optional Excusrsions</h5>
+      <div *ngFor="let acc of optionalExcusrsions; let i = index">
+        <div class="row">
+          <div class="col-md-4">Vendor: {{ acc.vendorName }}</div>
+          <div class="col-md-4">From: {{ acc.dateTimeFrom | date }}</div>
+          <div class="col-md-4">From: {{ acc.dateTimeTo | date }}</div>
+        </div>
+        <div class="row service" *ngFor="let ser of acc.services; let s = index">
+          <label class="col-md-1"><input type="checkbox" id="{{ser.id}}" name="{{ser.id}}" value="{{ser.id}}" /></label>
+          <label for="{{ser.id}}" class="col-md-4">Name: {{ser.name}}</label>
+          <label for="{{ser.id}}" class="col-md-4">Cost: {{ser.cost}}</label>
+          <label for="{{ser.id}}" class="col-md-3">Availability: {{ser.availNum}}</label>
+        </div>
+      </div>
+    </div>
+
+    <button type="button" class="btn btn-warning mt-3" (click)="addCustomer();">Save Changes</button>
+  </section>
+</form>

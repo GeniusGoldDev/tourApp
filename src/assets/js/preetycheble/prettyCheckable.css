@@ -1,0 +1,81 @@
+.clearfix:before,
+.clearfix:after {
+    content: "";
+    display: table
+}
+.clearfix:after {
+    clear: both
+}
+.clearfix {
+    *zoom: 1
+}
+.prettycheckbox label{display:none !important;}
+.prettycheckbox,
+.prettyradio {
+    display: inline-block;
+    padding: 0;
+    margin: 0
+}
+
+.prettycheckbox>a{
+	background: rgba(0, 0, 0, 0) url("images/uncheked.png") no-repeat scroll 0 0;
+    border: none;
+    cursor: pointer;
+    display: block;
+    float: left;
+    height: 19px;
+    margin-right: 10px;
+    position: relative;
+    top: 5px;
+    width: 21px;
+	padding:0px;
+
+}
+.prettyradio>a {
+    height: 16px;
+    display: block;
+    float: left;
+    cursor: pointer;
+    margin: 0;
+    background: url('img/radio_1.html');
+	position: relative;
+    width: 15px;
+}
+.prettycheckbox>a:focus,
+.prettyradio>a:focus {
+    outline: 0 none
+}
+.prettycheckbox label,
+.prettyradio label {
+    display: block;
+    float: left;
+    margin: 6px 5px;
+    cursor: pointer
+}
+.prettycheckbox a.disabled,
+.prettycheckbox label.disabled,
+.prettyradio a.disabled,
+.prettyradio label.disabled {
+    cursor: not-allowed
+}
+
+
+.prettycheckbox>a.checked.disabled {
+    background-position: -150px 0
+}
+.prettycheckbox>a.disabled {
+    background-position: -120px 0
+}
+.prettyradio>a.checked {
+    background: url('img/radio_2.html') no-repeat;
+	
+}
+.prettyradio>a.checked:focus {
+    b background: url('img/radio_2.html') no-repeat;
+}
+.prettyradio>a.checked.disabled {
+    background-position: -330px 0
+}
+.prettyradio>a.disabled {
+    background-position: -300px 0
+}
